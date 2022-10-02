@@ -4,11 +4,7 @@ import { OutputFormatType } from 'diff2html/lib/types';
 
 import { Commit } from './model';
 
-export function diff(
-  revOld: Commit,
-  revNew: Commit,
-  style: OutputFormatType,
-): string {
+export function diff(revOld: Commit, revNew: Commit, style: OutputFormatType): string {
   const options: PatchOptions = { context: 100 };
   if (style === 'line-by-line') {
     options.context = 4;
@@ -24,14 +20,7 @@ function titleDiff(rev1: Commit, rev2: Commit, options: PatchOptions): string {
   if (rev1.details.title === rev2.details.title) {
     return '';
   }
-  return Diff.createPatch(
-    '条目名',
-    rev1.details.title,
-    rev2.details.title,
-    rev1.rev.date,
-    rev2.rev.date,
-    options,
-  );
+  return Diff.createPatch('条目名', rev1.details.title, rev2.details.title, rev1.rev.date, rev2.rev.date, options);
 }
 
 function infoDiff(rev1: Commit, rev2: Commit, options: PatchOptions): string {
@@ -48,11 +37,7 @@ function infoDiff(rev1: Commit, rev2: Commit, options: PatchOptions): string {
   );
 }
 
-function descriptionDiff(
-  rev1: Commit,
-  rev2: Commit,
-  options: PatchOptions,
-): string {
+function descriptionDiff(rev1: Commit, rev2: Commit, options: PatchOptions): string {
   if (rev1.details.description === rev2.details.description) {
     return '';
   }

@@ -5,16 +5,16 @@ const LiveReloadPlugin = require('webpack-livereload-plugin');
 const UserScriptMetaDataPlugin = require('userscript-metadata-webpack-plugin');
 
 const webpackConfig = require('./webpack.config.base');
+const { author } = require('../../package.json');
 
 const merge = mergeWithRules({ plugins: 'append' });
 
 module.exports = function create(entry, metadata, externals = {}) {
   metadata = JSON.parse(JSON.stringify(metadata));
 
-  metadata.require.push(
-    'file://' +
-      path.resolve(__dirname, `../dist/dev/${metadata.name}.debug.js`),
-  );
+  Object.assign(metadata, { author });
+
+  metadata.require.push('file://' + path.resolve(__dirname, `../dist/dev/${metadata.name}.debug.js`));
 
   return merge(webpackConfig, {
     cache: {
@@ -36,9 +36,6 @@ module.exports = function create(entry, metadata, externals = {}) {
       ignored: /node_modules/,
     },
     externals,
-    plugins: [
-      new LiveReloadPlugin({ delay: 500 }),
-      new UserScriptMetaDataPlugin({ metadata }),
-    ],
+    plugins: [new LiveReloadPlugin({ delay: 500 }), new UserScriptMetaDataPlugin({ metadata })],
   });
 };

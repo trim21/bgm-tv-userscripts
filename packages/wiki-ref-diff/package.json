@@ -1,0 +1,10 @@
+{
+  "name": "@script/wiki-rev-diff",
+  "version": "0.2.4",
+  "scripts": {
+    "build": "webpack --config config/webpack.config.prod.js"
+  },
+  "devDependencies": {
+    "common": "workspace:*"
+  }
+}

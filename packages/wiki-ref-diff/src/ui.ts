@@ -7,9 +7,7 @@ import { Commit } from './model';
 import { diff } from './differ';
 
 export async function render(revOld: Commit, revNew: Commit): Promise<void> {
-  let outputFormat = (await GM.getValue(configKey)) as
-    | OutputFormatType
-    | undefined;
+  let outputFormat = (await GM.getValue(configKey)) as OutputFormatType | undefined;
   if (!outputFormat) {
     outputFormat = 'line-by-line';
   }

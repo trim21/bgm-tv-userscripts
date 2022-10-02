@@ -1,0 +1,25 @@
+{
+  "name": "@script/hover-subject-info",
+  "description": "Build your UserScript with webpack",
+  "version": "0.2.3",
+  "private": true,
+  "license": "MIT",
+  "author": {
+    "name": "Trim21",
+    "email": "i@trim21.me"
+  },
+  "scripts": {
+    "build": "webpack --config config/webpack.config.prod.js",
+    "dev": "webpack --config config/webpack.config.dev.js",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@jest/globals": "^29.1.2",
+    "@types/hogan.js": "^3.0.1",
+    "@types/jest": "^29.1.1",
+    "common": "workspace:*",
+    "jest": "^29.1.2",
+    "ts-jest": "^29.0.3",
+    "typescript": "4.8.4"
+  }
+}

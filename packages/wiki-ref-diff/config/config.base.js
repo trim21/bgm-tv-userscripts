@@ -1,7 +1,7 @@
 const path = require('path');
 
-const { name, version } = require('../package.json');
-const { author, repository, dependencies } = require('../../package.json');
+const { version } = require('../package.json');
+const { repository, dependencies } = require('../../../package.json');
 
 module.exports = {
   entry: path.join(__dirname, '../src/index.ts'),
@@ -12,19 +12,14 @@ module.exports = {
     lodash: '_',
   },
   metadata: {
-    name,
+    name: 'bgm-wiki-rev-diff',
     'name:zh': '显示条目信息版本差异',
     namespace: 'https://trim21.me/',
     version,
-    author,
     source: repository.url,
     supportURL: repository.url + '/issues',
     license: 'MIT',
-    match: [
-      'https://bgm.tv/subject/*/edit*',
-      'https://bangumi.tv/subject/*/edit*',
-      'https://chii.in/subject/*/edit*',
-    ],
+    match: ['https://bgm.tv/subject/*/edit*', 'https://bangumi.tv/subject/*/edit*', 'https://chii.in/subject/*/edit*'],
     require: [
       `https://cdn.jsdelivr.net/npm/jquery@${dependencies.jquery}/dist/jquery.min.js`,
       `https://cdn.jsdelivr.net/npm/diff2html@${dependencies.diff2html}/bundles/js/diff2html.min.js`,
@@ -34,12 +29,7 @@ module.exports = {
     resource: [
       `diff2html https://cdn.jsdelivr.net/npm/diff2html@${dependencies.diff2html}/bundles/css/diff2html.min.css`,
     ],
-    grant: [
-      'GM.getResourceUrl',
-      'GM.registerMenuCommand',
-      'GM.setValue',
-      'GM.getValue',
-    ],
+    grant: ['GM.getResourceUrl', 'GM.registerMenuCommand', 'GM.setValue', 'GM.getValue'],
     'run-at': 'document-end',
   },
 };

@@ -4,13 +4,11 @@
   "version": "0.0.0",
   "private": true,
   "license": "MIT",
-  "author": {
-    "name": "Trim21",
-    "email": "i@trim21.me"
-  },
   "prettier": {
+    "printWidth": 120,
     "trailingComma": "all",
     "singleQuote": true,
+    "endOfLine": "lf",
     "semi": true
   },
   "scripts": {
@@ -21,17 +19,22 @@
     "lint:tsc": "tsc --noEmit",
     "format:prettier": "prettier --write .",
     "format:eslint": "eslint --fix --ext cjs,js,ts ./",
-    "build": "run-s -c build:*",
-    "build:wiki-ref-diff": "webpack --config wiki-ref-diff/config/webpack.config.prod.js",
-    "dev:wiki-ref-diff": "webpack --config wiki-ref-diff/config/webpack.config.dev.js",
+    "build": "pnpm --filter=@script/* build",
+    "test": "pnpm --filter=@script/* test",
     "lint-staged": "lint-staged",
+    "script": "pnpm --filter=@script/*",
     "prepare": "husky install"
+  },
+  "author": {
+    "name": "Trim21",
+    "email": "i@trim21.me"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Trim21/bgm-wiki-rev-diff"
+    "url": "https://github.com/trim21/bgm-wiki-rev-diff"
   },
   "dependencies": {
+    "@jest/globals": "^29.1.2",
     "diff": "5.1.0",
     "diff2html": "3.4.19",
     "esbuild": "0.15.10",
@@ -46,7 +49,6 @@
   "devDependencies": {
     "@types/diff": "5.0.2",
     "@types/greasemonkey": "4.0.4",
-    "@types/hogan.js": "3.0.1",
     "@types/jquery": "3.5.14",
     "@types/lodash": "4.14.186",
     "@typescript-eslint/eslint-plugin": "5.38.1",

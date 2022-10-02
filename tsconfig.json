@@ -12,6 +12,6 @@
     "noEmit": false,
     "allowJs": false
   },
-  "include": ["./wiki-ref-diff"],
+  "include": ["./packages/"],
   "exclude": ["node_modules", "**/*.spec.ts", "./config/", "*/config/**"]
 }

@@ -1,10 +1,6 @@
 module.exports = {
-  extends: [
-    'plugin:import/recommended',
-    'plugin:import/typescript',
-    'plugin:promise/recommended',
-  ],
-  ignorePatterns: ['**/dist/**/*.js'],
+  extends: ['plugin:import/recommended', 'plugin:import/typescript', 'plugin:promise/recommended'],
+  ignorePatterns: ['**/dist/**/*.js', '**/*.spec.ts'],
   overrides: [
     {
       files: ['*.js'],
@@ -69,10 +65,7 @@ module.exports = {
         '@typescript-eslint/semi': ['error', 'always'],
         '@typescript-eslint/strict-boolean-expressions': 'off',
         '@typescript-eslint/comma-dangle': ['error', 'always-multiline'],
-        '@typescript-eslint/restrict-template-expressions': [
-          'error',
-          { allowAny: true },
-        ],
+        '@typescript-eslint/restrict-template-expressions': ['error', { allowAny: true }],
       },
     },
   ],
@@ -122,13 +115,7 @@ module.exports = {
       'error',
       {
         'newlines-between': 'always',
-        groups: [
-          'builtin',
-          'external',
-          ['index', 'sibling', 'parent'],
-          'internal',
-          'object',
-        ],
+        groups: ['builtin', 'external', ['index', 'sibling', 'parent'], 'internal', 'object'],
       },
     ],
   },

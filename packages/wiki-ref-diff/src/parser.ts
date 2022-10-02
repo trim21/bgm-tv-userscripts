@@ -6,8 +6,7 @@ export function parseRevDetails(html: string): RevDetail {
   const jq = $(html);
   const rawInfo = jq.find('#subject_infobox').val()?.toString() ?? '';
   const title = jq.find('input[name="subject_title"]').val()?.toString() ?? '';
-  const description =
-    jq.find('textarea#subject_summary').val()?.toString() ?? '';
+  const description = jq.find('textarea#subject_summary').val()?.toString() ?? '';
   return {
     title,
     rawInfo,
