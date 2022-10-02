@@ -29,7 +29,7 @@
     "build": "run-s -c build:*",
     "build:wiki-ref-diff": "webpack --config wiki-ref-diff/config/webpack.config.prod.js",
     "dev": "webpack --config wiki-ref-diff/config/webpack.config.dev.js",
-    "lint-staged": "lint-staged -v",
+    "lint-staged": "lint-staged",
     "prepare": "husky install"
   },
   "repository": {
