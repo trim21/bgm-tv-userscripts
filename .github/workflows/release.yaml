@@ -9,17 +9,17 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: pnpm/action-setup@v2.2.2
+      - uses: actions/checkout@v3
+
       - name: Setup node
         uses: actions/setup-node@v3
         with:
           node-version: 'lts/*'
-          cache: pnpm
+          cache: yarn
 
-      - run: pnpm i
+      - run: yarn
 
-      - run: pnpm build
+      - run: yarn build
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3

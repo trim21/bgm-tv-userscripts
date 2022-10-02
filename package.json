@@ -23,7 +23,7 @@
     "lint:tsc": "tsc --noEmit",
     "format:prettier": "prettier --write .",
     "format:eslint": "eslint --fix --ext cjs,js,ts ./",
-    "build": "pnpm --filter=@script/* build",
+    "build": "yarn workspaces run build",
     "test": "pnpm --filter=@script/* test",
     "lint-staged": "lint-staged",
     "script": "pnpm --filter=@script/*",
@@ -40,7 +40,6 @@
   },
   "dependencies": {
     "diff": "5.1.0",
-    "diff2html": "3.4.19",
     "jquery": "3.6.1",
     "lodash": "4.17.21"
   },
@@ -49,14 +48,10 @@
     "*.{cjs,js,ts}": "eslint --fix"
   },
   "devDependencies": {
-    "@types/diff": "5.0.2",
-    "@types/greasemonkey": "4.0.4",
-    "@types/jquery": "3.5.14",
-    "@types/lodash": "4.14.186",
     "@typescript-eslint/eslint-plugin": "5.38.1",
     "@typescript-eslint/parser": "5.38.1",
-    "esbuild": "0.15.10",
-    "esbuild-loader": "2.20.0",
+    "esbuild": "^0.15.10",
+    "esbuild-loader": "^2.20.0",
     "eslint": "8.24.0",
     "eslint-config-standard-with-typescript": "23.0.0",
     "eslint-plugin-import": "2.26.0",
