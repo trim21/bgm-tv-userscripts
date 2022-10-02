@@ -11,7 +11,7 @@ describe('should be subject url', () => {
 });
 
 describe('should not be subject url', () => {
-  for (const url of ['/rakuen/topic/group/373494']) {
+  for (const url of ['/rakuen/topic/group/373494', '#post_111']) {
     test(`${url}`, () => {
       expect(getSubjectID(url)).toBe(undefined);
     });
