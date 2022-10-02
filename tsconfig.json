@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "noImplicitAny": true,
+    "moduleResolution": "Node",
+    "module": "ESNext",
+    "target": "ESNext",
+    "lib": ["DOM", "ESNext"],
+    "skipLibCheck": false,
+    "strict": true,
+    "strictNullChecks": true,
+    "noEmit": false,
+    "allowJs": false
+  },
+  "include": ["./wiki-ref-diff"],
+  "exclude": ["node_modules", "**/*.spec.ts", "./config/", "*/config/**"]
+}
