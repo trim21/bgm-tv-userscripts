@@ -4,8 +4,8 @@
 // @namespace     https://trim21.me/
 // @description   鼠标指向条目链接时弹出一个悬浮窗显示条目信息
 // @version       0.2.3
-// @source        https://github.com/trim21/bgm-wiki-rev-diff
-// @supportURL    https://github.com/trim21/bgm-wiki-rev-diff/issues
+// @source        https://github.com/trim21/bgm-tv-userscripts
+// @supportURL    https://github.com/trim21/bgm-tv-userscripts/issues
 // @license       MIT
 // @match         https://bgm.tv/group/topic/*
 // @match         https://bangumi.tv/group/topic/*

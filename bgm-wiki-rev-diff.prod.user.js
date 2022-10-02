@@ -3,8 +3,8 @@
 // @name:zh      显示条目信息版本差异
 // @namespace    https://trim21.me/
 // @version      0.2.8
-// @source       https://github.com/trim21/bgm-wiki-rev-diff
-// @supportURL   https://github.com/trim21/bgm-wiki-rev-diff/issues
+// @source       https://github.com/trim21/bgm-tv-userscripts
+// @supportURL   https://github.com/trim21/bgm-tv-userscripts/issues
 // @license      MIT
 // @match        https://bgm.tv/subject/*/edit*
 // @match        https://bangumi.tv/subject/*/edit*
