@@ -31,7 +31,7 @@ fs.writeFileSync(pkgFilePath, JSON.stringify(packageJSON, undefined, 2));
 
 execSync('git add .', { encoding: 'utf8' });
 
-execSync(`git commit -m "release: bump ${packageJSON.name} to ${newVersion}"`, { encoding: 'utf8' });
+execSync(`git commit -m "release: bump \`${packageJSON.name}\` to ${newVersion}"`, { encoding: 'utf8' });
 
 execSync(`git tag -a -m "${packageJSON.name}/v${newVersion}" "${packageJSON.name}/v${newVersion}"`, {
   encoding: 'utf8',
