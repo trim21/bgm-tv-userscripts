@@ -1,9 +1,12 @@
 {
   "name": "bgm-wiki-rev-diff",
   "description": "Build your UserScript with webpack",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": true,
   "license": "MIT",
+  "workspaces": [
+    "./packages/*"
+  ],
   "prettier": {
     "printWidth": 120,
     "trailingComma": "all",
