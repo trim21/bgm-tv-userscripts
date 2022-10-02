@@ -11,6 +11,7 @@
     "endOfLine": "lf",
     "semi": true
   },
+  "packageManager": "pnpm@latest",
   "scripts": {
     "lint": "run-p lint:* ",
     "format": "run-s -c format:*",
@@ -23,6 +24,7 @@
     "test": "pnpm --filter=@script/* test",
     "lint-staged": "lint-staged",
     "script": "pnpm --filter=@script/*",
+    "wiki-rev-diff": "pnpm --filter=@script/wiki-rev-diff",
     "prepare": "husky install"
   },
   "author": {
@@ -34,11 +36,8 @@
     "url": "https://github.com/trim21/bgm-wiki-rev-diff"
   },
   "dependencies": {
-    "@jest/globals": "^29.1.2",
     "diff": "5.1.0",
     "diff2html": "3.4.19",
-    "esbuild": "0.15.10",
-    "esbuild-loader": "2.20.0",
     "jquery": "3.6.1",
     "lodash": "4.17.21"
   },
@@ -53,6 +52,8 @@
     "@types/lodash": "4.14.186",
     "@typescript-eslint/eslint-plugin": "5.38.1",
     "@typescript-eslint/parser": "5.38.1",
+    "esbuild": "0.15.10",
+    "esbuild-loader": "2.20.0",
     "eslint": "8.24.0",
     "eslint-config-standard-with-typescript": "23.0.0",
     "eslint-plugin-import": "2.26.0",

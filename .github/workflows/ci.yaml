@@ -12,37 +12,40 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2.2.2
       - name: Setup node
         uses: actions/setup-node@v3
         with:
           node-version: 'lts/*'
           cache: pnpm
 
-      - run: pnpm
+      - run: pnpm i
       - run: pnpm lint
 
   test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2.2.2
       - name: Setup node
         uses: actions/setup-node@v3
         with:
           node-version: 'lts/*'
           cache: pnpm
 
-      - run: pnpm
+      - run: pnpm i
       - run: pnpm test
 
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2.2.2
       - name: Setup node
         uses: actions/setup-node@v3
         with:
           node-version: 'lts/*'
           cache: pnpm
 
-      - run: pnpm
+      - run: pnpm i
       - run: pnpm build
