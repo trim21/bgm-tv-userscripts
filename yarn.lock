@@ -450,9 +450,9 @@
     jest-mock "^29.1.2"
     jest-util "^29.1.2"
 
-"@jest/globals@^29.1.2":
+"@jest/globals@29.1.2", "@jest/globals@^29.1.2":
   version "29.1.2"
-  resolved "https://registry.npmmirror.com/@jest/globals/-/globals-29.1.2.tgz"
+  resolved "https://registry.yarnpkg.com/@jest/globals/-/globals-29.1.2.tgz#826ede84bc280ae7f789cb72d325c48cd048b9d3"
   integrity sha512-uMgfERpJYoQmykAd0ffyMq8wignN4SvLUG6orJQRe9WAlTRc9cdpCaE/29qurXixYJVZWUqIBXhSk8v5xN1V9g==
   dependencies:
     "@jest/environment" "^29.1.2"
@@ -724,9 +724,9 @@
   resolved "https://registry.npmmirror.com/@types/greasemonkey/-/greasemonkey-4.0.4.tgz#fc6e9cd15c8fe8ee36fdbcfd85e5a0fa4a241377"
   integrity sha512-OA+sbH6cPgVMpAM2wAABY7D1ASiJ4vVD+uSmvQSwTatriWtTekDa7p1A5VUSSjBlrskCdOiKnLBjv5jU5E/8cg==
 
-"@types/hogan.js@^3.0.1":
+"@types/hogan.js@3.0.1":
   version "3.0.1"
-  resolved "https://registry.npmmirror.com/@types/hogan.js/-/hogan.js-3.0.1.tgz"
+  resolved "https://registry.yarnpkg.com/@types/hogan.js/-/hogan.js-3.0.1.tgz#64c54407b30da359763e14877f5702b8ae85d61c"
   integrity sha512-D03i/2OY7kGyMq9wdQ7oD8roE49z/ZCZThe/nbahtvuqCNZY9T2MfedOWyeBdbEpY2W8Gnh/dyJLdFtUCOkYbg==
 
 "@types/istanbul-lib-coverage@*", "@types/istanbul-lib-coverage@^2.0.0", "@types/istanbul-lib-coverage@^2.0.1":
@@ -748,9 +748,9 @@
   dependencies:
     "@types/istanbul-lib-report" "*"
 
-"@types/jest@^29.1.1":
+"@types/jest@29.1.1":
   version "29.1.1"
-  resolved "https://registry.npmmirror.com/@types/jest/-/jest-29.1.1.tgz"
+  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-29.1.1.tgz#cf21a0835a1ba9a30ea1966019f1261c6a114c92"
   integrity sha512-U9Ey07dGWl6fUFaIaUQUKWG5NoKi/zizeVQCGV8s4nSU0jPgqphVZvS64+8BtWYvrc3ZGw6wo943NSYPxkrp/g==
   dependencies:
     expect "^29.0.0"
@@ -1810,9 +1810,9 @@ esbuild-linux-s390x@0.15.10:
   resolved "https://registry.npmmirror.com/esbuild-linux-s390x/-/esbuild-linux-s390x-0.15.10.tgz#21fdf0cb3494a7fb520a71934e4dffce67fe47be"
   integrity sha512-ReP+6q3eLVVP2lpRrvl5EodKX7EZ1bS1/z5j6hsluAlZP5aHhk6ghT6Cq3IANvvDdscMMCB4QEbI+AjtvoOFpA==
 
-esbuild-loader@^2.20.0:
+esbuild-loader@2.20.0:
   version "2.20.0"
-  resolved "https://registry.npmmirror.com/esbuild-loader/-/esbuild-loader-2.20.0.tgz#28fcff0142fa7bd227512d69f31e9a6e202bb88f"
+  resolved "https://registry.yarnpkg.com/esbuild-loader/-/esbuild-loader-2.20.0.tgz#28fcff0142fa7bd227512d69f31e9a6e202bb88f"
   integrity sha512-dr+j8O4w5RvqZ7I4PPB4EIyVTd679EBQnMm+JBB7av+vu05Zpje2IpK5N3ld1VWa+WxrInIbNFAg093+E1aRsA==
   dependencies:
     esbuild "^0.15.6"
@@ -1852,9 +1852,9 @@ esbuild-windows-arm64@0.15.10:
   resolved "https://registry.npmmirror.com/esbuild-windows-arm64/-/esbuild-windows-arm64-0.15.10.tgz#5a6fcf2fa49e895949bf5495cf088ab1b43ae879"
   integrity sha512-S+th4F+F8VLsHLR0zrUcG+Et4hx0RKgK1eyHc08kztmLOES8BWwMiaGdoW9hiXuzznXQ0I/Fg904MNbr11Nktw==
 
-esbuild@^0.15.10, esbuild@^0.15.6:
+esbuild@0.15.10, esbuild@^0.15.6:
   version "0.15.10"
-  resolved "https://registry.npmmirror.com/esbuild/-/esbuild-0.15.10.tgz#85c2f8446e9b1fe04fae68daceacba033eedbd42"
+  resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.15.10.tgz#85c2f8446e9b1fe04fae68daceacba033eedbd42"
   integrity sha512-N7wBhfJ/E5fzn/SpNgX+oW2RLRjwaL8Y0ezqNqhjD6w0H2p0rDuEz2FKZqpqLnO8DCaWumKe8dsC/ljvVSSxng==
   optionalDependencies:
     "@esbuild/android-arm" "0.15.10"
@@ -3095,9 +3095,9 @@ jest-worker@^29.1.2:
     merge-stream "^2.0.0"
     supports-color "^8.0.0"
 
-jest@^29.1.2:
+jest@29.1.2:
   version "29.1.2"
-  resolved "https://registry.npmmirror.com/jest/-/jest-29.1.2.tgz"
+  resolved "https://registry.yarnpkg.com/jest/-/jest-29.1.2.tgz#f821a1695ffd6cd0efc3b59d2dfcc70a98582499"
   integrity sha512-5wEIPpCezgORnqf+rCaYD1SK+mNN7NsstWzIsuvsnrhR/hSxXWd82oI7DkrbJ+XTD28/eG8SmxdGvukrGGK6Tw==
   dependencies:
     "@jest/core" "^29.1.2"
@@ -3944,7 +3944,7 @@ schema-utils@^3.1.0, schema-utils@^3.1.1:
   resolved "https://registry.npmmirror.com/semver/-/semver-5.7.1.tgz"
   integrity sha512-sauaDf/PZdVgrLTNYHRtpXa1iRiKcaebiKQ1BJdpQlWH2lCvexQdX55snPFyK7QzpudqbCI0qXFfOasHdyNDGQ==
 
-semver@7.x, semver@^7.0.0, semver@^7.3.5, semver@^7.3.7:
+semver@7.3.7, semver@7.x, semver@^7.0.0, semver@^7.3.5, semver@^7.3.7:
   version "7.3.7"
   resolved "https://registry.npmmirror.com/semver/-/semver-7.3.7.tgz"
   integrity sha512-QlYTucUYOews+WeEujDoEGziz4K6c47V/Bd+LjSSYcA94p+DmINdf7ncaUinThfvZyu13lN9OY1XDxt8C0Tw0g==
@@ -4336,9 +4336,9 @@ to-regex-range@^5.0.1:
   dependencies:
     is-number "^7.0.0"
 
-ts-jest@^29.0.3:
+ts-jest@29.0.3:
   version "29.0.3"
-  resolved "https://registry.npmmirror.com/ts-jest/-/ts-jest-29.0.3.tgz"
+  resolved "https://registry.yarnpkg.com/ts-jest/-/ts-jest-29.0.3.tgz#63ea93c5401ab73595440733cefdba31fcf9cb77"
   integrity sha512-Ibygvmuyq1qp/z3yTh9QTwVVAbFdDy/+4BtIQR2sp6baF2SJU/8CKK/hhnGIDY2L90Az2jIqTwZPnN2p+BweiQ==
   dependencies:
     bs-logger "0.x"
@@ -4647,9 +4647,9 @@ yargs-parser@^21.0.0, yargs-parser@^21.0.1:
   resolved "https://registry.npmmirror.com/yargs-parser/-/yargs-parser-21.1.1.tgz"
   integrity sha512-tVpsJW7DdjecAiFpbIB1e3qxIQsE6NoPc5/eTdrbbIC4h0LVsWhnoa3g+m2HclBIujHzsxZ4VJVA+GUuc2/LBw==
 
-yargs@^17.3.1, yargs@^17.6.0:
+yargs@17.6.0, yargs@^17.3.1:
   version "17.6.0"
-  resolved "https://registry.npmmirror.com/yargs/-/yargs-17.6.0.tgz#e134900fc1f218bc230192bdec06a0a5f973e46c"
+  resolved "https://registry.yarnpkg.com/yargs/-/yargs-17.6.0.tgz#e134900fc1f218bc230192bdec06a0a5f973e46c"
   integrity sha512-8H/wTDqlSwoSnScvV2N/JHfLWOKuh5MVla9hqLjK3nsfyy6Y4kDSYSvkU5YCUEPOSnRXfIyx3Sq+B/IWudTo4g==
   dependencies:
     cliui "^8.0.1"
