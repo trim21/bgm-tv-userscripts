@@ -2,6 +2,7 @@
   "name": "common",
   "version": "0.0.0",
   "scripts": {
+    "test": "exit 0",
     "build": "exit 0"
   },
   "license": "MIT"

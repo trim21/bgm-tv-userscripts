@@ -24,7 +24,7 @@
     "format:prettier": "prettier --write .",
     "format:eslint": "eslint --fix --ext cjs,js,ts ./",
     "build": "yarn workspaces run build",
-    "test": "pnpm --filter=@script/* test",
+    "test": "yarn workspaces run test",
     "lint-staged": "lint-staged",
     "script": "pnpm --filter=@script/*",
     "wiki-rev-diff": "pnpm --filter=@script/wiki-rev-diff",
