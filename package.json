@@ -1,7 +1,7 @@
 {
   "name": "bgm-wiki-rev-diff",
   "description": "Build your UserScript with webpack",
-  "version": "0.2.4",
+  "version": "0.0.0",
   "private": true,
   "license": "MIT",
   "author": {
@@ -13,9 +13,6 @@
     "singleQuote": true,
     "semi": true
   },
-  "eslintIgnore": [
-    "dist/*.js"
-  ],
   "scripts": {
     "lint": "run-p lint:* ",
     "format": "run-s -c format:*",
@@ -24,11 +21,9 @@
     "lint:tsc": "tsc --noEmit",
     "format:prettier": "prettier --write .",
     "format:eslint": "eslint --fix --ext cjs,js,ts ./",
-    "anylize": "npm_config_report=true webpack --config config/webpack.config.production.js",
-    "postversion": "git push",
     "build": "run-s -c build:*",
     "build:wiki-ref-diff": "webpack --config wiki-ref-diff/config/webpack.config.prod.js",
-    "dev": "webpack --config wiki-ref-diff/config/webpack.config.dev.js",
+    "dev:wiki-ref-diff": "webpack --config wiki-ref-diff/config/webpack.config.dev.js",
     "lint-staged": "lint-staged",
     "prepare": "husky install"
   },

@@ -1,12 +1,7 @@
 const path = require('path');
 
-const {
-  name,
-  version,
-  author,
-  repository,
-  dependencies,
-} = require('../../package.json');
+const { name, version } = require('../package.json');
+const { author, repository, dependencies } = require('../../package.json');
 
 module.exports = {
   entry: path.join(__dirname, '../src/index.ts'),
