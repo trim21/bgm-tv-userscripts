@@ -1,7 +1,7 @@
 const path = require('path');
 
-const { version } = require('../package.json');
-const { repository, dependencies } = require('../../../package.json');
+const { version, dependencies } = require('../package.json');
+const { repository } = require('../../../package.json');
 
 const match = [];
 

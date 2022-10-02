@@ -38,20 +38,12 @@
     "type": "git",
     "url": "https://github.com/trim21/bgm-wiki-rev-diff"
   },
-  "dependencies": {
-    "diff": "5.1.0",
-    "jquery": "3.6.1",
-    "lodash": "4.17.21"
-  },
+  "dependencies": {},
   "lint-staged": {
     "*.{cjs,js,ts,json,yml,yaml}": "prettier --write",
     "*.{cjs,js,ts}": "eslint --fix"
   },
   "devDependencies": {
-    "@types/diff": "5.0.2",
-    "@types/greasemonkey": "4.0.4",
-    "@types/jquery": "3.5.14",
-    "@types/lodash": "4.14.186",
     "@typescript-eslint/eslint-plugin": "5.38.1",
     "@typescript-eslint/parser": "5.38.1",
     "esbuild": "^0.15.10",

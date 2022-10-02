@@ -13,10 +13,14 @@
     "dev": "webpack --config config/webpack.config.dev.js",
     "test": "jest"
   },
+  "dependencies": {
+    "jquery": "3.6.1"
+  },
   "devDependencies": {
     "@jest/globals": "^29.1.2",
     "@types/hogan.js": "^3.0.1",
     "@types/jest": "^29.1.1",
+    "@types/jquery": "3.5.14",
     "common": "0.0.0",
     "jest": "^29.1.2",
     "ts-jest": "^29.0.3"
