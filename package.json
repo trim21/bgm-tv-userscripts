@@ -14,8 +14,8 @@
     "endOfLine": "lf",
     "semi": true
   },
-  "packageManager": "pnpm@latest",
   "scripts": {
+    "bump": "node bump.js",
     "lint": "run-p lint:* ",
     "format": "run-s -c format:*",
     "lint:eslint": "eslint --ext cjs,js,ts ./",
@@ -25,7 +25,7 @@
     "format:eslint": "eslint --fix --ext cjs,js,ts ./",
     "build": "yarn workspaces run build",
     "test": "yarn workspaces run test",
-    "lint-staged": "lint-staged",
+    "lint-staged": "lint-staged --quiet",
     "script": "pnpm --filter=@script/*",
     "wiki-rev-diff": "pnpm --filter=@script/wiki-rev-diff",
     "prepare": "husky install"
@@ -62,11 +62,13 @@
     "lint-staged": "13.0.3",
     "npm-run-all": "4.1.5",
     "prettier": "2.7.1",
+    "semver": "^7.3.7",
     "typescript": "4.8.4",
     "userscript-metadata-webpack-plugin": "0.1.5",
     "webpack": "5.74.0",
     "webpack-cli": "4.10.0",
     "webpack-livereload-plugin": "3.0.2",
-    "webpack-merge": "5.8.0"
+    "webpack-merge": "5.8.0",
+    "yargs": "^17.6.0"
   }
 }
