@@ -1,7 +1,7 @@
 export function getSubjectID(s: string | undefined): number | undefined {
   if (!s?.length) return undefined;
 
-  if (s.startsWith('*')) {
+  if (s.startsWith('#')) {
     return;
   }
 
