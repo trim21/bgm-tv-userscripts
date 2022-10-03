@@ -3,7 +3,7 @@
 // @name:zh       鼠标指向条目链接时显示更多信息
 // @namespace     https://trim21.me/
 // @description   鼠标指向条目链接时弹出一个悬浮窗显示条目信息
-// @version       0.2.3
+// @version       0.2.4
 // @source        https://github.com/trim21/bgm-tv-userscripts
 // @supportURL    https://github.com/trim21/bgm-tv-userscripts/issues
 // @license       MIT
@@ -33,6 +33,9 @@ const external_$_namespaceObject = $;
 function getSubjectID(s) {
   if (!(s == null ? void 0 : s.length))
     return void 0;
+  if (s.startsWith("#")) {
+    return;
+  }
   if (s.startsWith("/")) {
     s = "https://bgm.tv" + s;
   }
