@@ -23,6 +23,11 @@ if (bump.length === 1 && semver.valid(bump[0], {})) {
   newVersion = semver.inc(packageJSON.version, ...bump);
 }
 
+if (!newVersion) {
+  console.log('no version, re-run');
+  process.exit(1);
+}
+
 console.log(newVersion);
 
 packageJSON.version = newVersion;
