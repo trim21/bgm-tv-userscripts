@@ -12,11 +12,17 @@ module.exports = {
         test: /\.[tj]s$/,
         exclude: /node_modules/,
         use: {
-          loader: 'esbuild-loader',
+          loader: 'babel-loader',
           options: {
-            loader: 'ts',
-            target: 'chrome86',
-            charset: 'utf8',
+            presets: [
+              [
+                '@babel/preset-env',
+                {
+                  targets: { chrome: '86' },
+                },
+              ],
+              ['@babel/preset-typescript'],
+            ],
           },
         },
       },
