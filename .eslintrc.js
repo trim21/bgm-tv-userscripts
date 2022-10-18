@@ -74,6 +74,7 @@ module.exports = {
     ecmaVersion: 2021,
   },
   rules: {
+    'no-else-return': 'error',
     'linebreak-style': ['error', 'unix'],
     indent: ['error', 2],
     'array-element-newline': ['error', 'consistent'],
