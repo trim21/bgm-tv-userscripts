@@ -13,7 +13,6 @@
     "diff2html": "3.4.19"
   },
   "devDependencies": {
-    "common": "0.0.0",
     "@types/diff": "5.0.2",
     "@types/greasemonkey": "4.0.4",
     "@types/jquery": "3.5.14",

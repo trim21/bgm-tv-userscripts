@@ -26,8 +26,6 @@
     "build": "yarn workspaces run build",
     "test": "yarn workspaces run test",
     "lint-staged": "lint-staged --quiet",
-    "script": "pnpm --filter=@script/*",
-    "wiki-rev-diff": "pnpm --filter=@script/wiki-rev-diff",
     "prepare": "husky install"
   },
   "author": {
