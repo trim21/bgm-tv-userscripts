@@ -20,7 +20,7 @@ module.exports = function create(entry, metadata, externals = {}) {
     entry: entry,
     output: {
       filename: metadata.name + '.prod.user.js',
-      path: path.resolve(__dirname, '../../dist/'),
+      path: path.resolve(__dirname, '../dist/'),
     },
     externals,
     plugins: [new UserScriptMetaDataPlugin({ metadata })],
