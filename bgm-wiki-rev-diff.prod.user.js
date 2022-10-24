@@ -13,7 +13,7 @@
 // @require      https://cdn.jsdelivr.net/npm/diff2html@3.4.21/bundles/js/diff2html.min.js
 // @require      https://cdn.jsdelivr.net/npm/diff@5.1.0/dist/diff.min.js
 // @require      https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js
-// @resource     0 diff2html https://cdn.jsdelivr.net/npm/diff2html@3.4.21/bundles/css/diff2html.min.css
+// @resource     diff2html https://cdn.jsdelivr.net/npm/diff2html@3.4.21/bundles/css/diff2html.min.css
 // @grant        GM.getResourceUrl
 // @grant        GM.registerMenuCommand
 // @grant        GM.setValue
