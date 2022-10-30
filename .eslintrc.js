@@ -62,10 +62,14 @@ module.exports = {
             multilineDetection: 'brackets',
           },
         ],
+        '@typescript-eslint/object-curly-spacing': ['error', 'always'],
+        '@typescript-eslint/quotes': ['error', 'single', { avoidEscape: true }],
+        '@typescript-eslint/prefer-string-starts-ends-with': 'error',
         '@typescript-eslint/semi': ['error', 'always'],
         '@typescript-eslint/strict-boolean-expressions': 'off',
         '@typescript-eslint/comma-dangle': ['error', 'always-multiline'],
         '@typescript-eslint/restrict-template-expressions': ['error', { allowAny: true }],
+        '@typescript-eslint/no-unused-vars': ['error'],
       },
     },
   ],
@@ -81,8 +85,6 @@ module.exports = {
     'array-element-newline': ['error', 'consistent'],
     'array-bracket-newline': ['error', 'consistent'],
     'promise/catch-or-return': ['error', { allowFinally: true }],
-    '@typescript-eslint/object-curly-spacing': ['error', 'always'],
-    '@typescript-eslint/quotes': ['error', 'single', { avoidEscape: true }],
     quotes: ['error', 'single', { avoidEscape: true }],
 
     'space-before-function-paren': [
@@ -111,8 +113,6 @@ module.exports = {
       },
     ],
     'no-unused-vars': 'off',
-    '@typescript-eslint/no-unused-vars': ['error'],
-    '@typescript-eslint/strict-boolean-expressions': 'off',
     'import/no-useless-path-segments': 'error',
     'import/order': [
       'error',
