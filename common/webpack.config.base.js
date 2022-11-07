@@ -18,7 +18,7 @@ module.exports = {
               [
                 '@babel/preset-env',
                 {
-                  targets: { chrome: '86' },
+                  targets: { chrome: '102' },
                 },
               ],
               ['@babel/preset-typescript'],
