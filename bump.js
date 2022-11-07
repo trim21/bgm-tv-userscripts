@@ -30,14 +30,7 @@ async function bumpPackage(pkg, bump) {
   const pkgFilePath = path.join(path.join(__dirname, 'packages', pkg), 'package.json');
   const packageJSON = JSON.parse((await fs.readFile(pkgFilePath)).toString());
 
-  function getNewVersion() {
-    if (semver.valid(bump, {})) {
-      return bump;
-    }
-    return semver.inc(packageJSON.version, bump);
-  }
-
-  const newVersion = getNewVersion();
+  const newVersion = semver.inc(packageJSON.version, bump);
 
   if (!newVersion) {
     console.log('no version, re-run');
@@ -62,7 +55,7 @@ async function main() {
 
   const packages = [];
   if (argv.length) {
-    packages.push(argv[0]);
+    packages.push(...argv);
   } else {
     // bump all packages
     packages.push(...(await fs.readdir(path.resolve(__dirname, 'packages'))));
