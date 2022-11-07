@@ -10,12 +10,12 @@
     "diff": "5.1.0",
     "jquery": "3.6.1",
     "lodash": "4.17.21",
-    "diff2html": "3.4.21"
+    "diff2html": "3.4.22"
   },
   "devDependencies": {
     "@types/diff": "5.0.2",
     "@types/greasemonkey": "4.0.4",
     "@types/jquery": "3.5.14",
-    "@types/lodash": "4.14.186"
+    "@types/lodash": "4.14.188"
   }
 }
