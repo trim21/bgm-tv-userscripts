@@ -77,7 +77,7 @@ async function main() {
   await exec('git', ['commit', '-m', message]);
 
   for (const { name, version } of results) {
-    await exec(`git tag -a -m '${name}/v${version}' '${name}/v${version}'`);
+    await exec('git', ['tag', '-a', '-m', `${name}/v${version}`, `${name}/v${version}`]);
   }
 }
 
