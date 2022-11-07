@@ -3,7 +3,7 @@
 // @name:zh       鼠标指向条目链接时显示更多信息
 // @namespace     https://trim21.me/
 // @description   鼠标指向条目链接时弹出一个悬浮窗显示条目信息
-// @version       0.2.5
+// @version       0.2.6
 // @source        https://github.com/trim21/bgm-tv-userscripts
 // @supportURL    https://github.com/trim21/bgm-tv-userscripts/issues
 // @license       MIT
@@ -21,7 +21,6 @@
 // @author        Trim21 <i@trim21.me>
 // ==/UserScript==
 
-
 /******/ (() => { // webpackBootstrap
 /******/ 	"use strict";
 var __webpack_exports__ = {};
@@ -29,30 +28,28 @@ var __webpack_exports__ = {};
 ;// CONCATENATED MODULE: external "$"
 const external_$_namespaceObject = $;
 ;// CONCATENATED MODULE: ./src/utils.ts
-
 function getSubjectID(s) {
-  if (!(s == null ? void 0 : s.length))
-    return void 0;
-  if (s.startsWith("#")) {
+  if (!s?.length) return undefined;
+  if (s.startsWith('#')) {
     return;
   }
-  if (s.startsWith("/")) {
-    s = "https://bgm.tv" + s;
+  if (s.startsWith('/')) {
+    s = 'https://bgm.tv' + s;
   }
   const u = new URL(s);
   const path = u.pathname;
-  const split = path.split("/");
+
+  // [ '', 'subject', '8' ]
+  const split = path.split('/');
   if (split.length >= 4) {
-    return void 0;
+    return undefined;
   }
-  if (split[1] === "subject") {
+  if (split[1] === 'subject') {
     return parseInt(split[2], 10);
   }
-  return void 0;
+  return undefined;
 }
-
 ;// CONCATENATED MODULE: ./src/index.ts
-
 
 
 const style = `
@@ -96,25 +93,22 @@ const style = `
 </style>
 `;
 function createPopup(subject) {
-  var _a;
-  let rank = "";
+  let rank = '';
   if (subject.rating.rank) {
     rank = `<p class='rateInfo'>
 <span class='starstop-s'><span class='starlight stars${Math.round(subject.rating.score)}'></span></span>
  <small class='fade'>${subject.rating.score}</small> <span class='tip_j'>(${subject.rating.total}人评分)</span>
 </p>`;
   }
-  let tags = "";
+  let tags = '';
   if (subject.tags.length) {
-    tags = "<div class='popup-tags'>" + subject.tags.sort((a, b) => b.count - a.count).slice(0, 10).map(
-      (value) => `<span class='tag'><span class='name'>${value.name}</span> <small>${value.count}</small></span>`
-    ).join("\n");
-    tags += "</div>";
+    tags = "<div class='popup-tags'>" + subject.tags.sort((a, b) => b.count - a.count).slice(0, 10).map(value => `<span class='tag'><span class='name'>${value.name}</span> <small>${value.count}</small></span>`).join('\n');
+    tags += '</div>';
   }
   return `
 <div class='d-flex'>
   <span class='image d-block'>
-    <img src='${(_a = subject.images) == null ? void 0 : _a.small}' class='cover' alt='${subject.name}'>
+    <img src='${subject.images?.small}' class='cover' alt='${subject.name}'>
   </span>
   <div class='d-block'>
     <h3>${subject.name}</h3>
@@ -130,50 +124,52 @@ ${tags}
 }
 function main() {
   console.log(GM.info.script.name);
-  external_$_namespaceObject("head").append(style);
-  external_$_namespaceObject("a").each((i, e) => {
-    if (getSubjectID(external_$_namespaceObject(e).attr("href"))) {
-      external_$_namespaceObject(e).on("mouseover", hoverHandler).on("mouseleave", leaveHandler);
+  external_$_namespaceObject('head').append(style);
+  external_$_namespaceObject('a').each((i, e) => {
+    if (getSubjectID(external_$_namespaceObject(e).attr('href'))) {
+      external_$_namespaceObject(e).on('mouseover', hoverHandler).on('mouseleave', leaveHandler);
     }
   });
 }
 function leaveHandler() {
-  external_$_namespaceObject("#popup").remove();
-  console.log("leave");
+  external_$_namespaceObject('#popup').remove();
+  console.log('leave');
 }
 function hoverHandler() {
   const e = external_$_namespaceObject(this);
-  const href = e.attr("href");
+  const href = e.attr('href');
   if (!href) {
     return;
   }
-  const offset = e.offset() ?? { left: 0, top: 0 };
-  external_$_namespaceObject("body").append('<div id="popup"> loading </div>');
-  const popup = external_$_namespaceObject("#popup").css({
+  const offset = e.offset() ?? {
+    left: 0,
+    top: 0
+  };
+  external_$_namespaceObject('body').append('<div id="popup"> loading </div>');
+  const popup = external_$_namespaceObject('#popup').css({
     left: offset.left,
     top: offset.top + 40,
-    position: "absolute",
-    "z-index": 1e3
+    position: 'absolute',
+    'z-index': 1000
   });
   const subjectID = getSubjectID(href);
   if (!subjectID) {
     return;
   }
-  (async function() {
+  (async function () {
     const res = await fetch(`https://api.bgm.tv/v0/subjects/${subjectID}`);
     if (res.status > 400) {
-      popup.html("not found");
+      popup.html('not found');
       return;
     }
     const data = await res.json();
     let html = createPopup(data);
     if (res.redirected) {
-      html = "条目被合并到此条目" + html;
+      html = '条目被合并到此条目' + html;
     }
     popup.html(html);
   })().catch(console.error);
 }
 main();
-
 /******/ })()
 ;
