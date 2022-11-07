@@ -14,11 +14,19 @@ node ./bump.js patch/minor/major
  */
 
 const fs = require('node:fs/promises');
+const { execSync } = require('node:child_process');
 const path = require('path');
 
-const { exec } = require('@actions/exec');
 const semver = require('semver');
 const { hideBin } = require('yargs/helpers');
+
+/**
+ * @param {string} cmd
+ */
+function exec(cmd) {
+  console.log(`$ ${cmd}`);
+  execSync(cmd, { stdio: 'pipe' });
+}
 
 /**
  *
@@ -36,8 +44,6 @@ async function bumpPackage(pkg, bump) {
     console.log('no version, re-run');
     process.exit(1);
   }
-
-  console.log(newVersion);
 
   packageJSON.version = newVersion;
 
@@ -63,14 +69,15 @@ async function main() {
 
   const results = await Promise.all(packages.map((x) => bumpPackage(x, bump)));
 
-  await exec('git add .');
+  exec('git add .');
 
   let message = 'release: ' + results.map(({ name, version }) => `${name}/v${version}`).join(' ');
 
-  await exec('git', ['commit', '-m', message]);
+  exec(`git commit -m ${JSON.stringify(message)}`);
 
   for (const { name, version } of results) {
-    await exec('git', ['tag', '-a', '-m', `${name}/v${version}`, `${name}/v${version}`]);
+    const tag = `${name}/v${version}`;
+    exec(`git tag -a -m ${JSON.stringify(tag)} ${JSON.stringify(tag)}`);
   }
 }
 
