@@ -25,7 +25,7 @@ const { hideBin } = require('yargs/helpers');
  */
 function exec(cmd) {
   console.log(`$ ${cmd}`);
-  execSync(cmd, { stdio: 'pipe' });
+  execSync(cmd, { stdio: 'inherit' });
 }
 
 /**
