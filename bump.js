@@ -31,25 +31,18 @@ function exec(cmd) {
 /**
  *
  * @param {string} pkg
- * @param {string} bump
+ * @param {semver.ReleaseType} bump
  * @return {Promise<{ name: string; version: string; }>}
  */
 async function bumpPackage(pkg, bump) {
-  const pkgFilePath = path.join(path.join(__dirname, 'packages', pkg), 'package.json');
+  const pkgFilePath = path.join(__dirname, 'packages', pkg, 'package.json');
   const packageJSON = JSON.parse((await fs.readFile(pkgFilePath)).toString());
 
-  const newVersion = semver.inc(packageJSON.version, bump);
-
-  if (!newVersion) {
-    console.log('no version, re-run');
-    process.exit(1);
-  }
-
-  packageJSON.version = newVersion;
+  packageJSON.version = new semver.SemVer(packageJSON.version).inc(bump).version;
 
   await fs.writeFile(pkgFilePath, JSON.stringify(packageJSON, undefined, 2));
 
-  return { name: packageJSON.name, version: newVersion };
+  return { name: packageJSON.name, version: packageJSON.version };
 }
 
 async function main() {
