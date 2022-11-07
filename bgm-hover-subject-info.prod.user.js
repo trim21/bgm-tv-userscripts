@@ -29,8 +29,7 @@ var __webpack_exports__ = {};
 const external_$_namespaceObject = $;
 ;// CONCATENATED MODULE: ./src/utils.ts
 function getSubjectID(s) {
-  var _s;
-  if (!((_s = s) !== null && _s !== void 0 && _s.length)) return undefined;
+  if (!s?.length) return undefined;
   if (s.startsWith('#')) {
     return;
   }
@@ -94,7 +93,6 @@ const style = `
 </style>
 `;
 function createPopup(subject) {
-  var _subject$images;
   let rank = '';
   if (subject.rating.rank) {
     rank = `<p class='rateInfo'>
@@ -110,7 +108,7 @@ function createPopup(subject) {
   return `
 <div class='d-flex'>
   <span class='image d-block'>
-    <img src='${(_subject$images = subject.images) === null || _subject$images === void 0 ? void 0 : _subject$images.small}' class='cover' alt='${subject.name}'>
+    <img src='${subject.images?.small}' class='cover' alt='${subject.name}'>
   </span>
   <div class='d-block'>
     <h3>${subject.name}</h3>

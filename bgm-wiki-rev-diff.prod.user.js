@@ -33,11 +33,10 @@ const external_namespaceObject = _;
 ;// CONCATENATED MODULE: ./src/parser.ts
 
 function parseRevDetails(html) {
-  var _jq$find$val, _jq$find$val2, _jq$find$val3;
   const jq = external_$_namespaceObject(html);
-  const rawInfo = ((_jq$find$val = jq.find('#subject_infobox').val()) === null || _jq$find$val === void 0 ? void 0 : _jq$find$val.toString()) ?? '';
-  const title = ((_jq$find$val2 = jq.find('input[name="subject_title"]').val()) === null || _jq$find$val2 === void 0 ? void 0 : _jq$find$val2.toString()) ?? '';
-  const description = ((_jq$find$val3 = jq.find('textarea#subject_summary').val()) === null || _jq$find$val3 === void 0 ? void 0 : _jq$find$val3.toString()) ?? '';
+  const rawInfo = jq.find('#subject_infobox').val()?.toString() ?? '';
+  const title = jq.find('input[name="subject_title"]').val()?.toString() ?? '';
+  const description = jq.find('textarea#subject_summary').val()?.toString() ?? '';
   return {
     title,
     rawInfo,
@@ -127,7 +126,6 @@ function descriptionDiff(rev1, rev2, options) {
 
 
 async function render(revOld, revNew) {
-  var _document$getElementB;
   let outputFormat = await GM.getValue(configKey);
   if (!outputFormat) {
     outputFormat = 'line-by-line';
@@ -139,7 +137,7 @@ async function render(revOld, revNew) {
   const elID = `show-diff-view-${outputFormat}`;
   show('');
   external_$_namespaceObject(`#${elID}`).html(html);
-  (_document$getElementB = document.getElementById(elID)) === null || _document$getElementB === void 0 ? void 0 : _document$getElementB.scrollIntoView({
+  document.getElementById(elID)?.scrollIntoView({
     behavior: 'smooth'
   });
 }
@@ -252,8 +250,7 @@ async function initUI() {
   external_$_namespaceObject('head').append(style).append(`<link rel='stylesheet' type='text/css' href='${diff2htmlStyle}' />`);
   const s = external_$_namespaceObject('#pagehistory li');
   const revs = Array.from(s).map(function (e) {
-    var _parseRevEl;
-    return (_parseRevEl = parseRevEl(external_$_namespaceObject(e))) === null || _parseRevEl === void 0 ? void 0 : _parseRevEl.id;
+    return parseRevEl(external_$_namespaceObject(e))?.id;
   });
   s.each(function (index) {
     const el = external_$_namespaceObject(this);
