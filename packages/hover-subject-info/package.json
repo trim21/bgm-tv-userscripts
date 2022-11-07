@@ -1,7 +1,7 @@
 {
   "name": "@script/hover-subject-info",
   "description": "Build your UserScript with webpack",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "private": true,
   "license": "MIT",
   "author": {
