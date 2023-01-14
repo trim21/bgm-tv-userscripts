@@ -14,7 +14,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "jquery": "3.6.2"
+    "jquery": "3.6.3"
   },
   "devDependencies": {
     "@jest/globals": "29.3.1",
