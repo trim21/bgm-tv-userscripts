@@ -62,6 +62,7 @@ module.exports = {
             multilineDetection: 'brackets',
           },
         ],
+        'promise/always-return': 'off',
         '@typescript-eslint/object-curly-spacing': ['error', 'always'],
         '@typescript-eslint/quotes': ['error', 'single', { avoidEscape: true }],
         '@typescript-eslint/prefer-string-starts-ends-with': 'error',

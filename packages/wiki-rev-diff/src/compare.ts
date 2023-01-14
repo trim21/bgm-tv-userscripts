@@ -14,7 +14,7 @@ export function compare(revID1: string, revID2: string): void {
 
   Promise.all(ps)
     .then(async (values) => {
-      return await render(values[1], values[0]);
+      await render(values[1], values[0]);
     })
     .catch((e) => {
       console.error(e);
