@@ -2336,10 +2336,10 @@ diff-sequences@^29.3.1:
   resolved "https://registry.yarnpkg.com/diff-sequences/-/diff-sequences-29.3.1.tgz#104b5b95fe725932421a9c6e5b4bef84c3f2249e"
   integrity sha512-hlM3QR272NXCi4pq+N4Kok4kOp6EsgOM3ZSpJI7Da3UAs+Ttsi8MRmB6trM/lhyzUxGfOgnpkHtgqm5Q/CTcfQ==
 
-diff2html@3.4.22:
-  version "3.4.22"
-  resolved "https://registry.yarnpkg.com/diff2html/-/diff2html-3.4.22.tgz#ae9d0f1949a5858141c737dd0b3a6d7fbcee85a2"
-  integrity sha512-n7b0cfjqG+NLAmxdlSRMXIGoeoK+OhCNxd/6InjjMxy3v5Gk1L5Ms5r4jziFiRBoNaB6L8lLyZ8KQ8Kv+DOgnw==
+diff2html@3.4.29:
+  version "3.4.29"
+  resolved "https://registry.yarnpkg.com/diff2html/-/diff2html-3.4.29.tgz#f86b711c9fa0885965cc2f63fcd953a44e5e4dd5"
+  integrity sha512-xS7LQgUEd5ALH9X5TTPP8nnSmaa7mm+cAt5pZE5hSnEEvXSdoYBTStTkLBHOHJu9rZmGXs4jdFRsU8q90VfWkg==
   dependencies:
     diff "5.1.0"
     hogan.js "3.0.2"
