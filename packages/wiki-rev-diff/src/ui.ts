@@ -1,9 +1,9 @@
 import * as Diff2Html from 'diff2html';
 import * as $ from 'jquery';
-import { OutputFormatType } from 'diff2html/lib/types';
+import type { OutputFormatType } from 'diff2html/lib/types';
 
 import { configKey } from './config';
-import { Commit } from './model';
+import type { Commit } from './model';
 import { diff } from './differ';
 
 export async function render(revOld: Commit, revNew: Commit): Promise<void> {

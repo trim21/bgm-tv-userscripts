@@ -1,6 +1,6 @@
 import * as $ from 'jquery';
 import * as lodash from 'lodash';
-import { OutputFormatType } from 'diff2html/lib/types';
+import type { OutputFormatType } from 'diff2html/lib/types';
 
 import { parseRevEl } from './parser';
 import { compare } from './compare';

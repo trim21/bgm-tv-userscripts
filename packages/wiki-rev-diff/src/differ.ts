@@ -1,8 +1,8 @@
 import * as Diff from 'diff';
-import { PatchOptions } from 'diff';
-import { OutputFormatType } from 'diff2html/lib/types';
+import type { PatchOptions } from 'diff';
+import type { OutputFormatType } from 'diff2html/lib/types';
 
-import { Commit } from './model';
+import type { Commit } from './model';
 
 export function diff(revOld: Commit, revNew: Commit, style: OutputFormatType): string {
   const options: PatchOptions = { context: 100 };

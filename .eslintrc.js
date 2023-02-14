@@ -71,6 +71,13 @@ module.exports = {
         '@typescript-eslint/comma-dangle': ['error', 'always-multiline'],
         '@typescript-eslint/restrict-template-expressions': ['error', { allowAny: true }],
         '@typescript-eslint/no-unused-vars': ['error'],
+        '@typescript-eslint/consistent-type-imports': [
+          'error',
+          {
+            prefer: 'type-imports',
+            fixStyle: 'separate-type-imports',
+          },
+        ],
       },
     },
   ],
