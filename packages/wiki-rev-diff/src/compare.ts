@@ -1,6 +1,7 @@
 import { getRevInfo, parseRevDetails } from './parser';
 import { clear, render, show } from './ui';
-import { Commit, Rev } from './model';
+import type { Rev } from './model';
+import { Commit } from './model';
 
 export function compare(revID1: string, revID2: string): void {
   clear();

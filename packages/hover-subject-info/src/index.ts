@@ -1,6 +1,6 @@
 import * as $ from 'jquery';
 
-import { Subject } from './model';
+import type { Subject } from './model';
 import { getSubjectID } from './utils';
 
 const style = `

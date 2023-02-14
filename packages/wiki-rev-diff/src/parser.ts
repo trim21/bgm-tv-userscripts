@@ -1,6 +1,6 @@
 import * as $ from 'jquery';
 
-import { Rev, RevDetail } from './model';
+import type { Rev, RevDetail } from './model';
 
 export function parseRevDetails(html: string): RevDetail {
   const jq = $(html);
