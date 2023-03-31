@@ -43,9 +43,9 @@
   },
   "devDependencies": {
     "@actions/exec": "1.1.1",
-    "@babel/core": "7.21.0",
-    "@babel/preset-env": "7.20.2",
-    "@babel/preset-typescript": "7.21.0",
+    "@babel/core": "7.21.4",
+    "@babel/preset-env": "7.21.4",
+    "@babel/preset-typescript": "7.21.4",
     "@typescript-eslint/eslint-plugin": "5.57.0",
     "@typescript-eslint/parser": "5.57.0",
     "babel-loader": "9.1.2",
