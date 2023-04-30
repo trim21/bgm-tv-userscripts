@@ -5154,17 +5154,17 @@ uri-js@^4.2.2:
   dependencies:
     punycode "^2.1.0"
 
-userscript-metadata-generator@^0.0.10:
-  version "0.0.10"
-  resolved "https://registry.yarnpkg.com/userscript-metadata-generator/-/userscript-metadata-generator-0.0.10.tgz#67437234e06a3b49456872f2263ec689723d0435"
-  integrity sha512-CITWdVAASo61OMkYlsqJxbM80K1o9pMTamNsOJsTxHdLNgVsXvIwKHZajZbulFUynDrkWellOImYi7APsQtmqQ==
+userscript-metadata-generator@^0.2.3:
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/userscript-metadata-generator/-/userscript-metadata-generator-0.2.3.tgz#df99c66837c4dfcc40b1b8d841bc33ada2209c22"
+  integrity sha512-09z8a41GX/wcMT8CjN6rxuXrarYMd50hb+gWWNlGG/BVn1ndmxISwtnoRGeloMH5lSEjeyCGE7sileJUt+7GTQ==
 
-userscript-metadata-webpack-plugin@0.2.12:
-  version "0.2.12"
-  resolved "https://registry.yarnpkg.com/userscript-metadata-webpack-plugin/-/userscript-metadata-webpack-plugin-0.2.12.tgz#d529f0b2f4076a1a24363f5d109138f10f8f94a5"
-  integrity sha512-aJQZPmmIo70E4SYkeAjLouGAni0VqpqSlFFUwClBO83vRX3amXN7dI1WDzPmbPp1PkkOcDQhWwWlFXT2JDDhSQ==
+userscript-metadata-webpack-plugin@0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/userscript-metadata-webpack-plugin/-/userscript-metadata-webpack-plugin-0.4.0.tgz#ed21888b466cb29135fa7c1b8aa0a054035aa7aa"
+  integrity sha512-MOGscQCM+g/KM9PGVhlrjB0uY5ecie4P9t5PSnFK/5vuWvbI61CaASzf0SE5S0XFZ7Lhfs/clnsBXbQRBKHUlg==
   dependencies:
-    userscript-metadata-generator "^0.0.10"
+    userscript-metadata-generator "^0.2.3"
 
 v8-to-istanbul@^9.0.1:
   version "9.1.0"
