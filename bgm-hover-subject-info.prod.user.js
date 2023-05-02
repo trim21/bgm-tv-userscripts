@@ -3,7 +3,7 @@
 // @name:zh       鼠标指向条目链接时显示更多信息
 // @namespace     https://trim21.me/
 // @description   鼠标指向条目链接时弹出一个悬浮窗显示条目信息
-// @version       0.2.12
+// @version       0.2.13
 // @source        https://github.com/trim21/bgm-tv-userscripts
 // @supportURL    https://github.com/trim21/bgm-tv-userscripts/issues
 // @license       MIT
@@ -16,7 +16,7 @@
 // @match         https://bgm.tv/rakuen/topiclist
 // @match         https://bangumi.tv/rakuen/topiclist
 // @match         https://chii.in/rakuen/topiclist
-// @require       https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js
+// @require       https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js
 // @run-at        document-end
 // @author        Trim21 <i@trim21.me>
 // ==/UserScript==

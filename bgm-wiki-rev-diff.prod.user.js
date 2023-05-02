@@ -2,18 +2,18 @@
 // @name         bgm-wiki-rev-diff
 // @name:zh      显示条目信息版本差异
 // @namespace    https://trim21.me/
-// @version      0.2.15
+// @version      0.2.16
 // @source       https://github.com/trim21/bgm-tv-userscripts
 // @supportURL   https://github.com/trim21/bgm-tv-userscripts/issues
 // @license      MIT
 // @match        https://bgm.tv/subject/*/edit*
 // @match        https://bangumi.tv/subject/*/edit*
 // @match        https://chii.in/subject/*/edit*
-// @require      https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js
-// @require      https://cdn.jsdelivr.net/npm/diff2html@3.4.22/bundles/js/diff2html.min.js
+// @require      https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js
+// @require      https://cdn.jsdelivr.net/npm/diff2html@3.4.35/bundles/js/diff2html.min.js
 // @require      https://cdn.jsdelivr.net/npm/diff@5.1.0/dist/diff.min.js
 // @require      https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js
-// @resource     diff2html https://cdn.jsdelivr.net/npm/diff2html@3.4.22/bundles/css/diff2html.min.css
+// @resource     diff2html https://cdn.jsdelivr.net/npm/diff2html@3.4.35/bundles/css/diff2html.min.css
 // @grant        GM.getResourceUrl
 // @grant        GM.registerMenuCommand
 // @grant        GM.setValue
@@ -170,7 +170,7 @@ function compare(revID1, revID2) {
   }
   const ps = [fetchRev(rev1), fetchRev(rev2)];
   Promise.all(ps).then(async values => {
-    return await render(values[1], values[0]);
+    await render(values[1], values[0]);
   }).catch(e => {
     console.error(e);
     show('<div style="color: red">获取历史修改失败，请刷新页面后重试</div>');
