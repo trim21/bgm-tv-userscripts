@@ -1812,7 +1812,7 @@ __metadata:
     jquery: 3.6.4
     prettier: 2.8.8
     raw-loader: 4.0.2
-    webpack: ^5.81.0
+    webpack: 5.81.0
   languageName: unknown
   linkType: soft
 
@@ -7520,7 +7520,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"webpack@npm:5.81.0, webpack@npm:^5.81.0":
+"webpack@npm:5.81.0":
   version: 5.81.0
   resolution: "webpack@npm:5.81.0"
   dependencies:
