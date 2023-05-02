@@ -73,16 +73,11 @@ async function main() {
     packages.push(...currentPackages);
   }
 
-  const results = await Promise.all(packages.map((x) => bumpPackage(x, bump)));
+  const results = (await Promise.all(packages.map((x) => bumpPackage(x, bump)))).filter((x) => x);
 
   exec('git add .');
 
-  let message =
-    'release: ' +
-    results
-      .filter((x) => x)
-      .map(({ name, version }) => `${name}/v${version}`)
-      .join(' ');
+  let message = 'release: ' + results.map(({ name, version }) => `${name}/v${version}`).join(' ');
 
   exec(`git commit -m ${JSON.stringify(message)}`);
 
