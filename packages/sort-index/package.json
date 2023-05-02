@@ -1,7 +1,7 @@
 {
   "name": "@script/sort-index",
   "description": "Sort subjects on index page",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "private": true,
   "license": "MIT",
   "scripts": {
