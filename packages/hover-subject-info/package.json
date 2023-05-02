@@ -14,8 +14,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "jquery": "3.6.4",
-    "typescript": "5.0.4"
+    "jquery": "3.6.4"
   },
   "devDependencies": {
     "@jest/globals": "29.5.0",
@@ -23,6 +22,7 @@
     "@types/jest": "29.5.1",
     "@types/jquery": "3.5.16",
     "jest": "29.5.0",
-    "ts-jest": "29.1.0"
+    "ts-jest": "29.1.0",
+    "typescript": "5.0.4"
   }
 }

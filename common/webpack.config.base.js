@@ -14,15 +14,7 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: [
-              [
-                '@babel/preset-env',
-                {
-                  targets: { chrome: '102' },
-                },
-              ],
-              ['@babel/preset-typescript'],
-            ],
+            presets: [['@babel/preset-env'], ['@babel/preset-typescript']],
           },
         },
       },

@@ -2,7 +2,6 @@
   "name": "@script/wiki-rev-diff",
   "version": "0.2.16",
   "scripts": {
-    "test": "exit 0",
     "build": "webpack --config config/webpack.config.prod.js"
   },
   "license": "MIT",
@@ -16,7 +15,6 @@
     "@types/diff": "5.0.3",
     "@types/greasemonkey": "4.0.4",
     "@types/jquery": "3.5.16",
-    "@types/lodash": "4.14.194",
-    "typescript": "5.0.4"
+    "@types/lodash": "4.14.194"
   }
 }

@@ -16,13 +16,11 @@
   },
   "scripts": {
     "bump": "node bump.js",
-    "lint": "run-p 'lint:*'",
-    "format": "run-s -c format:*",
-    "lint:eslint": "eslint --ext cjs,js,ts ./",
-    "lint:prettier": "prettier --check .",
-    "lint:tsc": "tsc --noEmit",
-    "format:eslint": "eslint --fix --ext cjs,js,ts ./",
-    "format:prettier": "prettier --write .",
+    "tsc": "tsc --noEmit",
+    "lint": "eslint --ext cjs,js,ts ./",
+    "format": "prettier --list-different  -w .",
+    "format:check": "prettier --check .",
+    "sort-index": "yarn workspace @script/sort-index",
     "wiki-rev-diff": "yarn workspace @script/wiki-rev-diff",
     "hover-subject-info": "yarn workspace @script/hover-subject-info",
     "test": "yarn workspaces foreach --include '@script/*' run test",
@@ -42,6 +40,12 @@
     "*.{cjs,js,ts,json,yml,yaml}": "prettier --write",
     "*.{cjs,js,ts}": "eslint --fix"
   },
+  "browserslist": [
+    "chrome >= 102",
+    "last 10 Edge version",
+    "last 2 Safari Major version",
+    "last 10 Firefox version"
+  ],
   "devDependencies": {
     "@actions/exec": "1.1.1",
     "@babel/core": "7.21.8",
@@ -57,7 +61,6 @@
     "eslint-plugin-promise": "6.1.1",
     "husky": "8.0.3",
     "lint-staged": "13.2.2",
-    "npm-run-all": "4.1.5",
     "prettier": "2.8.8",
     "semver": "7.5.0",
     "typescript": "5.0.4",

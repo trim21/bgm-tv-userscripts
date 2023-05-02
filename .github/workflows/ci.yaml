@@ -21,6 +21,10 @@ jobs:
 
       - run: yarn
 
+      - run: yarn tsc
+
+      - run: yarn format:check
+
       - run: yarn lint
 
   test:

@@ -8,21 +8,25 @@ const { author } = require('../package.json');
 
 const merge = mergeWithRules({ plugins: 'append' });
 
-module.exports = function create(entry, metadata, externals = {}) {
+module.exports = function create(entry, metadata, externals = {}, options = {}) {
   Object.assign(metadata, { author });
 
-  return merge(webpackConfig, {
-    cache: {
-      type: 'filesystem',
-      name: 'prod-' + metadata.name,
+  return merge(
+    webpackConfig,
+    {
+      cache: {
+        type: 'filesystem',
+        name: 'prod-' + metadata.name,
+      },
+      mode: 'production',
+      entry: entry,
+      output: {
+        filename: metadata.name + '.prod.user.js',
+        path: path.resolve(__dirname, '../dist/'),
+      },
+      externals,
+      plugins: [new UserScriptMetaDataPlugin({ metadata })],
     },
-    mode: 'production',
-    entry: entry,
-    output: {
-      filename: metadata.name + '.prod.user.js',
-      path: path.resolve(__dirname, '../dist/'),
-    },
-    externals,
-    plugins: [new UserScriptMetaDataPlugin({ metadata })],
-  });
+    options,
+  );
 };
