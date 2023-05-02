@@ -32,11 +32,15 @@ function exec(cmd) {
  *
  * @param {string} pkg
  * @param {semver.ReleaseType} bump
- * @return {Promise<{ name: string; version: string; }>}
+ * @return {Promise<{ name: string; version: string; } | false>}
  */
 async function bumpPackage(pkg, bump) {
   const pkgFilePath = path.join(__dirname, 'packages', pkg, 'package.json');
   const packageJSON = JSON.parse((await fs.readFile(pkgFilePath)).toString());
+
+  if (!packageJSON.name.startsWith('@script/')) {
+    return false;
+  }
 
   packageJSON.version = new semver.SemVer(packageJSON.version).inc(bump).version;
 
@@ -52,19 +56,33 @@ async function main() {
     throw new Error(`${bump} is not valid bump type`);
   }
 
+  const currentPackages = await fs.readdir(path.resolve(__dirname, 'packages'));
+
   const packages = [];
   if (argv.length) {
-    packages.push(...argv);
+    packages.push(
+      ...argv.filter((x) => {
+        if (x.startsWith('.') || x.startsWith('packages')) {
+          return path.basename(x);
+        }
+        return x;
+      }),
+    );
   } else {
     // bump all packages
-    packages.push(...(await fs.readdir(path.resolve(__dirname, 'packages'))));
+    packages.push(...currentPackages);
   }
 
   const results = await Promise.all(packages.map((x) => bumpPackage(x, bump)));
 
   exec('git add .');
 
-  let message = 'release: ' + results.map(({ name, version }) => `${name}/v${version}`).join(' ');
+  let message =
+    'release: ' +
+    results
+      .filter((x) => x)
+      .map(({ name, version }) => `${name}/v${version}`)
+      .join(' ');
 
   exec(`git commit -m ${JSON.stringify(message)}`);
 
