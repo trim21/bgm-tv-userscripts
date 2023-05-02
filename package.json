@@ -16,15 +16,17 @@
   },
   "scripts": {
     "bump": "node bump.js",
-    "lint": "run-p lint:* ",
+    "lint": "run-p 'lint:*'",
     "format": "run-s -c format:*",
     "lint:eslint": "eslint --ext cjs,js,ts ./",
     "lint:prettier": "prettier --check .",
     "lint:tsc": "tsc --noEmit",
     "format:eslint": "eslint --fix --ext cjs,js,ts ./",
     "format:prettier": "prettier --write .",
-    "build": "yarn workspaces run build",
-    "test": "yarn workspaces run test",
+    "wiki-rev-diff": "yarn workspace @script/wiki-rev-diff",
+    "hover-subject-info": "yarn workspace @script/hover-subject-info",
+    "test": "yarn workspaces foreach --include '@script/*' run test",
+    "build": "yarn workspaces foreach --include '@script/*' run build",
     "lint-staged": "lint-staged --quiet",
     "prepare": "husky install"
   },
@@ -36,7 +38,6 @@
     "type": "git",
     "url": "https://github.com/trim21/bgm-tv-userscripts"
   },
-  "dependencies": {},
   "lint-staged": {
     "*.{cjs,js,ts,json,yml,yaml}": "prettier --write",
     "*.{cjs,js,ts}": "eslint --fix"
@@ -61,10 +62,11 @@
     "semver": "7.5.0",
     "typescript": "5.0.4",
     "userscript-metadata-webpack-plugin": "0.4.0",
-    "webpack": "5.81.0",
+    "webpack": "^5.81.0",
     "webpack-cli": "5.0.2",
     "webpack-livereload-plugin": "3.0.2",
     "webpack-merge": "5.8.0",
     "yargs": "17.7.2"
-  }
+  },
+  "packageManager": "yarn@3.5.1"
 }
