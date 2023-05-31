@@ -9,7 +9,7 @@
 // @supportURL    https://github.com/trim21/bgm-tv-userscripts/issues
 // @license       MIT
 // @include       /^https://(bangumi\.tv|bgm\.tv|chii\.in)/[^/]*/
-// @require       https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js
+// @require       https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js
 // @run-at        document-end
 // ==/UserScript==
 
