@@ -1798,7 +1798,7 @@ __metadata:
     "@types/jest": 29.5.2
     "@types/jquery": 3.5.16
     jest: 29.5.0
-    jquery: 3.6.4
+    jquery: 3.7.0
     ts-jest: 29.1.0
     typescript: 5.0.4
   languageName: unknown
@@ -1809,7 +1809,7 @@ __metadata:
   resolution: "@script/sort-index@workspace:packages/sort-index"
   dependencies:
     "@types/jquery": 3.5.16
-    jquery: 3.6.4
+    jquery: 3.7.0
     prettier: 2.8.8
     raw-loader: 4.0.2
     webpack: 5.85.0
@@ -1826,7 +1826,7 @@ __metadata:
     "@types/lodash": 4.14.195
     diff: 5.1.0
     diff2html: 3.4.35
-    jquery: 3.6.4
+    jquery: 3.7.0
     lodash: 4.17.21
   languageName: unknown
   linkType: soft
@@ -5321,10 +5321,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jquery@npm:3.6.4":
-  version: 3.6.4
-  resolution: "jquery@npm:3.6.4"
-  checksum: 8354f7bd0a0424aa714ee1b6b1ef74b410f834eb5c8501682289b358bc151f11677f11188b544f3bb49309d6ec4d15d1a5de175661250c206b06185a252f706f
+"jquery@npm:3.7.0":
+  version: 3.7.0
+  resolution: "jquery@npm:3.7.0"
+  checksum: 907785e133afc427650a131af5fccef66a404885037513b3d4d7d63aee6409bcc32a39836868c60e59b05aa0fb8ace8961c18b2ee3ffdf6ffdb571d6d7cd88ff
   languageName: node
   linkType: hard
 
