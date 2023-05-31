@@ -62,7 +62,7 @@
     "husky": "8.0.3",
     "lint-staged": "13.2.2",
     "prettier": "2.8.8",
-    "semver": "7.5.0",
+    "semver": "7.5.1",
     "typescript": "5.0.4",
     "userscript-metadata-webpack-plugin": "0.4.0",
     "webpack": "5.85.0",
