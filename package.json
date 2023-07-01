@@ -63,7 +63,7 @@
     "lint-staged": "13.2.3",
     "prettier": "2.8.8",
     "semver": "7.5.3",
-    "typescript": "5.0.4",
+    "typescript": "5.1.6",
     "userscript-metadata-webpack-plugin": "0.4.0",
     "webpack": "5.88.1",
     "webpack-cli": "5.1.4",
