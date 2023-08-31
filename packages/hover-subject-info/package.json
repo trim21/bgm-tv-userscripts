@@ -19,7 +19,7 @@
   "devDependencies": {
     "@jest/globals": "29.6.4",
     "@types/hogan.js": "3.0.1",
-    "@types/jest": "29.5.3",
+    "@types/jest": "29.5.4",
     "@types/jquery": "3.5.16",
     "jest": "29.6.4",
     "ts-jest": "29.1.1",
