@@ -7,7 +7,7 @@
   "license": "MIT",
   "dependencies": {
     "diff": "5.1.0",
-    "diff2html": "3.4.35",
+    "diff2html": "3.4.41",
     "jquery": "3.7.0",
     "lodash": "4.17.21"
   },
