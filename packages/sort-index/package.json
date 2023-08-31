@@ -9,10 +9,10 @@
     "dev": "webpack --config config/webpack.config.dev.js"
   },
   "dependencies": {
-    "jquery": "3.7.0"
+    "jquery": "3.7.1"
   },
   "devDependencies": {
-    "@types/jquery": "3.5.16",
+    "@types/jquery": "3.5.17",
     "prettier": "3.0.0",
     "raw-loader": "4.0.2",
     "webpack": "5.88.2"
