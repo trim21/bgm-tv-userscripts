@@ -1843,7 +1843,7 @@ __metadata:
     "@jest/globals": 29.7.0
     "@types/hogan.js": 3.0.2
     "@types/jest": 29.5.5
-    "@types/jquery": 3.5.17
+    "@types/jquery": 3.5.20
     jest: 29.7.0
     jquery: 3.7.1
     ts-jest: 29.1.1
@@ -1855,7 +1855,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@script/sort-index@workspace:packages/sort-index"
   dependencies:
-    "@types/jquery": 3.5.17
+    "@types/jquery": 3.5.20
     jquery: 3.7.1
     prettier: 3.0.3
     raw-loader: 4.0.2
@@ -1869,7 +1869,7 @@ __metadata:
   dependencies:
     "@types/diff": 5.0.5
     "@types/greasemonkey": 4.0.5
-    "@types/jquery": 3.5.17
+    "@types/jquery": 3.5.20
     "@types/lodash": 4.14.199
     diff: 5.1.0
     diff2html: 3.4.44
@@ -2049,12 +2049,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/jquery@npm:3.5.17":
-  version: 3.5.17
-  resolution: "@types/jquery@npm:3.5.17"
+"@types/jquery@npm:3.5.20":
+  version: 3.5.20
+  resolution: "@types/jquery@npm:3.5.20"
   dependencies:
     "@types/sizzle": "*"
-  checksum: be289003382a8d4a1c6eab9c68845e919e467926557493033e78f6793ed8acd482b01b7b47955e4bf51f65f9b05607beccb32d31d649a2b42f3b07f1444d1f1a
+  checksum: 9bd69faea3d60f52d3029a87b890003042a9dcf4f538c23ac2c11b3bd0e0ccd86b281d5ba3028d1b02df67c69266b8dc0ef0a35696ae174515ecf34523a0287b
   languageName: node
   linkType: hard
 
