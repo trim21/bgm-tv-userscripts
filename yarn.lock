@@ -1841,7 +1841,7 @@ __metadata:
   resolution: "@script/hover-subject-info@workspace:packages/hover-subject-info"
   dependencies:
     "@jest/globals": 29.6.4
-    "@types/hogan.js": 3.0.1
+    "@types/hogan.js": 3.0.2
     "@types/jest": 29.5.4
     "@types/jquery": 3.5.17
     jest: 29.6.4
@@ -2007,10 +2007,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/hogan.js@npm:3.0.1":
-  version: 3.0.1
-  resolution: "@types/hogan.js@npm:3.0.1"
-  checksum: 93b6a7b31a8905f6bb5cedd95c6fc8db85b07efcb7ef840b3e610108be4ded504c575f68882f0cec1f37db880eabdbdcdf70cbd0039f5c783c751782f2adc897
+"@types/hogan.js@npm:3.0.2":
+  version: 3.0.2
+  resolution: "@types/hogan.js@npm:3.0.2"
+  checksum: 23726b05ff6e0f4adf0a72768fb81ce17d2440c4cb393e14505bf0a91378ffaa4349bbe54a6f359cb24ad31a8cd60a8f4e8e112fa46083dc0204474649f2e859
   languageName: node
   linkType: hard
 
