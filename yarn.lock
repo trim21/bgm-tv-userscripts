@@ -1868,7 +1868,7 @@ __metadata:
   resolution: "@script/wiki-rev-diff@workspace:packages/wiki-rev-diff"
   dependencies:
     "@types/diff": 5.0.5
-    "@types/greasemonkey": 4.0.4
+    "@types/greasemonkey": 4.0.5
     "@types/jquery": 3.5.17
     "@types/lodash": 4.14.197
     diff: 5.1.0
@@ -2000,10 +2000,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/greasemonkey@npm:4.0.4":
-  version: 4.0.4
-  resolution: "@types/greasemonkey@npm:4.0.4"
-  checksum: 6aa2663601e1d71fb47908f90662a04a7bf0d01800f9e7572936054cfe7c313a8364ff1913024950433d20dfa594f3cf485b3dbd3bf7e531d7e8cdf4b2ee2efd
+"@types/greasemonkey@npm:4.0.5":
+  version: 4.0.5
+  resolution: "@types/greasemonkey@npm:4.0.5"
+  checksum: a882008ae9c1dd0dc322258c7df4bbb56f372d337d60caee47db1827883f68e722ae24d453647b3cf942eb678f9a47e539af491a59e55c01e265d587423de110
   languageName: node
   linkType: hard
 
