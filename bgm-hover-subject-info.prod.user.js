@@ -157,7 +157,7 @@ function hoverHandler() {
     return;
   }
   (async function () {
-    const res = await fetch(`https://api.bgm.tv/v0/subjects/${subjectID}`);
+    const res = await getWithCache(subjectID);
     if (res.status > 400) {
       popup.html('not found');
       return;
@@ -169,6 +169,15 @@ function hoverHandler() {
     }
     popup.html(html);
   })().catch(console.error);
+}
+const c = {};
+async function getWithCache(subjectID) {
+  if (subjectID in c) {
+    return c[subjectID].clone();
+  }
+  const res = await fetch(`https://api.bgm.tv/v0/subjects/${subjectID}`);
+  c[subjectID] = res.clone();
+  return res;
 }
 main();
 /******/ })()
