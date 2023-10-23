@@ -3,7 +3,7 @@
 // @name:zh       鼠标指向条目链接时显示更多信息
 // @namespace     https://trim21.me/
 // @description   鼠标指向条目链接时弹出一个悬浮窗显示条目信息
-// @version       0.2.15
+// @version       0.2.16
 // @source        https://github.com/trim21/bgm-tv-userscripts
 // @supportURL    https://github.com/trim21/bgm-tv-userscripts/issues
 // @license       MIT
@@ -173,10 +173,16 @@ function hoverHandler() {
 const c = {};
 async function getWithCache(subjectID) {
   if (subjectID in c) {
-    return c[subjectID].clone();
+    if (c[subjectID].createdAt + 1000 * 60 * 5 > new Date().getTime()) {
+      // cache request in 5min
+      return c[subjectID].res.clone();
+    }
   }
   const res = await fetch(`https://api.bgm.tv/v0/subjects/${subjectID}`);
-  c[subjectID] = res.clone();
+  c[subjectID] = {
+    res: res.clone(),
+    createdAt: new Date().getTime()
+  };
   return res;
 }
 main();
