@@ -23,8 +23,8 @@
     "sort-index": "yarn workspace @script/sort-index",
     "wiki-rev-diff": "yarn workspace @script/wiki-rev-diff",
     "hover-subject-info": "yarn workspace @script/hover-subject-info",
-    "test": "yarn workspaces foreach --include '@script/*' run test",
-    "build": "yarn workspaces foreach --include '@script/*' run build",
+    "test": "yarn workspaces foreach -A --include '@script/*' run test",
+    "build": "yarn workspaces foreach -A --include '@script/*' run build",
     "lint-staged": "lint-staged --quiet",
     "prepare": "husky install"
   },
@@ -71,5 +71,5 @@
     "webpack-merge": "5.9.0",
     "yargs": "17.7.2"
   },
-  "packageManager": "yarn@3.6.4"
+  "packageManager": "yarn@4.0.0"
 }
