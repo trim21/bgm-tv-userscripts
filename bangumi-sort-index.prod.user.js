@@ -3,7 +3,7 @@
 // @name:zh       排序首页条目
 // @namespace     https://trim21.me/
 // @description   Sort subjects on index page
-// @version       0.0.8
+// @version       0.0.9
 // @author        Trim21 <i@trim21.me>
 // @source        https://github.com/trim21/bgm-tv-userscripts
 // @supportURL    https://github.com/trim21/bgm-tv-userscripts/issues
