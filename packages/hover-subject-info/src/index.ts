@@ -124,7 +124,7 @@ function hoverHandler(this: HTMLElement): void {
   }
 
   (async function () {
-    const res = await fetch(`https://api.bgm.tv/v0/subjects/${subjectID}`);
+    const res = await getWithCache(subjectID);
     if (res.status > 400) {
       popup.html('not found');
 
@@ -140,6 +140,20 @@ function hoverHandler(this: HTMLElement): void {
 
     popup.html(html);
   })().catch(console.error);
+}
+
+const c: Record<number, Response> = {};
+
+async function getWithCache(subjectID: number): Promise<Response> {
+  if (subjectID in c) {
+    return c[subjectID].clone();
+  }
+
+  const res = await fetch(`https://api.bgm.tv/v0/subjects/${subjectID}`);
+
+  c[subjectID] = res.clone();
+
+  return res;
 }
 
 main();
