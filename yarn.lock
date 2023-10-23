@@ -1891,7 +1891,7 @@ __metadata:
     "@types/jquery": "npm:3.5.20"
     "@types/lodash": "npm:4.14.199"
     diff: "npm:5.1.0"
-    diff2html: "npm:3.4.44"
+    diff2html: "npm:3.4.45"
     jquery: "npm:3.7.1"
     lodash: "npm:4.17.21"
   languageName: unknown
@@ -3530,9 +3530,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"diff2html@npm:3.4.44":
-  version: 3.4.44
-  resolution: "diff2html@npm:3.4.44"
+"diff2html@npm:3.4.45":
+  version: 3.4.45
+  resolution: "diff2html@npm:3.4.45"
   dependencies:
     diff: "npm:5.1.0"
     highlight.js: "npm:11.8.0"
@@ -3540,7 +3540,7 @@ __metadata:
   dependenciesMeta:
     highlight.js:
       optional: true
-  checksum: a68a87ab2b3e34a14a449021da01628020d12762f0a52bc3cfd66ed76951b1ba8a73cd477908d6782cc7ebe206962547a4261f65415e7d1778644127d80aefdb
+  checksum: da62c2059105171a975c6c04b0384ca1271b02787c7d1a6cb0f2aa0c9767410300bd0663399217cf2dd0181cd9b3f029595c8dcb5f3ab08933864c2e411e9dbe
   languageName: node
   linkType: hard
 
