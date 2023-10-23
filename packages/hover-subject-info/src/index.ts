@@ -142,16 +142,23 @@ function hoverHandler(this: HTMLElement): void {
   })().catch(console.error);
 }
 
-const c: Record<number, Response> = {};
+interface Item {
+  res: Response;
+  createdAt: number;
+}
+const c: Record<number, Item> = {};
 
 async function getWithCache(subjectID: number): Promise<Response> {
   if (subjectID in c) {
-    return c[subjectID].clone();
+    if (c[subjectID].createdAt + 1000 * 60 * 5 > new Date().getTime()) {
+      // cache request in 5min
+      return c[subjectID].res.clone();
+    }
   }
 
   const res = await fetch(`https://api.bgm.tv/v0/subjects/${subjectID}`);
 
-  c[subjectID] = res.clone();
+  c[subjectID] = { res: res.clone(), createdAt: new Date().getTime() };
 
   return res;
 }
