@@ -1875,7 +1875,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@script/wiki-rev-diff@workspace:packages/wiki-rev-diff"
   dependencies:
-    "@types/diff": "npm:5.0.7"
+    "@types/diff": "npm:5.0.8"
     "@types/greasemonkey": "npm:4.0.6"
     "@types/jquery": "npm:3.5.25"
     "@types/lodash": "npm:4.14.200"
@@ -1965,10 +1965,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/diff@npm:5.0.7":
-  version: 5.0.7
-  resolution: "@types/diff@npm:5.0.7"
-  checksum: 121b52262f1b1d8b098b4ac65cd228c5e485034a51b979e79a1a8a9507c4caa29ce249a4299503620ff6ba547f8d07f843609f273b0bd285d53eef3b77deec6b
+"@types/diff@npm:5.0.8":
+  version: 5.0.8
+  resolution: "@types/diff@npm:5.0.8"
+  checksum: 73ed9eb68d159c81f5464a7df9d1db14510ebeaa521cce3e29da9749bdff4d75801fbd55bb935ef7fa8ea6593939c56c73c446af3f965ddbffb93b22e67524d7
   languageName: node
   linkType: hard
 
