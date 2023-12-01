@@ -15,6 +15,6 @@
     "@types/diff": "5.0.8",
     "@types/greasemonkey": "4.0.7",
     "@types/jquery": "3.5.29",
-    "@types/lodash": "4.14.200"
+    "@types/lodash": "4.14.202"
   }
 }
