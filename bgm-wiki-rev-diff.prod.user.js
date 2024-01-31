@@ -10,10 +10,10 @@
 // @match        https://bangumi.tv/subject/*/edit*
 // @match        https://chii.in/subject/*/edit*
 // @require      https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js
-// @require      https://cdn.jsdelivr.net/npm/diff2html@3.4.46/bundles/js/diff2html.min.js
+// @require      https://cdn.jsdelivr.net/npm/diff2html@3.4.47/bundles/js/diff2html.min.js
 // @require      https://cdn.jsdelivr.net/npm/diff@5.1.0/dist/diff.min.js
 // @require      https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js
-// @resource     diff2html https://cdn.jsdelivr.net/npm/diff2html@3.4.46/bundles/css/diff2html.min.css
+// @resource     diff2html https://cdn.jsdelivr.net/npm/diff2html@3.4.47/bundles/css/diff2html.min.css
 // @grant        GM.getResourceUrl
 // @grant        GM.registerMenuCommand
 // @grant        GM.setValue
