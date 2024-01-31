@@ -1881,7 +1881,7 @@ __metadata:
     "@types/jquery": "npm:3.5.29"
     "@types/lodash": "npm:4.14.202"
     diff: "npm:5.1.0"
-    diff2html: "npm:3.4.46"
+    diff2html: "npm:3.4.47"
     jquery: "npm:3.7.1"
     lodash: "npm:4.17.21"
   languageName: unknown
@@ -3473,17 +3473,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"diff2html@npm:3.4.46":
-  version: 3.4.46
-  resolution: "diff2html@npm:3.4.46"
+"diff2html@npm:3.4.47":
+  version: 3.4.47
+  resolution: "diff2html@npm:3.4.47"
   dependencies:
     diff: "npm:5.1.0"
-    highlight.js: "npm:11.8.0"
+    highlight.js: "npm:11.9.0"
     hogan.js: "npm:3.0.2"
   dependenciesMeta:
     highlight.js:
       optional: true
-  checksum: 30ba4a2b98fb574f8e65e56c72d2807e3604ade008fc82896fd518e5fa4f016c4253c50fb9e8b0fc03094044da372afce0c65b693f5db14b93df8aeee86d6f90
+  checksum: 48a89a7036dcd9f8b98a15e3f63553b1e78d1fd7e9542af28ab180b37c9a2f2bc42c8991d378cae2a5a9e6fdb971efa034baf56dda53d1379fb966caa1d2b5b2
   languageName: node
   linkType: hard
 
@@ -4600,10 +4600,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"highlight.js@npm:11.8.0":
-  version: 11.8.0
-  resolution: "highlight.js@npm:11.8.0"
-  checksum: a1952caae8ae07b9e60faad87307881eaf38d2356b0b1295b0692b16fb57811da6bb4d143a4940609f58c6a8facf73ff493bab4d946fb24731af9355d51d0a69
+"highlight.js@npm:11.9.0":
+  version: 11.9.0
+  resolution: "highlight.js@npm:11.9.0"
+  checksum: 44b3e42bc096a2e5207e514826a10ff7671de315a7216ebaeba76593d4f16dfe3f7078390cb5c2b08eae657694fef4fb65d775376db48480c829c83fbc4f157a
   languageName: node
   linkType: hard
 
