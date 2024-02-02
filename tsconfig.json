@@ -10,8 +10,8 @@
     "strict": true,
     "strictNullChecks": true,
     "noEmit": false,
-    "allowJs": false
+    "allowJs": false,
   },
   "include": ["./packages/**/*"],
-  "exclude": ["node_modules", "**/*.spec.ts", "./config/", "*/config/**"]
+  "exclude": ["node_modules", "**/*.spec.ts", "./config/", "*/config/**"],
 }
