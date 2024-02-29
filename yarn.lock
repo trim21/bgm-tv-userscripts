@@ -2934,7 +2934,7 @@ __metadata:
     eslint-plugin-import: "npm:2.29.1"
     eslint-plugin-n: "npm:16.6.2"
     eslint-plugin-promise: "npm:6.1.1"
-    husky: "npm:9.0.9"
+    husky: "npm:9.0.11"
     lint-staged: "npm:15.2.1"
     prettier: "npm:3.2.4"
     semver: "npm:7.6.0"
@@ -4683,12 +4683,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"husky@npm:9.0.9":
-  version: 9.0.9
-  resolution: "husky@npm:9.0.9"
+"husky@npm:9.0.11":
+  version: 9.0.11
+  resolution: "husky@npm:9.0.11"
   bin:
     husky: bin.mjs
-  checksum: 10/ea6731d6c3abedc2af6ad45e65308caf0e404d77c3f5b853f4fae34f8004c46a5160e490cd2c331cfbae40b812d212a84e21e33ab4bb4ce6611454520ab51c5e
+  checksum: 10/8a9b7cb9dc8494b470b3b47b386e65d579608c6206da80d3cc8b71d10e37947264af3dfe00092368dad9673b51d2a5ee87afb4b2291e77ba9e7ec1ac36e56cd1
   languageName: node
   linkType: hard
 
