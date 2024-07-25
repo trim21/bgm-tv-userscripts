@@ -19,6 +19,7 @@ export async function render(revOld: Commit, revNew: Commit): Promise<void> {
 
   show('');
   $(`#${elID}`).html(html);
+  applyThemeBasedOnCookie();
 
   document.getElementById(elID)?.scrollIntoView({
     behavior: 'smooth',
@@ -33,4 +34,24 @@ export function clear(): void {
   $('#show-diff-view-line-by-line').html('');
   $('#show-diff-view-side-by-side').html('');
   show('');
+}
+
+function getCookie(name: string): string | undefined {
+  const value = "; " + document.cookie;
+  const parts = value.split("; " + name + "=");
+  if (parts.length === 2) return parts.pop()?.split(";").shift();
+  return undefined;
+}
+
+function applyThemeBasedOnCookie(): void {
+  const wrapper = $('.d2h-wrapper');
+
+  wrapper.removeClass('d2h-dark-color-scheme d2h-light-color-scheme');
+
+  const theme = getCookie('chii_theme');
+  if (theme === 'dark') {
+      wrapper.addClass('d2h-dark-color-scheme');
+  } else {
+      wrapper.addClass('d2h-light-color-scheme');
+  }
 }
