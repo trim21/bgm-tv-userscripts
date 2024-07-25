@@ -37,9 +37,9 @@ export function clear(): void {
 }
 
 function getCookie(name: string): string | undefined {
-  const value = "; " + document.cookie;
-  const parts = value.split("; " + name + "=");
-  if (parts.length === 2) return parts.pop()?.split(";").shift();
+  const value = '; ' + document.cookie;
+  const parts = value.split('; ' + name + '=');
+  if (parts.length === 2) return parts.pop()?.split(';').shift();
   return undefined;
 }
 
@@ -50,8 +50,8 @@ function applyThemeBasedOnCookie(): void {
 
   const theme = getCookie('chii_theme');
   if (theme === 'dark') {
-      wrapper.addClass('d2h-dark-color-scheme');
+    wrapper.addClass('d2h-dark-color-scheme');
   } else {
-      wrapper.addClass('d2h-light-color-scheme');
+    wrapper.addClass('d2h-light-color-scheme');
   }
 }
