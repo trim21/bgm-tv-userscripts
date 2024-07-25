@@ -3,7 +3,7 @@ import * as lodash from 'lodash';
 import type { OutputFormatType } from 'diff2html/lib/types';
 
 import { parseRevEl } from './parser';
-import { compare } from './compare';
+import { compare, compareWithLastVersion } from './compare';
 import { configKey } from './config';
 
 type Pos = 'rev-left' | 'rev-right';
@@ -11,6 +11,10 @@ type Pos = 'rev-left' | 'rev-right';
 async function main(): Promise<void> {
   console.log('start bgm-wiki-rev-diff UserScript');
   await initUI();
+
+  if (window.location.href.includes('edit_detail')) {
+    initEditDetailUI();
+  }
 }
 
 const style = `
@@ -36,6 +40,17 @@ const style = `
 ul#pagehistory > li > * {
   vertical-align: middle;
 }
+
+#preview-changes-btn{
+  width: 4em;
+  margin-right: 20px;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0.2, #10b981), color-stop(1, #16a34a)) !important;
+  border: #16a34a;
+  outline: none;
+  height: 21px;
+  user-select: none;
+}
+#preview-changes-btn:active
 </style>
 `;
 
@@ -135,6 +150,31 @@ async function initUI(): Promise<void> {
   $('#compare-trim21-cn').on('click', function () {
     const selectedRevs = getSelectedVersion();
     compare(selectedRevs[0], selectedRevs[1]);
+  });
+}
+
+function initEditDetailUI(): void {
+  $('#show-diff-view-side-by-side').remove();
+  $('#show-diff-view-line-by-line').remove();
+  $('#compare-trim21-cn').remove();
+  $('#footer').before(
+    style +
+      '<div id="show-diff-view-side-by-side" class="show-version-diff"></div><div id="show-diff-view-line-by-line" class="show-version-diff"></div>',
+  );
+
+  const button = document.createElement('input');
+  button.value = '预览修改';
+  button.readOnly = true;
+  button.id = 'preview-changes-btn';
+  button.classList.add('inputBtn');
+
+  const submitBtn = document.querySelector('input[type="submit"][onclick="NormaltoWCODE()"]');
+  if (submitBtn instanceof HTMLInputElement) {
+    submitBtn.parentNode?.insertBefore(button, submitBtn);
+  }
+
+  button.addEventListener('click', function () {
+    compareWithLastVersion();
   });
 }
 

@@ -1,4 +1,6 @@
-import { getRevInfo, parseRevDetails } from './parser';
+import * as $ from 'jquery';
+
+import { getLastRev, getRevInfo, parseRevDetails } from './parser';
 import { clear, render, show } from './ui';
 import type { Rev } from './model';
 import { Commit } from './model';
@@ -23,9 +25,52 @@ export function compare(revID1: string, revID2: string): void {
     });
 }
 
+export function compareWithLastVersion(): void {
+  const normaltoWCODE = document.querySelector('a[onclick="NormaltoWCODE()"]');
+
+  if (normaltoWCODE instanceof HTMLAnchorElement) {
+    normaltoWCODE.click();
+  }
+
+  clear();
+  show('<h2>loading versions...</h2>');
+
+  const subjectUrl = getSubjectUrl();
+  const currentRev = createCurrentRevision();
+
+  getLastRev(subjectUrl)
+    .then(async (lastRev) => {
+      await render(lastRev, currentRev);
+    })
+    .catch((e) => {
+      console.error(e);
+      show('<div style="color: red">获取历史修改失败，请刷新页面后重试</div>');
+    });
+}
+
+function getSubjectUrl(): string {
+  return window.location.href.split('/edit_detail').shift() + '/edit';
+}
+
+function createCurrentRevision(): Commit {
+  return new Commit(
+    {
+      id: '0',
+      comment: '',
+      date: '当前修改',
+      url: '',
+    },
+    {
+      rawInfo: $('#subject_infobox').val()?.toString() ?? '',
+      title: $('input[name="subject_title"]').val()?.toString() ?? '',
+      description: $('textarea#subject_summary').val()?.toString() ?? '',
+    },
+  );
+}
+
 const _cache: Record<string, Commit> = {};
 
-async function fetchRev(rev: Rev | undefined): Promise<Commit> {
+export async function fetchRev(rev: Rev | undefined): Promise<Commit> {
   if (rev == null) {
     return new Commit(
       {

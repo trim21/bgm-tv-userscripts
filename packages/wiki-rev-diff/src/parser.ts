@@ -1,6 +1,7 @@
 import * as $ from 'jquery';
 
-import type { Rev, RevDetail } from './model';
+import type { Commit, Rev, RevDetail } from './model';
+import { fetchRev } from './compare';
 
 export function parseRevDetails(html: string): RevDetail {
   const jq = $(html);
@@ -57,4 +58,24 @@ export function getRevInfo(revID: string): Rev | undefined {
       return rev;
     }
   }
+}
+
+const _revCache: Record<string, Rev> = {};
+
+export async function getLastRev(url: string): Promise<Commit> {
+  if (!_revCache[url]) {
+    const res = await fetch(url);
+    const jq = $(await res.text());
+
+    for (const el of jq.find('#pagehistory li')) {
+      const rev = parseRevEl($(el));
+      if (rev) {
+        _revCache[url] = rev;
+        break;
+      }
+    }
+  }
+
+  const rev = _revCache[url];
+  return await fetchRev(rev);
 }
