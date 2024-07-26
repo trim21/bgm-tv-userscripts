@@ -2,7 +2,7 @@
 // @name         bgm-wiki-rev-diff
 // @name:zh      显示条目信息版本差异
 // @namespace    https://trim21.me/
-// @version      0.2.18
+// @version      0.2.20
 // @source       https://github.com/trim21/bgm-tv-userscripts
 // @supportURL   https://github.com/trim21/bgm-tv-userscripts/issues
 // @license      MIT
