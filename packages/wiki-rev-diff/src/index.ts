@@ -5,7 +5,6 @@ import type { OutputFormatType } from 'diff2html/lib/types';
 import { parseRevEl } from './parser';
 import { compare } from './compare';
 import { configKey } from './config';
-import { getCookie } from './utils';
 
 type Pos = 'rev-left' | 'rev-right';
 
@@ -136,22 +135,6 @@ async function initUI(): Promise<void> {
   $('#compare-trim21-cn').on('click', function () {
     const selectedRevs = getSelectedVersion();
     compare(selectedRevs[0], selectedRevs[1]);
-  });
-  handleThemeToggle();
-}
-
-function handleThemeToggle(): void {
-  $('#toggleTheme').on('click', () => {
-    const wrapper = $('.d2h-wrapper');
-
-    wrapper.removeClass('d2h-dark-color-scheme d2h-light-color-scheme');
-
-    const theme = getCookie('chii_theme');
-    if (theme === 'dark') {
-      wrapper.addClass('d2h-dark-color-scheme');
-    } else {
-      wrapper.addClass('d2h-light-color-scheme');
-    }
   });
 }
 
