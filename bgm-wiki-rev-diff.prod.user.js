@@ -120,7 +120,15 @@ function descriptionDiff(rev1, rev2, options) {
   }
   return external_Diff_namespaceObject.createPatch('简介', rev1.details.description, rev2.details.description, rev1.rev.date, rev2.rev.date, options);
 }
+;// CONCATENATED MODULE: ./src/utils.ts
+function getCookie(name) {
+  const value = '; ' + document.cookie;
+  const parts = value.split('; ' + name + '=');
+  if (parts.length === 2) return parts.pop()?.split(';').shift();
+  return undefined;
+}
 ;// CONCATENATED MODULE: ./src/ui.ts
+
 
 
 
@@ -130,9 +138,11 @@ async function render(revOld, revNew) {
   if (!outputFormat) {
     outputFormat = 'line-by-line';
   }
+  const colorScheme = getCookie('chii_theme');
   const patch = diff(revOld, revNew, outputFormat);
   const html = external_Diff2Html_namespaceObject.html(patch, {
-    outputFormat
+    outputFormat,
+    colorScheme
   });
   const elID = `show-diff-view-${outputFormat}`;
   show('');
