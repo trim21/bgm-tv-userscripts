@@ -3010,7 +3010,7 @@ __metadata:
     eslint-config-standard-with-typescript: "npm:43.0.1"
     eslint-plugin-import: "npm:2.29.1"
     eslint-plugin-n: "npm:17.4.0"
-    eslint-plugin-promise: "npm:6.1.1"
+    eslint-plugin-promise: "npm:7.0.0"
     husky: "npm:9.0.11"
     lint-staged: "npm:15.2.2"
     prettier: "npm:3.2.5"
@@ -3987,12 +3987,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-promise@npm:6.1.1":
-  version: 6.1.1
-  resolution: "eslint-plugin-promise@npm:6.1.1"
+"eslint-plugin-promise@npm:7.0.0":
+  version: 7.0.0
+  resolution: "eslint-plugin-promise@npm:7.0.0"
   peerDependencies:
-    eslint: ^7.0.0 || ^8.0.0
-  checksum: 10/216c4348f796c5e90984224532d42a8f8d0455b8cbb1955bcb328b3aa10a52e9718f6fb044b6fe19825eda3a2d62a32b1042d9cbb10731353cf61b7a6cab2d71
+    eslint: ^7.0.0 || ^8.0.0 || ^9.0.0
+  checksum: 10/a06d5a96e44d84953a6a04542289bf21fbc164f58023e8711afb95d658d7263330871e87e453ed3f9963d901c504095d61b073627c9887b1abd73b3ad2c2d271
   languageName: node
   linkType: hard
 
