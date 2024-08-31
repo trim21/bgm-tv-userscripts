@@ -23,7 +23,6 @@
 
 /******/ (() => { // webpackBootstrap
 /******/ 	"use strict";
-var __webpack_exports__ = {};
 
 ;// CONCATENATED MODULE: external "$"
 const external_$_namespaceObject = $;
