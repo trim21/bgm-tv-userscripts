@@ -15,6 +15,6 @@
     "@types/jquery": "3.5.29",
     "prettier": "3.2.5",
     "raw-loader": "4.0.2",
-    "webpack": "5.91.0"
+    "webpack": "5.94.0"
   }
 }
