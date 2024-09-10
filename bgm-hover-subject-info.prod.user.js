@@ -3,7 +3,7 @@
 // @name:zh       鼠标指向条目链接时显示更多信息
 // @namespace     https://trim21.me/
 // @description   鼠标指向条目链接时弹出一个悬浮窗显示条目信息
-// @version       0.2.17
+// @version       0.2.18
 // @source        https://github.com/trim21/bgm-tv-userscripts
 // @supportURL    https://github.com/trim21/bgm-tv-userscripts/issues
 // @license       MIT
@@ -26,7 +26,7 @@
 
 ;// CONCATENATED MODULE: external "$"
 const external_$_namespaceObject = $;
-;// CONCATENATED MODULE: ./src/utils.ts
+;// CONCATENATED MODULE: ./scripts/hover-subject-info/src/utils.ts
 function getSubjectID(s) {
   if (!s?.length) return undefined;
   if (s.startsWith('#')) {
@@ -34,6 +34,10 @@ function getSubjectID(s) {
   }
   if (s.startsWith('/')) {
     s = 'https://bgm.tv' + s;
+  } else {
+    if (!/^https?:\/\/(bgm\.tv|chii\.in|bangumi\.tv)\//.test(s)) {
+      return;
+    }
   }
   const u = new URL(s);
   const path = u.pathname;
@@ -48,7 +52,7 @@ function getSubjectID(s) {
   }
   return undefined;
 }
-;// CONCATENATED MODULE: ./src/index.ts
+;// CONCATENATED MODULE: ./scripts/hover-subject-info/src/index.ts
 
 
 const style = `

@@ -2,10 +2,10 @@
 // @name                bgm-wiki-rev-diff
 // @name:zh             bangumi 显示 条目 wiki 版本差异
 // @name:zh-CN          bangumi 显示 条目 wiki 版本差异
-// @description         显示条目信息版本差异, 可以在 https://github.com/trim21/bgm-tv-userscripts/tree/master/packages/wiki-rev-diff#readme 查看效果图
-// @description:zh-CN   显示条目信息版本差异, 可以在 https://github.com/trim21/bgm-tv-userscripts/tree/master/packages/wiki-rev-diff#readme 查看效果图
+// @description         显示条目信息版本差异, 可以在 https://github.com/trim21/bgm-tv-userscripts/tree/master/scripts/wiki-rev-diff#readme 查看效果图
+// @description:zh-CN   显示条目信息版本差异, 可以在 https://github.com/trim21/bgm-tv-userscripts/tree/master/scripts/wiki-rev-diff#readme 查看效果图
 // @namespace           https://trim21.me/
-// @version             0.2.22
+// @version             0.2.23
 // @source              https://github.com/trim21/bgm-tv-userscripts
 // @supportURL          https://github.com/trim21/bgm-tv-userscripts/issues
 // @license             MIT
@@ -32,7 +32,7 @@
 const external_$_namespaceObject = $;
 ;// CONCATENATED MODULE: external "_"
 const external_namespaceObject = _;
-;// CONCATENATED MODULE: ./src/parser.ts
+;// CONCATENATED MODULE: ./scripts/wiki-rev-diff/src/parser.ts
 
 function parseRevDetails(html) {
   const jq = external_$_namespaceObject(html);
@@ -89,11 +89,11 @@ function getRevInfo(revID) {
 }
 ;// CONCATENATED MODULE: external "Diff2Html"
 const external_Diff2Html_namespaceObject = Diff2Html;
-;// CONCATENATED MODULE: ./src/config.ts
+;// CONCATENATED MODULE: ./scripts/wiki-rev-diff/src/config.ts
 const configKey = 'view-mode';
 ;// CONCATENATED MODULE: external "Diff"
 const external_Diff_namespaceObject = Diff;
-;// CONCATENATED MODULE: ./src/differ.ts
+;// CONCATENATED MODULE: ./scripts/wiki-rev-diff/src/differ.ts
 
 function diff(revOld, revNew, style) {
   const options = {
@@ -122,14 +122,14 @@ function descriptionDiff(rev1, rev2, options) {
   }
   return external_Diff_namespaceObject.createPatch('简介', rev1.details.description, rev2.details.description, rev1.rev.date, rev2.rev.date, options);
 }
-;// CONCATENATED MODULE: ./src/utils.ts
+;// CONCATENATED MODULE: ./scripts/wiki-rev-diff/src/utils.ts
 function getCookie(name) {
   const value = '; ' + document.cookie;
   const parts = value.split('; ' + name + '=');
   if (parts.length === 2) return parts.pop()?.split(';').shift();
   return undefined;
 }
-;// CONCATENATED MODULE: ./src/ui.ts
+;// CONCATENATED MODULE: ./scripts/wiki-rev-diff/src/ui.ts
 
 
 
@@ -161,14 +161,14 @@ function clear() {
   external_$_namespaceObject('#show-diff-view-side-by-side').html('');
   show('');
 }
-;// CONCATENATED MODULE: ./src/model.ts
+;// CONCATENATED MODULE: ./scripts/wiki-rev-diff/src/model.ts
 class Commit {
   constructor(rev, detail) {
     this.rev = rev;
     this.details = detail;
   }
 }
-;// CONCATENATED MODULE: ./src/compare.ts
+;// CONCATENATED MODULE: ./scripts/wiki-rev-diff/src/compare.ts
 
 
 
@@ -208,7 +208,7 @@ async function fetchRev(rev) {
   }
   return _cache[rev.id];
 }
-;// CONCATENATED MODULE: ./src/index.ts
+;// CONCATENATED MODULE: ./scripts/wiki-rev-diff/src/index.ts
 
 
 
