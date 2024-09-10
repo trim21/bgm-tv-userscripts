@@ -13,7 +13,12 @@ module.exports = {
   },
   metadata: {
     name: 'bgm-wiki-rev-diff',
-    'name:zh': '显示条目信息版本差异',
+    'name:zh': 'bangumi 显示 条目 wiki 版本差异',
+    'name:zh-CN': 'bangumi 显示 条目 wiki 版本差异',
+    description:
+      '显示条目信息版本差异, 可以在 https://github.com/trim21/bgm-tv-userscripts/tree/master/packages/wiki-rev-diff#readme 查看效果图',
+    'description:zh-CN':
+      '显示条目信息版本差异, 可以在 https://github.com/trim21/bgm-tv-userscripts/tree/master/packages/wiki-rev-diff#readme 查看效果图',
     namespace: 'https://trim21.me/',
     version,
     source: repository.url,
