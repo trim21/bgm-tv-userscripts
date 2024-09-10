@@ -25,7 +25,7 @@
     "hover-subject-info": "yarn workspace @script/hover-subject-info",
     "test": "yarn workspaces foreach -A --include '@script/*' run test",
     "build": "yarn workspaces foreach -A --include '@script/*' run build",
-    "lint-staged": "lint-staged --quiet",
+    "lint-staged": "lint-staged",
     "prepare": "husky install"
   },
   "author": {
