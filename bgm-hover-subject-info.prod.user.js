@@ -18,6 +18,7 @@
 // @match         https://chii.in/rakuen/topiclist
 // @require       https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js
 // @run-at        document-end
+// @grant         GM_info
 // @author        Trim21 <i@trim21.me>
 // ==/UserScript==
 
@@ -126,7 +127,6 @@ ${tags}
 `;
 }
 function main() {
-  console.log(GM.info.script.name);
   external_$_namespaceObject('head').append(style);
   external_$_namespaceObject('a').each((i, e) => {
     if (getSubjectID(external_$_namespaceObject(e).attr('href'))) {
@@ -144,6 +144,10 @@ function hoverHandler() {
   if (!href) {
     return;
   }
+  const subjectID = getSubjectID(href);
+  if (!subjectID) {
+    return;
+  }
   const offset = e.offset() ?? {
     left: 0,
     top: 0
@@ -155,10 +159,6 @@ function hoverHandler() {
     position: 'absolute',
     'z-index': 1000
   });
-  const subjectID = getSubjectID(href);
-  if (!subjectID) {
-    return;
-  }
   (async function () {
     const res = await getWithCache(subjectID);
     if (res.status > 400) {

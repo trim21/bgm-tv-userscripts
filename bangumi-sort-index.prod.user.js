@@ -11,6 +11,7 @@
 // @include       /^https://(bangumi\.tv|bgm\.tv|chii\.in)/[^/]*/
 // @require       https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js
 // @run-at        document-end
+// @grant         GM_info
 // ==/UserScript==
 
 /******/ (() => { // webpackBootstrap
