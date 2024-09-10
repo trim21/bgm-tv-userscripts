@@ -1,25 +1,28 @@
 // ==UserScript==
-// @name         bgm-wiki-rev-diff
-// @name:zh      显示条目信息版本差异
-// @namespace    https://trim21.me/
-// @version      0.2.21
-// @source       https://github.com/trim21/bgm-tv-userscripts
-// @supportURL   https://github.com/trim21/bgm-tv-userscripts/issues
-// @license      MIT
-// @match        https://bgm.tv/subject/*/edit*
-// @match        https://bangumi.tv/subject/*/edit*
-// @match        https://chii.in/subject/*/edit*
-// @require      https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js
-// @require      https://cdn.jsdelivr.net/npm/diff2html@3.4.48/bundles/js/diff2html.min.js
-// @require      https://cdn.jsdelivr.net/npm/diff@5.2.0/dist/diff.min.js
-// @require      https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js
-// @resource     diff2html https://cdn.jsdelivr.net/npm/diff2html@3.4.48/bundles/css/diff2html.min.css
-// @grant        GM.getResourceUrl
-// @grant        GM.registerMenuCommand
-// @grant        GM.setValue
-// @grant        GM.getValue
-// @run-at       document-end
-// @author       Trim21 <i@trim21.me>
+// @name                bgm-wiki-rev-diff
+// @name:zh             bangumi 显示 条目 wiki 版本差异
+// @name:zh-CN          bangumi 显示 条目 wiki 版本差异
+// @description         显示条目信息版本差异, 可以在 https://github.com/trim21/bgm-tv-userscripts/tree/master/packages/wiki-rev-diff#readme 查看效果图
+// @description:zh-CN   显示条目信息版本差异, 可以在 https://github.com/trim21/bgm-tv-userscripts/tree/master/packages/wiki-rev-diff#readme 查看效果图
+// @namespace           https://trim21.me/
+// @version             0.2.21
+// @source              https://github.com/trim21/bgm-tv-userscripts
+// @supportURL          https://github.com/trim21/bgm-tv-userscripts/issues
+// @license             MIT
+// @match               https://bgm.tv/subject/*/edit*
+// @match               https://bangumi.tv/subject/*/edit*
+// @match               https://chii.in/subject/*/edit*
+// @require             https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js
+// @require             https://cdn.jsdelivr.net/npm/diff2html@3.4.48/bundles/js/diff2html.min.js
+// @require             https://cdn.jsdelivr.net/npm/diff@5.2.0/dist/diff.min.js
+// @require             https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js
+// @resource            diff2html https://cdn.jsdelivr.net/npm/diff2html@3.4.48/bundles/css/diff2html.min.css
+// @grant               GM.getResourceUrl
+// @grant               GM.registerMenuCommand
+// @grant               GM.setValue
+// @grant               GM.getValue
+// @run-at              document-end
+// @author              Trim21 <i@trim21.me>
 // ==/UserScript==
 
 /******/ (() => { // webpackBootstrap
