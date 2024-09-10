@@ -1946,12 +1946,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@trim21/script-utils@workspace:packages/utils":
-  version: 0.0.0-use.local
-  resolution: "@trim21/script-utils@workspace:packages/utils"
-  languageName: unknown
-  linkType: soft
-
 "@types/babel__core@npm:^7.1.14":
   version: 7.20.5
   resolution: "@types/babel__core@npm:7.20.5"
