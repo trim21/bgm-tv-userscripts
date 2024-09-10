@@ -62,7 +62,6 @@ module.exports = {
     'import/no-unresolved': 'error',
     'no-else-return': 'error',
     'linebreak-style': ['error', 'unix'],
-    indent: ['error', 2],
     'array-element-newline': ['error', 'consistent'],
     'array-bracket-newline': ['error', 'consistent'],
     'promise/catch-or-return': ['error', { allowFinally: true }],

@@ -129,16 +129,16 @@ function bangumiSortIndex(): void {
       }
 
       switch (mode) {
-      case 'smart':
-        smart(subjects);
-        break;
-      case 'normal':
-        normal();
-        break;
-      default:
-        mode = 'normal';
-        localStorage.setItem(configKey, mode);
-        normal();
+        case 'smart':
+          smart(subjects);
+          break;
+        case 'normal':
+          normal();
+          break;
+        default:
+          mode = 'normal';
+          localStorage.setItem(configKey, mode);
+          normal();
       }
 
       $(`#prgManagerOrder li[data-mode="${mode}"]`).find('a').addClass('focus');
