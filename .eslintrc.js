@@ -25,7 +25,6 @@ module.exports = {
       },
       plugins: ['@typescript-eslint'],
       extends: [
-        'standard-with-typescript',
         'plugin:@typescript-eslint/recommended',
         'plugin:@typescript-eslint/recommended-requiring-type-checking',
       ],
@@ -40,35 +39,9 @@ module.exports = {
             functions: 'ignore',
           },
         ],
-        '@typescript-eslint/space-before-function-paren': [
-          'error',
-          {
-            anonymous: 'always',
-            named: 'never',
-            asyncArrow: 'always',
-          },
-        ],
-        '@typescript-eslint/member-delimiter-style': [
-          'error',
-          {
-            multiline: {
-              delimiter: 'semi',
-              requireLast: true,
-            },
-            singleline: {
-              delimiter: 'semi',
-              requireLast: false,
-            },
-            multilineDetection: 'brackets',
-          },
-        ],
         'promise/always-return': 'off',
-        '@typescript-eslint/object-curly-spacing': ['error', 'always'],
-        '@typescript-eslint/quotes': ['error', 'single', { avoidEscape: true }],
         '@typescript-eslint/prefer-string-starts-ends-with': 'error',
-        '@typescript-eslint/semi': ['error', 'always'],
         '@typescript-eslint/strict-boolean-expressions': 'off',
-        '@typescript-eslint/comma-dangle': ['error', 'always-multiline'],
         '@typescript-eslint/restrict-template-expressions': ['error', { allowAny: true }],
         '@typescript-eslint/no-unused-vars': ['error'],
         '@typescript-eslint/consistent-type-imports': [

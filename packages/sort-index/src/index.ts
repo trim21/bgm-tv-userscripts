@@ -1,7 +1,17 @@
 import * as $ from 'jquery';
-import { addStyle } from '@trim21/script-utils';
 
 import style from './style.css';
+
+function addStyle(css: string): void {
+  'use strict';
+  const head = document.getElementsByTagName('head')[0];
+  if (head) {
+    const style = document.createElement('style');
+    style.setAttribute('type', 'text/css');
+    style.textContent = css;
+    head.appendChild(style);
+  }
+}
 
 addStyle(style);
 
@@ -119,16 +129,16 @@ function bangumiSortIndex(): void {
       }
 
       switch (mode) {
-        case 'smart':
-          smart(subjects);
-          break;
-        case 'normal':
-          normal();
-          break;
-        default:
-          mode = 'normal';
-          localStorage.setItem(configKey, mode);
-          normal();
+      case 'smart':
+        smart(subjects);
+        break;
+      case 'normal':
+        normal();
+        break;
+      default:
+        mode = 'normal';
+        localStorage.setItem(configKey, mode);
+        normal();
       }
 
       $(`#prgManagerOrder li[data-mode="${mode}"]`).find('a').addClass('focus');
