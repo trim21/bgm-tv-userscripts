@@ -24,7 +24,7 @@ module.exports = {
     'name:zh': '排序首页条目',
     namespace: 'https://trim21.me/',
     description,
-    version: '0.0.9',
+    version: '0.0.10',
     author,
     source: repository.url,
     supportURL: repository.url + '/issues',

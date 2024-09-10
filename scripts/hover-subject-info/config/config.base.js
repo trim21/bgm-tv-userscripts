@@ -16,7 +16,7 @@ module.exports = {
     'name:zh': '鼠标指向条目链接时显示更多信息',
     namespace: 'https://trim21.me/',
     description: '鼠标指向条目链接时弹出一个悬浮窗显示条目信息',
-    version: '0.2.17',
+    version: '0.2.18',
     source: repository.url,
     supportURL: repository.url + '/issues',
     license: 'MIT',
