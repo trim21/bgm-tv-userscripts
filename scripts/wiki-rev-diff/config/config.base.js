@@ -1,7 +1,6 @@
 const path = require('path');
 
-const { version, dependencies } = require('../package.json');
-const { repository } = require('../../../package.json');
+const { dependencies, repository } = require('../../../package.json');
 
 module.exports = {
   entry: path.join(__dirname, '../src/index.ts'),
@@ -16,11 +15,11 @@ module.exports = {
     'name:zh': 'bangumi 显示 条目 wiki 版本差异',
     'name:zh-CN': 'bangumi 显示 条目 wiki 版本差异',
     description:
-      '显示条目信息版本差异, 可以在 https://github.com/trim21/bgm-tv-userscripts/tree/master/packages/wiki-rev-diff#readme 查看效果图',
+      '显示条目信息版本差异, 可以在 https://github.com/trim21/bgm-tv-userscripts/tree/master/scripts/wiki-rev-diff#readme 查看效果图',
     'description:zh-CN':
-      '显示条目信息版本差异, 可以在 https://github.com/trim21/bgm-tv-userscripts/tree/master/packages/wiki-rev-diff#readme 查看效果图',
+      '显示条目信息版本差异, 可以在 https://github.com/trim21/bgm-tv-userscripts/tree/master/scripts/wiki-rev-diff#readme 查看效果图',
     namespace: 'https://trim21.me/',
-    version,
+    version: '0.2.22',
     source: repository.url,
     supportURL: repository.url + '/issues',
     license: 'MIT',

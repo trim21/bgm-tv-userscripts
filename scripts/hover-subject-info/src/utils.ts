@@ -7,6 +7,10 @@ export function getSubjectID(s: string | undefined): number | undefined {
 
   if (s.startsWith('/')) {
     s = 'https://bgm.tv' + s;
+  } else {
+    if (!/^https?:\/\/(bgm\.tv|chii\.in|bangumi\.tv)\//.test(s)) {
+      return;
+    }
   }
 
   const u = new URL(s);

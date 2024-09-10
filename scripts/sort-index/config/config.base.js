@@ -1,6 +1,6 @@
 const path = require('path');
 
-const { version, dependencies, description } = require('../package.json');
+const { dependencies, description } = require('../../../package.json');
 const { repository, author } = require('../../../package.json');
 
 module.exports = {
@@ -24,7 +24,7 @@ module.exports = {
     'name:zh': '排序首页条目',
     namespace: 'https://trim21.me/',
     description,
-    version,
+    version: '0.0.9',
     author,
     source: repository.url,
     supportURL: repository.url + '/issues',

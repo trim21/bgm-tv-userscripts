@@ -13,6 +13,6 @@
     "noEmit": false,
     "allowJs": false
   },
-  "include": ["./packages/**/*"],
+  "include": ["./scripts/**/*"],
   "exclude": ["node_modules", "**/*.spec.ts", "./config/", "*/config/**"]
 }
