@@ -1,6 +1,6 @@
 {
   "name": "@script/wiki-rev-diff",
-  "version": "0.2.21",
+  "version": "0.2.22",
   "scripts": {
     "build": "webpack --config config/webpack.config.prod.js"
   },
