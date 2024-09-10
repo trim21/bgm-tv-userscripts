@@ -12,7 +12,7 @@
     "jquery": "3.7.1"
   },
   "devDependencies": {
-    "@types/jquery": "3.5.29",
+    "@types/jquery": "3.5.30",
     "raw-loader": "4.0.2",
     "webpack": "5.94.0"
   }

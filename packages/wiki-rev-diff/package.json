@@ -12,9 +12,9 @@
     "lodash": "4.17.21"
   },
   "devDependencies": {
-    "@types/diff": "5.0.9",
+    "@types/diff": "5.2.2",
     "@types/greasemonkey": "4.0.7",
-    "@types/jquery": "3.5.29",
-    "@types/lodash": "4.17.0"
+    "@types/jquery": "3.5.30",
+    "@types/lodash": "4.17.7"
   }
 }
