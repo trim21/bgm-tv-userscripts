@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ['plugin:import/recommended', 'plugin:import/typescript', 'plugin:promise/recommended'],
+  extends: ['plugin:import/recommended', 'plugin:import/typescript', 'plugin:promise/recommended', 'prettier'],
   ignorePatterns: ['**/dist/**/*.js', '**/*.spec.ts'],
   overrides: [
     {
