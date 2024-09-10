@@ -86,7 +86,6 @@ ${tags}
 }
 
 function main(): void {
-  console.log(GM.info.script.name);
   $('head').append(style);
 
   $('a').each((i, e) => {
@@ -108,6 +107,11 @@ function hoverHandler(this: HTMLElement): void {
     return;
   }
 
+  const subjectID = getSubjectID(href);
+  if (!subjectID) {
+    return;
+  }
+
   const offset = e.offset() ?? { left: 0, top: 0 };
   $('body').append('<div id="popup"> loading </div>');
 
@@ -117,11 +121,6 @@ function hoverHandler(this: HTMLElement): void {
     position: 'absolute',
     'z-index': 1000,
   });
-
-  const subjectID = getSubjectID(href);
-  if (!subjectID) {
-    return;
-  }
 
   (async function () {
     const res = await getWithCache(subjectID);
@@ -146,6 +145,7 @@ interface Item {
   res: Response;
   createdAt: number;
 }
+
 const c: Record<number, Item> = {};
 
 async function getWithCache(subjectID: number): Promise<Response> {

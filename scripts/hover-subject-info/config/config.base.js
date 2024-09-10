@@ -23,6 +23,7 @@ module.exports = {
     match,
     require: [`https://cdn.jsdelivr.net/npm/jquery@${dependencies.jquery}/dist/jquery.min.js`],
     'run-at': 'document-end',
+    grant: 'GM_info',
   },
 
   externals: {

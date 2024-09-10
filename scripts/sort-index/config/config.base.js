@@ -32,5 +32,6 @@ module.exports = {
     include: String.raw`/^https://(bangumi\.tv|bgm\.tv|chii\.in)/[^/]*/`,
     require: [`https://cdn.jsdelivr.net/npm/jquery@${dependencies.jquery}/dist/jquery.min.js`],
     'run-at': 'document-end',
+    grant: 'GM_info',
   },
 };
