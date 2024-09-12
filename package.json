@@ -75,7 +75,7 @@
     "raw-loader": "4.0.2",
     "semver": "7.6.3",
     "ts-jest": "29.2.5",
-    "typescript": "~5.5.4",
+    "typescript": "5.5.4",
     "userscript-metadata-webpack-plugin": "0.4.0",
     "webpack": "5.94.0",
     "webpack-cli": "5.1.4",
