@@ -102,7 +102,7 @@ function escapeInvisible(s) {
     if (u === undefined) {
       return '';
     }
-    return '\\U' + u.toString(16).toUpperCase();
+    return '\\u' + u.toString(16).toLowerCase();
   });
 }
 function diff(revOld, revNew, style) {
