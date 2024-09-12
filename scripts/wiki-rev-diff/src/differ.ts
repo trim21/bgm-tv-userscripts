@@ -4,10 +4,10 @@ import type { OutputFormatType } from 'diff2html/lib/types';
 
 import type { Commit } from './model';
 
-const pattern = /(?![\t\r\n])(\p{Cf}|\p{Cc})/u;
+const pattern = /(?![\t\r\n])(\p{Cf}|\p{Cc})/gu;
 
 function escapeInvisible(s: string): string {
-  return s.replace(pattern, function (match): string {
+  return s.replaceAll(pattern, function (match): string {
     const u = match.codePointAt(0);
     if (u === undefined) {
       return '';
