@@ -19,7 +19,7 @@ module.exports = {
     'description:zh-CN':
       '显示条目信息版本差异, 可以在 https://github.com/trim21/bgm-tv-userscripts/tree/master/scripts/wiki-rev-diff#readme 查看效果图',
     namespace: 'https://trim21.me/',
-    version: '0.2.24',
+    version: '0.2.25',
     source: repository.url,
     supportURL: repository.url + '/issues',
     license: 'MIT',
