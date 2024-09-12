@@ -12,7 +12,7 @@ function escapeInvisible(s: string): string {
     if (u === undefined) {
       return '';
     }
-    return '\\U' + u.toString(16).toUpperCase();
+    return '\\u' + u.toString(16).toLowerCase();
   });
 }
 
