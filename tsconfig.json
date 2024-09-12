@@ -10,7 +10,7 @@
     "allowImportingTsExtensions": true,
     "strict": true,
     "strictNullChecks": true,
-    "noEmit": false,
+    "noEmit": true,
     "allowJs": false
   },
   "include": ["./scripts/**/*"],
