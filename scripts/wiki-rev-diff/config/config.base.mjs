@@ -1,6 +1,6 @@
 import * as path from 'node:path';
 
-import pkg  from '../../../package.json' assert { type: 'json' };
+import pkg from '../../../package.json' with { type: 'json' };
 
 export const entry = path.join(import.meta.dirname, '../src/index.ts');
 

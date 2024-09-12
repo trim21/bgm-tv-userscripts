@@ -29,16 +29,7 @@ module.exports = {
         'plugin:@typescript-eslint/recommended-requiring-type-checking',
       ],
       rules: {
-        'comma-dangle': [
-          'error',
-          {
-            arrays: 'always-multiline',
-            objects: 'always-multiline',
-            imports: 'always-multiline',
-            exports: 'always-multiline',
-            functions: 'ignore',
-          },
-        ],
+        'comma-dangle': 'off',
         'promise/always-return': 'off',
         '@typescript-eslint/prefer-string-starts-ends-with': 'error',
         '@typescript-eslint/strict-boolean-expressions': 'off',
@@ -54,9 +45,12 @@ module.exports = {
       },
     },
   ],
+  parser: '@babel/eslint-parser',
   parserOptions: {
-    sourceType: 'module',
-    ecmaVersion: 2021,
+    requireConfigFile: false,
+    babelOptions: {
+      plugins: ['@babel/plugin-syntax-import-assertions'],
+    },
   },
   rules: {
     'import/no-unresolved': 'error',
@@ -65,8 +59,6 @@ module.exports = {
     'array-element-newline': ['error', 'consistent'],
     'array-bracket-newline': ['error', 'consistent'],
     'promise/catch-or-return': ['error', { allowFinally: true }],
-    quotes: ['error', 'single', { avoidEscape: true }],
-
     'space-before-function-paren': [
       'error',
       {
@@ -76,22 +68,7 @@ module.exports = {
       },
     ],
     semi: ['error', 'always'],
-    'comma-dangle': [
-      'error',
-      {
-        arrays: 'always-multiline',
-        objects: 'always-multiline',
-        imports: 'always-multiline',
-        exports: 'always-multiline',
-        functions: 'ignore',
-      },
-    ],
-    'import/no-unused-modules': [
-      1,
-      {
-        unusedExports: true,
-      },
-    ],
+    'comma-dangle': 'off',
     'no-unused-vars': 'off',
     'import/no-useless-path-segments': 'error',
     'import/order': [

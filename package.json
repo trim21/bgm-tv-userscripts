@@ -14,7 +14,7 @@
   "scripts": {
     "bump": "node bump.js",
     "tsc": "tsc --noEmit",
-    "lint": "eslint --ext cjs,js,ts ./",
+    "lint": "eslint --ext cjs,js,ts,mjs ./",
     "format": "prettier --list-different  -w .",
     "format:check": "prettier --check .",
     "test": "jest",
@@ -30,8 +30,8 @@
     "url": "https://github.com/trim21/bgm-tv-userscripts"
   },
   "lint-staged": {
-    "*.{cjs,js,ts,json,yml,yaml}": "prettier --write",
-    "*.{cjs,js,ts}": "eslint --fix"
+    "*.{cjs,js,mjs,ts,json,yml,yaml}": "prettier --write",
+    "*.{cjs,js,mjs,ts}": "eslint --fix"
   },
   "dependencies": {
     "diff": "7.0.0",
@@ -48,6 +48,8 @@
   "devDependencies": {
     "@actions/exec": "1.1.1",
     "@babel/core": "7.25.2",
+    "@babel/eslint-parser": "^7.25.1",
+    "@babel/plugin-syntax-import-assertions": "^7.25.6",
     "@babel/preset-env": "7.25.4",
     "@babel/preset-typescript": "7.24.7",
     "@jest/globals": "29.7.0",
@@ -73,7 +75,7 @@
     "raw-loader": "4.0.2",
     "semver": "7.6.3",
     "ts-jest": "29.2.5",
-    "typescript": "5.6.2",
+    "typescript": "~5.5.4",
     "userscript-metadata-webpack-plugin": "0.4.0",
     "webpack": "5.94.0",
     "webpack-cli": "5.1.4",
