@@ -5,7 +5,7 @@
 // @description         显示条目信息版本差异, 可以在 https://github.com/trim21/bgm-tv-userscripts/tree/master/scripts/wiki-rev-diff#readme 查看效果图
 // @description:zh-CN   显示条目信息版本差异, 可以在 https://github.com/trim21/bgm-tv-userscripts/tree/master/scripts/wiki-rev-diff#readme 查看效果图
 // @namespace           https://trim21.me/
-// @version             0.2.25
+// @version             0.2.26
 // @source              https://github.com/trim21/bgm-tv-userscripts
 // @supportURL          https://github.com/trim21/bgm-tv-userscripts/issues
 // @license             MIT
@@ -95,9 +95,9 @@ const configKey = 'view-mode';
 const external_Diff_namespaceObject = Diff;
 ;// CONCATENATED MODULE: ./scripts/wiki-rev-diff/src/differ.ts
 
-const pattern = /(?![\t\r\n])(\p{Cf}|\p{Cc})/u;
+const pattern = /(?![\t\r\n])(\p{Cf}|\p{Cc})/gu;
 function escapeInvisible(s) {
-  return s.replace(pattern, function (match) {
+  return s.replaceAll(pattern, function (match) {
     const u = match.codePointAt(0);
     if (u === undefined) {
       return '';
