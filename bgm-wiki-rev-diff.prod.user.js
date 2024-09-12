@@ -95,6 +95,16 @@ const configKey = 'view-mode';
 const external_Diff_namespaceObject = Diff;
 ;// CONCATENATED MODULE: ./scripts/wiki-rev-diff/src/differ.ts
 
+const pattern = /(?![\t\r\n])(\p{Cf}|\p{Cc})/u;
+function escapeInvisible(s) {
+  return s.replace(pattern, function (match) {
+    const u = match.codePointAt(0);
+    if (u === undefined) {
+      return '';
+    }
+    return '\\U' + u.toString(16).toUpperCase();
+  });
+}
 function diff(revOld, revNew, style) {
   const options = {
     context: 100
@@ -108,19 +118,19 @@ function titleDiff(rev1, rev2, options) {
   if (rev1.details.title === rev2.details.title) {
     return '';
   }
-  return external_Diff_namespaceObject.createPatch('条目名', rev1.details.title, rev2.details.title, rev1.rev.date, rev2.rev.date, options);
+  return external_Diff_namespaceObject.createPatch('条目名', escapeInvisible(rev1.details.title), escapeInvisible(rev2.details.title), rev1.rev.date, rev2.rev.date, options);
 }
 function infoDiff(rev1, rev2, options) {
   if (rev1.details.rawInfo === rev2.details.rawInfo) {
     return '';
   }
-  return external_Diff_namespaceObject.createPatch('相关信息', rev1.details.rawInfo, rev2.details.rawInfo, rev1.rev.date, rev2.rev.date, options);
+  return external_Diff_namespaceObject.createPatch('相关信息', escapeInvisible(rev1.details.rawInfo), escapeInvisible(rev2.details.rawInfo), rev1.rev.date, rev2.rev.date, options);
 }
 function descriptionDiff(rev1, rev2, options) {
   if (rev1.details.description === rev2.details.description) {
     return '';
   }
-  return external_Diff_namespaceObject.createPatch('简介', rev1.details.description, rev2.details.description, rev1.rev.date, rev2.rev.date, options);
+  return external_Diff_namespaceObject.createPatch('简介', escapeInvisible(rev1.details.description), escapeInvisible(rev2.details.description), rev1.rev.date, rev2.rev.date, options);
 }
 ;// CONCATENATED MODULE: ./scripts/wiki-rev-diff/src/utils.ts
 function getCookie(name) {
