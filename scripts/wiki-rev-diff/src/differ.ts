@@ -4,6 +4,18 @@ import type { OutputFormatType } from 'diff2html/lib/types';
 
 import type { Commit } from './model';
 
+const pattern = /(?![\t\r\n])(\p{Cf}|\p{Cc})/u;
+
+function escapeInvisible(s: string): string {
+  return s.replace(pattern, function (match): string {
+    const u = match.codePointAt(0);
+    if (u === undefined) {
+      return '';
+    }
+    return '\\U' + u.toString(16).toUpperCase();
+  });
+}
+
 export function diff(revOld: Commit, revNew: Commit, style: OutputFormatType): string {
   const options: PatchOptions = { context: 100 };
   if (style === 'line-by-line') {
@@ -20,7 +32,14 @@ function titleDiff(rev1: Commit, rev2: Commit, options: PatchOptions): string {
   if (rev1.details.title === rev2.details.title) {
     return '';
   }
-  return Diff.createPatch('条目名', rev1.details.title, rev2.details.title, rev1.rev.date, rev2.rev.date, options);
+  return Diff.createPatch(
+    '条目名',
+    escapeInvisible(rev1.details.title),
+    escapeInvisible(rev2.details.title),
+    rev1.rev.date,
+    rev2.rev.date,
+    options,
+  );
 }
 
 function infoDiff(rev1: Commit, rev2: Commit, options: PatchOptions): string {
@@ -29,8 +48,8 @@ function infoDiff(rev1: Commit, rev2: Commit, options: PatchOptions): string {
   }
   return Diff.createPatch(
     '相关信息',
-    rev1.details.rawInfo,
-    rev2.details.rawInfo,
+    escapeInvisible(rev1.details.rawInfo),
+    escapeInvisible(rev2.details.rawInfo),
     rev1.rev.date,
     rev2.rev.date,
     options,
@@ -43,8 +62,8 @@ function descriptionDiff(rev1: Commit, rev2: Commit, options: PatchOptions): str
   }
   return Diff.createPatch(
     '简介',
-    rev1.details.description,
-    rev2.details.description,
+    escapeInvisible(rev1.details.description),
+    escapeInvisible(rev2.details.description),
     rev1.rev.date,
     rev2.rev.date,
     options,
