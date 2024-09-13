@@ -4,7 +4,7 @@ import type { OutputFormatType } from 'diff2html/lib/types';
 
 import type { Commit } from './model';
 
-const pattern = /(?![\t\r\n])(\p{Cf}|\p{Cc})/gu;
+const pattern = /(?![\t\r\n])(\p{Cf}|\p{Cc}|\p{Co})/gu;
 
 function escapeInvisible(s: string): string {
   return s.replaceAll(pattern, function (match): string {
