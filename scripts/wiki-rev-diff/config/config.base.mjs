@@ -20,7 +20,7 @@ export const metadata = {
   'description:zh-CN':
     '显示条目信息版本差异, 可以在 https://github.com/trim21/bgm-tv-userscripts/tree/master/scripts/wiki-rev-diff#readme 查看效果图',
   namespace: 'https://trim21.me/',
-  version: '0.2.26',
+  version: '0.2.27',
   source: pkg.repository.url,
   supportURL: pkg.repository.url + '/issues',
   license: 'MIT',
