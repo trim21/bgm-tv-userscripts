@@ -1,3 +1,3 @@
-![image](https://tvax4.sinaimg.cn/large/003t3Pc8ly1gur6r86f04j614i0txqlm02.jpg)
+![image](https://raw.githubusercontent.com/trim21/bgm-tv-userscripts/refs/heads/master/scripts/wiki-rev-diff/preview.jpg)
 
 install: <https://greasyfork.org/zh-CN/scripts/401921-bgm-wiki-rev-differ>
