@@ -25,9 +25,9 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	"use strict";
 
-;// CONCATENATED MODULE: external "$"
+;// external "$"
 const external_$_namespaceObject = $;
-;// CONCATENATED MODULE: ./scripts/hover-subject-info/src/utils.ts
+;// ./scripts/hover-subject-info/src/utils.ts
 function getSubjectID(s) {
   if (!s?.length) return undefined;
   if (s.startsWith('#')) {
@@ -53,7 +53,7 @@ function getSubjectID(s) {
   }
   return undefined;
 }
-;// CONCATENATED MODULE: ./scripts/hover-subject-info/src/index.ts
+;// ./scripts/hover-subject-info/src/index.ts
 
 
 const style = `

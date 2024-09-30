@@ -51,10 +51,10 @@
 /******/ 	
 /************************************************************************/
 
-;// CONCATENATED MODULE: external "$"
+;// external "$"
 const external_$_namespaceObject = $;
 var external_$_default = /*#__PURE__*/__webpack_require__.n(external_$_namespaceObject);
-;// CONCATENATED MODULE: ./scripts/fetch-tvdb-series/src/index.ts
+;// ./scripts/fetch-tvdb-series/src/index.ts
 
 function main() {
   const params = new URLSearchParams(document.location.search);

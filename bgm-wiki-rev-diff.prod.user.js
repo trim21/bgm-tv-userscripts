@@ -28,11 +28,11 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	"use strict";
 
-;// CONCATENATED MODULE: external "$"
+;// external "$"
 const external_$_namespaceObject = $;
-;// CONCATENATED MODULE: external "_"
+;// external "_"
 const external_namespaceObject = _;
-;// CONCATENATED MODULE: ./scripts/wiki-rev-diff/src/parser.ts
+;// ./scripts/wiki-rev-diff/src/parser.ts
 
 function parseRevDetails(html) {
   const jq = external_$_namespaceObject(html);
@@ -87,13 +87,13 @@ function getRevInfo(revID) {
     }
   }
 }
-;// CONCATENATED MODULE: external "Diff2Html"
+;// external "Diff2Html"
 const external_Diff2Html_namespaceObject = Diff2Html;
-;// CONCATENATED MODULE: ./scripts/wiki-rev-diff/src/config.ts
+;// ./scripts/wiki-rev-diff/src/config.ts
 const configKey = 'view-mode';
-;// CONCATENATED MODULE: external "Diff"
+;// external "Diff"
 const external_Diff_namespaceObject = Diff;
-;// CONCATENATED MODULE: ./scripts/wiki-rev-diff/src/differ.ts
+;// ./scripts/wiki-rev-diff/src/differ.ts
 
 const pattern = /(?![\t\r\n])(\p{Cf}|\p{Cc}|\p{Co})/gu;
 function escapeInvisible(s) {
@@ -132,14 +132,14 @@ function descriptionDiff(rev1, rev2, options) {
   }
   return external_Diff_namespaceObject.createPatch('简介', escapeInvisible(rev1.details.description), escapeInvisible(rev2.details.description), rev1.rev.date, rev2.rev.date, options);
 }
-;// CONCATENATED MODULE: ./scripts/wiki-rev-diff/src/utils.ts
+;// ./scripts/wiki-rev-diff/src/utils.ts
 function getCookie(name) {
   const value = '; ' + document.cookie;
   const parts = value.split('; ' + name + '=');
   if (parts.length === 2) return parts.pop()?.split(';').shift();
   return undefined;
 }
-;// CONCATENATED MODULE: ./scripts/wiki-rev-diff/src/ui.ts
+;// ./scripts/wiki-rev-diff/src/ui.ts
 
 
 
@@ -171,14 +171,14 @@ function clear() {
   external_$_namespaceObject('#show-diff-view-side-by-side').html('');
   show('');
 }
-;// CONCATENATED MODULE: ./scripts/wiki-rev-diff/src/model.ts
+;// ./scripts/wiki-rev-diff/src/model.ts
 class Commit {
   constructor(rev, detail) {
     this.rev = rev;
     this.details = detail;
   }
 }
-;// CONCATENATED MODULE: ./scripts/wiki-rev-diff/src/compare.ts
+;// ./scripts/wiki-rev-diff/src/compare.ts
 
 
 
@@ -218,7 +218,7 @@ async function fetchRev(rev) {
   }
   return _cache[rev.id];
 }
-;// CONCATENATED MODULE: ./scripts/wiki-rev-diff/src/index.ts
+;// ./scripts/wiki-rev-diff/src/index.ts
 
 
 
