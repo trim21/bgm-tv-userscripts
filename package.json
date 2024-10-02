@@ -38,7 +38,7 @@
     "diff2html": "3.4.48",
     "jquery": "3.7.1",
     "lodash": "4.17.21",
-    "lodash-es": "^4.17.21"
+    "lodash-es": "4.17.21"
   },
   "browserslist": [
     "chrome >= 102",
