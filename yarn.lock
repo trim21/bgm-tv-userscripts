@@ -2904,7 +2904,7 @@ __metadata:
     jquery: "npm:3.7.1"
     lint-staged: "npm:15.2.10"
     lodash: "npm:4.17.21"
-    lodash-es: "npm:^4.17.21"
+    lodash-es: "npm:4.17.21"
     prettier: "npm:3.3.3"
     raw-loader: "npm:4.0.2"
     semver: "npm:7.6.3"
@@ -5831,7 +5831,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lodash-es@npm:^4.17.21":
+"lodash-es@npm:4.17.21":
   version: 4.17.21
   resolution: "lodash-es@npm:4.17.21"
   checksum: 10/03f39878ea1e42b3199bd3f478150ab723f93cc8730ad86fec1f2804f4a07c6e30deaac73cad53a88e9c3db33348bb8ceeb274552390e7a75d7849021c02df43
