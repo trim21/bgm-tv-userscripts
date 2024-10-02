@@ -5,7 +5,7 @@
 // @description         显示条目信息版本差异, 可以在 https://github.com/trim21/bgm-tv-userscripts/tree/master/scripts/wiki-rev-diff#readme 查看效果图
 // @description:zh-CN   显示条目信息版本差异, 可以在 https://github.com/trim21/bgm-tv-userscripts/tree/master/scripts/wiki-rev-diff#readme 查看效果图
 // @namespace           https://trim21.me/
-// @version             0.2.27
+// @version             0.2.28
 // @source              https://github.com/trim21/bgm-tv-userscripts
 // @supportURL          https://github.com/trim21/bgm-tv-userscripts/issues
 // @license             MIT
