@@ -22,24 +22,25 @@ export function diff(revOld: Commit, revNew: Commit, style: OutputFormatType): s
     options.context = 4;
   }
   return [
-    titleDiff(revOld, revNew, options),
+    oneLineDiff('标题', revOld.details.title, revNew.details.title, revOld.rev.date, revNew.rev.date, options),
+    oneLineDiff('标签', revOld.details.metaTags, revNew.details.metaTags, revOld.rev.date, revNew.rev.date, options),
     infoDiff(revOld, revNew, options),
     descriptionDiff(revOld, revNew, options),
   ].join('\n');
 }
 
-function titleDiff(rev1: Commit, rev2: Commit, options: PatchOptions): string {
-  if (rev1.details.title === rev2.details.title) {
+function oneLineDiff(
+  name: string,
+  s1: string,
+  s2: string,
+  oldDate: string,
+  newDate: string,
+  options: PatchOptions,
+): string {
+  if (s1 === s2) {
     return '';
   }
-  return Diff.createPatch(
-    '条目名',
-    escapeInvisible(rev1.details.title),
-    escapeInvisible(rev2.details.title),
-    rev1.rev.date,
-    rev2.rev.date,
-    options,
-  );
+  return Diff.createPatch(name, escapeInvisible(s1), escapeInvisible(s2), oldDate, newDate, options);
 }
 
 function infoDiff(rev1: Commit, rev2: Commit, options: PatchOptions): string {

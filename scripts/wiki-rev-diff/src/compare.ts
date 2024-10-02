@@ -38,6 +38,7 @@ async function fetchRev(rev: Rev | undefined): Promise<Commit> {
         title: '',
         rawInfo: '',
         description: '',
+        metaTags: '',
       },
     );
   }

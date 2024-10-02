@@ -2,6 +2,7 @@ export interface RevDetail {
   title: string;
   rawInfo: string;
   description: string;
+  metaTags: string;
 }
 
 export interface Rev {

@@ -16,11 +16,19 @@ export async function render(revOld: Commit, revNew: Commit): Promise<void> {
 
   const patch = diff(revOld, revNew, outputFormat);
 
-  const html = Diff2Html.html(patch, { outputFormat, colorScheme });
+  const html = Diff2Html.html(patch, {
+    outputFormat,
+    colorScheme,
+    drawFileList: false,
+  });
   const elID = `show-diff-view-${outputFormat}`;
 
   show('');
-  $(`#${elID}`).html(html);
+  if (patch.trim()) {
+    $(`#${elID}`).html(html);
+  } else {
+    $(`#${elID}`).html('<h1>选中的版本之间没有修改</h1>');
+  }
 
   document.getElementById(elID)?.scrollIntoView({
     behavior: 'smooth',

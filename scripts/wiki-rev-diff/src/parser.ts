@@ -7,10 +7,12 @@ export function parseRevDetails(html: string): RevDetail {
   const rawInfo = jq.find('#subject_infobox').val()?.toString() ?? '';
   const title = jq.find('input[name="subject_title"]').val()?.toString() ?? '';
   const description = jq.find('textarea#subject_summary').val()?.toString() ?? '';
+  const metaTags = jq.find('input#tags').val()?.toString() ?? '';
   return {
     title,
     rawInfo,
     description,
+    metaTags,
   };
 }
 
