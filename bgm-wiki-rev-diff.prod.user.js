@@ -335,9 +335,9 @@ var root = _freeGlobal || freeSelf || Function('return this')();
 
 
 /** Built-in value references. */
-var Symbol = _root.Symbol;
+var _Symbol_Symbol = _root.Symbol;
 
-/* harmony default export */ const _Symbol = (Symbol);
+/* harmony default export */ const _Symbol = (_Symbol_Symbol);
 
 ;// ./node_modules/lodash-es/_getRawTag.js
 
