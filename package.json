@@ -54,7 +54,7 @@
     "@babel/preset-env": "7.26.0",
     "@babel/preset-typescript": "7.26.0",
     "@jest/globals": "29.7.0",
-    "@types/diff": "5.2.3",
+    "@types/diff": "6.0.0",
     "@types/greasemonkey": "4.0.7",
     "@types/hogan.js": "3.0.5",
     "@types/jquery": "3.5.32",
