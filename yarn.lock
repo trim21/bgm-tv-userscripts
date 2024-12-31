@@ -2829,7 +2829,7 @@ __metadata:
     "@typescript-eslint/parser": "npm:8.16.0"
     babel-loader: "npm:9.2.1"
     diff: "npm:7.0.0"
-    diff2html: "npm:3.4.48"
+    diff2html: "npm:3.4.51"
     eslint: "npm:8.57.1"
     eslint-config-prettier: "npm:9.1.0"
     eslint-plugin-import: "npm:2.31.0"
@@ -3348,28 +3348,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"diff2html@npm:3.4.48":
-  version: 3.4.48
-  resolution: "diff2html@npm:3.4.48"
+"diff2html@npm:3.4.51":
+  version: 3.4.51
+  resolution: "diff2html@npm:3.4.51"
   dependencies:
-    diff: "npm:5.1.0"
+    diff: "npm:^7.0.0"
     highlight.js: "npm:11.9.0"
     hogan.js: "npm:3.0.2"
   dependenciesMeta:
     highlight.js:
       optional: true
-  checksum: 10/74384c170c4545e5e2b31319386d61f1442a342bdaf5d1a65cb70bd5d6402ccb9a465e3f95c37426b55c56e20926d2b571c0ef45b482a5f805814b2ef81f98ea
+  checksum: 10/5c9582bc01c41f9f91baf4791f3f5c9a16703b369f83aec87188b76db729f753a80c7db1f5c24a42679267a960a1dc153933777a6c13105de80e584dbbb33322
   languageName: node
   linkType: hard
 
-"diff@npm:5.1.0":
-  version: 5.1.0
-  resolution: "diff@npm:5.1.0"
-  checksum: 10/f4557032a98b2967fe27b1a91dfcf8ebb6b9a24b1afe616b5c2312465100b861e9b8d4da374be535f2d6b967ce2f53826d7f6edc2a0d32b2ab55abc96acc2f9d
-  languageName: node
-  linkType: hard
-
-"diff@npm:7.0.0":
+"diff@npm:7.0.0, diff@npm:^7.0.0":
   version: 7.0.0
   resolution: "diff@npm:7.0.0"
   checksum: 10/e9b8e48d054c9c0c093c65ce8e2637af94b35f2427001607b14e5e0589e534ea3413a7f91ebe6d7c5a1494ace49cb7c7c3972f442ddd96a4767ff091999a082e
