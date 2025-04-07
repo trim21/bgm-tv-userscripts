@@ -2810,7 +2810,7 @@ __metadata:
     ts-jest: "npm:29.3.1"
     typescript: "npm:5.8.3"
     userscript-metadata-webpack-plugin: "npm:0.4.2"
-    webpack: "npm:5.98.0"
+    webpack: "npm:5.99.0"
     webpack-cli: "npm:6.0.1"
     webpack-livereload-plugin: "npm:3.0.2"
     webpack-merge: "npm:6.0.1"
@@ -7836,9 +7836,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"webpack@npm:5.98.0":
-  version: 5.98.0
-  resolution: "webpack@npm:5.98.0"
+"webpack@npm:5.99.0":
+  version: 5.99.0
+  resolution: "webpack@npm:5.99.0"
   dependencies:
     "@types/eslint-scope": "npm:^3.7.7"
     "@types/estree": "npm:^1.0.6"
@@ -7868,7 +7868,7 @@ __metadata:
       optional: true
   bin:
     webpack: bin/webpack.js
-  checksum: 10/eb16a58b3eb02bfb538c7716e28d7f601a03922e975c74007b41ba5926071ae70302d9acae9800fbd7ddd0c66a675b1069fc6ebb88123b87895a52882e2dc06a
+  checksum: 10/cc3d37cd266aef26c96d27bda12c7b9d246e06b9115efe1c814db83dbd0076f2b4de8c60df88a8db7472cd06029b069dd669eda08e1b515118d65e31ae3bc022
   languageName: node
   linkType: hard
 
