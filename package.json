@@ -34,7 +34,7 @@
     "*.{cjs,js,mjs,ts}": "eslint --fix"
   },
   "dependencies": {
-    "diff": "7.0.0",
+    "diff": "8.0.0",
     "diff2html": "3.4.51",
     "jquery": "3.7.1",
     "lodash": "4.17.21",
@@ -54,7 +54,7 @@
     "@babel/preset-env": "7.28.0",
     "@babel/preset-typescript": "7.27.1",
     "@jest/globals": "30.0.5",
-    "@types/diff": "7.0.2",
+    "@types/diff": "8.0.0",
     "@types/greasemonkey": "4.0.7",
     "@types/hogan.js": "3.0.5",
     "@types/jquery": "3.5.32",
@@ -76,7 +76,7 @@
     "raw-loader": "4.0.2",
     "semver": "7.7.2",
     "ts-jest": "29.4.0",
-    "typescript": "5.9.2",
+    "typescript": "5.8.2",
     "userscript-metadata-webpack-plugin": "0.4.2",
     "webpack": "5.101.0",
     "webpack-cli": "6.0.1",

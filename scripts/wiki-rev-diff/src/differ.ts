@@ -1,5 +1,5 @@
 import * as Diff from 'diff';
-import type { PatchOptions } from 'diff';
+import type { CreatePatchOptionsNonabortable } from 'diff';
 import type { OutputFormatType } from 'diff2html/lib/types';
 
 import type { Commit } from './model';
@@ -17,7 +17,7 @@ function escapeInvisible(s: string): string {
 }
 
 export function diff(revOld: Commit, revNew: Commit, style: OutputFormatType): string {
-  const options: PatchOptions = { context: 100 };
+  const options: CreatePatchOptionsNonabortable = { context: 100 };
   if (style === 'line-by-line') {
     options.context = 4;
   }
@@ -35,7 +35,7 @@ function oneLineDiff(
   s2: string,
   oldDate: string,
   newDate: string,
-  options: PatchOptions,
+  options: CreatePatchOptionsNonabortable,
 ): string {
   if (s1 === s2) {
     return '';
@@ -43,7 +43,7 @@ function oneLineDiff(
   return Diff.createPatch(name, escapeInvisible(s1), escapeInvisible(s2), oldDate, newDate, options);
 }
 
-function infoDiff(rev1: Commit, rev2: Commit, options: PatchOptions): string {
+function infoDiff(rev1: Commit, rev2: Commit, options: CreatePatchOptionsNonabortable): string {
   if (rev1.details.rawInfo === rev2.details.rawInfo) {
     return '';
   }
@@ -57,7 +57,7 @@ function infoDiff(rev1: Commit, rev2: Commit, options: PatchOptions): string {
   );
 }
 
-function descriptionDiff(rev1: Commit, rev2: Commit, options: PatchOptions): string {
+function descriptionDiff(rev1: Commit, rev2: Commit, options: CreatePatchOptionsNonabortable): string {
   if (rev1.details.description === rev2.details.description) {
     return '';
   }

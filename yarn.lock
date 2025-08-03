@@ -1976,10 +1976,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/diff@npm:7.0.2":
-  version: 7.0.2
-  resolution: "@types/diff@npm:7.0.2"
-  checksum: 10/50965189d8eb8a03e0cdf0f0146170733bc649fcb26633ef309d2a8d3b5365f17581d1d092630487aaae40ef5bc17c174be744c4a6aa404bde66704d0a032863
+"@types/diff@npm:8.0.0":
+  version: 8.0.0
+  resolution: "@types/diff@npm:8.0.0"
+  dependencies:
+    diff: "npm:*"
+  checksum: 10/9a7210d664898457db83d463f2586b2b4883013772a84879dfd6a9e2d3c8dc3b087d90e552d28adf982ca6e8635e5a9b47c8dc21507643a01af6b0797a8cec68
   languageName: node
   linkType: hard
 
@@ -3038,7 +3040,7 @@ __metadata:
     "@babel/preset-env": "npm:7.28.0"
     "@babel/preset-typescript": "npm:7.27.1"
     "@jest/globals": "npm:30.0.5"
-    "@types/diff": "npm:7.0.2"
+    "@types/diff": "npm:8.0.0"
     "@types/greasemonkey": "npm:4.0.7"
     "@types/hogan.js": "npm:3.0.5"
     "@types/jquery": "npm:3.5.32"
@@ -3048,7 +3050,7 @@ __metadata:
     "@typescript-eslint/eslint-plugin": "npm:8.38.0"
     "@typescript-eslint/parser": "npm:8.38.0"
     babel-loader: "npm:10.0.0"
-    diff: "npm:7.0.0"
+    diff: "npm:8.0.0"
     diff2html: "npm:3.4.51"
     eslint: "npm:8.57.1"
     eslint-config-prettier: "npm:10.1.8"
@@ -3065,7 +3067,7 @@ __metadata:
     raw-loader: "npm:4.0.2"
     semver: "npm:7.7.2"
     ts-jest: "npm:29.4.0"
-    typescript: "npm:5.9.2"
+    typescript: "npm:5.8.2"
     userscript-metadata-webpack-plugin: "npm:0.4.2"
     webpack: "npm:5.101.0"
     webpack-cli: "npm:6.0.1"
@@ -3574,7 +3576,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"diff@npm:7.0.0, diff@npm:^7.0.0":
+"diff@npm:*":
+  version: 8.0.2
+  resolution: "diff@npm:8.0.2"
+  checksum: 10/82a2120d3418f97822e17a6044ccd4b99a91e26e145e8698353673d7146bd2d092bbebb79c112aae7badc7b9c526f9098cbe342f96174feb6beabdd2587b3c42
+  languageName: node
+  linkType: hard
+
+"diff@npm:8.0.0":
+  version: 8.0.0
+  resolution: "diff@npm:8.0.0"
+  checksum: 10/58e80cf85e5ac3857e168f04bb723b62fe53670bbcadaedef347a8e3b205fe4d69686bbe8c89eb9bb929c404c22cf1670c548a026abd2e246bd7eac5f5c70e69
+  languageName: node
+  linkType: hard
+
+"diff@npm:^7.0.0":
   version: 7.0.0
   resolution: "diff@npm:7.0.0"
   checksum: 10/e9b8e48d054c9c0c093c65ce8e2637af94b35f2427001607b14e5e0589e534ea3413a7f91ebe6d7c5a1494ace49cb7c7c3972f442ddd96a4767ff091999a082e
@@ -7802,23 +7818,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:5.9.2":
-  version: 5.9.2
-  resolution: "typescript@npm:5.9.2"
+"typescript@npm:5.8.2":
+  version: 5.8.2
+  resolution: "typescript@npm:5.8.2"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 10/cc2fe6c822819de5d453fa25aa9f32096bf70dde215d481faa1ad84a283dfb264e33988ed8f6d36bc803dd0b16dbe943efa311a798ef76d5b3892a05dfbfd628
+  checksum: 10/dbc2168a55d56771f4d581997be52bab5cbc09734fec976cfbaabd787e61fb4c6cf9125fd48c6f98054ce549c77ecedefc7f64252a830dd8e9c3381f61fbeb78
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@npm%3A5.9.2#optional!builtin<compat/typescript>":
-  version: 5.9.2
-  resolution: "typescript@patch:typescript@npm%3A5.9.2#optional!builtin<compat/typescript>::version=5.9.2&hash=5786d5"
+"typescript@patch:typescript@npm%3A5.8.2#optional!builtin<compat/typescript>":
+  version: 5.8.2
+  resolution: "typescript@patch:typescript@npm%3A5.8.2#optional!builtin<compat/typescript>::version=5.8.2&hash=5786d5"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 10/bd810ab13e8e557225a8b5122370385440b933e4e077d5c7641a8afd207fdc8be9c346e3c678adba934b64e0e70b0acf5eef9493ea05170a48ce22bef845fdc7
+  checksum: 10/97920a082ffc57583b1cb6bc4faa502acc156358e03f54c7fc7fdf0b61c439a717f4c9070c449ee9ee683d4cfc3bb203127c2b9794b2950f66d9d307a4ff262c
   languageName: node
   linkType: hard
 
