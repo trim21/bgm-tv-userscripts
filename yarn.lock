@@ -1976,10 +1976,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/diff@npm:7.0.2":
-  version: 7.0.2
-  resolution: "@types/diff@npm:7.0.2"
-  checksum: 10/50965189d8eb8a03e0cdf0f0146170733bc649fcb26633ef309d2a8d3b5365f17581d1d092630487aaae40ef5bc17c174be744c4a6aa404bde66704d0a032863
+"@types/diff@npm:8.0.0":
+  version: 8.0.0
+  resolution: "@types/diff@npm:8.0.0"
+  dependencies:
+    diff: "npm:*"
+  checksum: 10/9a7210d664898457db83d463f2586b2b4883013772a84879dfd6a9e2d3c8dc3b087d90e552d28adf982ca6e8635e5a9b47c8dc21507643a01af6b0797a8cec68
   languageName: node
   linkType: hard
 
@@ -3038,7 +3040,7 @@ __metadata:
     "@babel/preset-env": "npm:7.28.0"
     "@babel/preset-typescript": "npm:7.27.1"
     "@jest/globals": "npm:30.0.5"
-    "@types/diff": "npm:7.0.2"
+    "@types/diff": "npm:8.0.0"
     "@types/greasemonkey": "npm:4.0.7"
     "@types/hogan.js": "npm:3.0.5"
     "@types/jquery": "npm:3.5.32"
@@ -3571,6 +3573,13 @@ __metadata:
     highlight.js:
       optional: true
   checksum: 10/5c9582bc01c41f9f91baf4791f3f5c9a16703b369f83aec87188b76db729f753a80c7db1f5c24a42679267a960a1dc153933777a6c13105de80e584dbbb33322
+  languageName: node
+  linkType: hard
+
+"diff@npm:*":
+  version: 8.0.2
+  resolution: "diff@npm:8.0.2"
+  checksum: 10/82a2120d3418f97822e17a6044ccd4b99a91e26e145e8698353673d7146bd2d092bbebb79c112aae7badc7b9c526f9098cbe342f96174feb6beabdd2587b3c42
   languageName: node
   linkType: hard
 
