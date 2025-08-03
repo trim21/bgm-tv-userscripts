@@ -3048,7 +3048,7 @@ __metadata:
     "@typescript-eslint/eslint-plugin": "npm:8.38.0"
     "@typescript-eslint/parser": "npm:8.38.0"
     babel-loader: "npm:10.0.0"
-    diff: "npm:7.0.0"
+    diff: "npm:8.0.2"
     diff2html: "npm:3.4.51"
     eslint: "npm:8.57.1"
     eslint-config-prettier: "npm:10.1.8"
@@ -3574,7 +3574,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"diff@npm:7.0.0, diff@npm:^7.0.0":
+"diff@npm:8.0.2":
+  version: 8.0.2
+  resolution: "diff@npm:8.0.2"
+  checksum: 10/82a2120d3418f97822e17a6044ccd4b99a91e26e145e8698353673d7146bd2d092bbebb79c112aae7badc7b9c526f9098cbe342f96174feb6beabdd2587b3c42
+  languageName: node
+  linkType: hard
+
+"diff@npm:^7.0.0":
   version: 7.0.0
   resolution: "diff@npm:7.0.0"
   checksum: 10/e9b8e48d054c9c0c093c65ce8e2637af94b35f2427001607b14e5e0589e534ea3413a7f91ebe6d7c5a1494ace49cb7c7c3972f442ddd96a4767ff091999a082e
