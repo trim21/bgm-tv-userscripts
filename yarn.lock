@@ -3041,7 +3041,7 @@ __metadata:
     "@typescript-eslint/parser": "npm:8.38.0"
     babel-loader: "npm:10.0.0"
     diff: "npm:8.0.2"
-    diff2html: "npm:3.4.51"
+    diff2html: "npm:3.4.52"
     eslint: "npm:8.57.1"
     eslint-config-prettier: "npm:10.1.8"
     eslint-plugin-import: "npm:2.32.0"
@@ -3552,9 +3552,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"diff2html@npm:3.4.51":
-  version: 3.4.51
-  resolution: "diff2html@npm:3.4.51"
+"diff2html@npm:3.4.52":
+  version: 3.4.52
+  resolution: "diff2html@npm:3.4.52"
   dependencies:
     diff: "npm:^7.0.0"
     highlight.js: "npm:11.9.0"
@@ -3562,7 +3562,7 @@ __metadata:
   dependenciesMeta:
     highlight.js:
       optional: true
-  checksum: 10/5c9582bc01c41f9f91baf4791f3f5c9a16703b369f83aec87188b76db729f753a80c7db1f5c24a42679267a960a1dc153933777a6c13105de80e584dbbb33322
+  checksum: 10/2a9ef5f1bc8ca579f480594f9fb5344779aa85adaf239afb5472f5856ec0d3c0be44179341e4d65165ae2c40de3b0b881a413c5b0d4c62e50b73caa09b97693d
   languageName: node
   linkType: hard
 
