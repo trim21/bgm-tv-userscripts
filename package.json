@@ -34,7 +34,7 @@
     "*.{cjs,js,mjs,ts}": "eslint --fix"
   },
   "dependencies": {
-    "diff": "8.0.2",
+    "diff": "8.0.3",
     "diff2html": "3.4.52",
     "jquery": "3.7.1",
     "lodash": "4.17.21",
