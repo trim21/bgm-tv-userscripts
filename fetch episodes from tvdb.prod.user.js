@@ -8,7 +8,7 @@
 // @license      MIT
 // @match        https://bgm.tv/new_subject/*
 // @require      https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js
-// @require      https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js
+// @require      https://cdn.jsdelivr.net/npm/lodash@4.17.23/lodash.min.js
 // @grant        GM_info
 // @run-at       document-end
 // @author       Trim21 <i@trim21.me>
