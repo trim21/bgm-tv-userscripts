@@ -1919,6 +1919,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@profoundlogic/hogan@npm:^3.0.4":
+  version: 3.0.4
+  resolution: "@profoundlogic/hogan@npm:3.0.4"
+  dependencies:
+    nopt: "npm:1.0.10"
+  bin:
+    hulk: bin/hulk
+  checksum: 10/446a4ba0cd5422be95c54d52012d3de6417f11b736cdbca1409617ff2080ecf5505be9f4935f5d93a6a120a45e09f7b5ea9d433b7fc121db437ad8e455b82168
+  languageName: node
+  linkType: hard
+
 "@rtsao/scc@npm:^1.1.0":
   version: 1.1.0
   resolution: "@rtsao/scc@npm:1.1.0"
@@ -3071,7 +3082,7 @@ __metadata:
     "@typescript-eslint/parser": "npm:8.51.0"
     babel-loader: "npm:10.0.0"
     diff: "npm:8.0.3"
-    diff2html: "npm:3.4.52"
+    diff2html: "npm:3.4.56"
     eslint: "npm:9.39.2"
     eslint-config-prettier: "npm:10.1.8"
     eslint-plugin-import: "npm:2.32.0"
@@ -3576,31 +3587,24 @@ __metadata:
   languageName: node
   linkType: hard
 
-"diff2html@npm:3.4.52":
-  version: 3.4.52
-  resolution: "diff2html@npm:3.4.52"
+"diff2html@npm:3.4.56":
+  version: 3.4.56
+  resolution: "diff2html@npm:3.4.56"
   dependencies:
-    diff: "npm:^7.0.0"
-    highlight.js: "npm:11.9.0"
-    hogan.js: "npm:3.0.2"
+    "@profoundlogic/hogan": "npm:^3.0.4"
+    diff: "npm:^8.0.3"
+    highlight.js: "npm:11.11.1"
   dependenciesMeta:
     highlight.js:
       optional: true
-  checksum: 10/2a9ef5f1bc8ca579f480594f9fb5344779aa85adaf239afb5472f5856ec0d3c0be44179341e4d65165ae2c40de3b0b881a413c5b0d4c62e50b73caa09b97693d
+  checksum: 10/17aa4ff9ebe2b2da5dfde9bfbe4ed34271144b5a8c32be1efcc6d38ae25d2f2c40906ecf176c344c76a693b39b704792d5d7736814292df6057413ed14cd239c
   languageName: node
   linkType: hard
 
-"diff@npm:8.0.3":
+"diff@npm:8.0.3, diff@npm:^8.0.3":
   version: 8.0.3
   resolution: "diff@npm:8.0.3"
   checksum: 10/52f957e1fa53db4616ff5f4811b92b22b97a160c12a2f86f22debd4181227b0f6751aa8fd711d6a8fcf4618acb13b86bc702e6d9d6d6ed82acfd00c9cb26ace2
-  languageName: node
-  linkType: hard
-
-"diff@npm:^7.0.0":
-  version: 7.0.0
-  resolution: "diff@npm:7.0.0"
-  checksum: 10/e9b8e48d054c9c0c093c65ce8e2637af94b35f2427001607b14e5e0589e534ea3413a7f91ebe6d7c5a1494ace49cb7c7c3972f442ddd96a4767ff091999a082e
   languageName: node
   linkType: hard
 
@@ -4671,22 +4675,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"highlight.js@npm:11.9.0":
-  version: 11.9.0
-  resolution: "highlight.js@npm:11.9.0"
-  checksum: 10/44b3e42bc096a2e5207e514826a10ff7671de315a7216ebaeba76593d4f16dfe3f7078390cb5c2b08eae657694fef4fb65d775376db48480c829c83fbc4f157a
-  languageName: node
-  linkType: hard
-
-"hogan.js@npm:3.0.2":
-  version: 3.0.2
-  resolution: "hogan.js@npm:3.0.2"
-  dependencies:
-    mkdirp: "npm:0.3.0"
-    nopt: "npm:1.0.10"
-  bin:
-    hulk: ./bin/hulk
-  checksum: 10/385784c5e61dafe019b01bad57b52cac27bc7509c1ad213dcbdd4bc39b001ef25f5af8af03dbb4e9885eaa2dad5462c87dd668e1eb6697fe71c1c8af6887b09e
+"highlight.js@npm:11.11.1":
+  version: 11.11.1
+  resolution: "highlight.js@npm:11.11.1"
+  checksum: 10/205272f12f2c8ab1760452a75c58b043b11129cf3a5d2a9c0c90d43993580d0f5c385a73a4b8aba197eef20c0ec37d64000e6b35c4ed5991324f4c2dc78f4e43
   languageName: node
   linkType: hard
 
@@ -6155,13 +6147,6 @@ __metadata:
   dependencies:
     minipass: "npm:^7.1.2"
   checksum: 10/f47365cc2cb7f078cbe7e046eb52655e2e7e97f8c0a9a674f4da60d94fb0624edfcec9b5db32e8ba5a99a5f036f595680ae6fe02a262beaa73026e505cc52f99
-  languageName: node
-  linkType: hard
-
-"mkdirp@npm:0.3.0":
-  version: 0.3.0
-  resolution: "mkdirp@npm:0.3.0"
-  checksum: 10/51b0010427561f044f3c2f453163c9e9452c4a26643d63defd8313674e314cde3866019f19e8e9fc7eefcff4c73666fa7ae8e4676b85bc15b5fddd850bffbed1
   languageName: node
   linkType: hard
 
