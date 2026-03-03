@@ -47,7 +47,7 @@
     "last 10 Firefox version"
   ],
   "devDependencies": {
-    "@actions/exec": "2.0.0",
+    "@actions/exec": "3.0.0",
     "@babel/core": "7.28.5",
     "@babel/eslint-parser": "7.28.5",
     "@babel/plugin-syntax-import-assertions": "7.27.1",
