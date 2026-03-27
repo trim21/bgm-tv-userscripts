@@ -2076,12 +2076,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/jquery@npm:3.5.34":
-  version: 3.5.34
-  resolution: "@types/jquery@npm:3.5.34"
-  dependencies:
-    "@types/sizzle": "npm:*"
-  checksum: 10/398bf81a845e4ca8a2d2a60a21b9ad2fcd7c99123a2c82ba76cfb969b976d66fa24f3b8502055a081b39db7dc67204bee2bda817225900c59615ad083e261cef
+"@types/jquery@npm:4.0.0":
+  version: 4.0.0
+  resolution: "@types/jquery@npm:4.0.0"
+  checksum: 10/3a0491a1a2b7d0a9d471c318dcf245607c8af0954658a5d2758b9f746cd85a1ce362c37c2a3ab2a41ab24d67574e167d2f4e6a873fdceeef359536d73e03a804
   languageName: node
   linkType: hard
 
@@ -2130,13 +2128,6 @@ __metadata:
   dependencies:
     undici-types: "npm:~7.16.0"
   checksum: 10/d2f4f898c6a0f14980e55c697904fb58681729fc46b4e264d5f64dc391b23da73c9b422cfffbca28c045e6e8eca72dab5f28ed633faa95398ef1528af5398382
-  languageName: node
-  linkType: hard
-
-"@types/sizzle@npm:*":
-  version: 2.3.10
-  resolution: "@types/sizzle@npm:2.3.10"
-  checksum: 10/7898ae8c147d6804e1eb7811664bf6e58c382840b03a56976c668f17fbc76f752c4086bddb0d6c6d54e279a9259cf4fbb61a6ee968dac98615c42350f6f57d6a
   languageName: node
   linkType: hard
 
@@ -3111,7 +3102,7 @@ __metadata:
     "@jest/globals": "npm:30.2.0"
     "@types/greasemonkey": "npm:4.0.7"
     "@types/hogan.js": "npm:3.0.5"
-    "@types/jquery": "npm:3.5.34"
+    "@types/jquery": "npm:4.0.0"
     "@types/lodash": "npm:4.17.24"
     "@types/lodash-es": "npm:4.17.12"
     "@types/node": "npm:24.11.0"
