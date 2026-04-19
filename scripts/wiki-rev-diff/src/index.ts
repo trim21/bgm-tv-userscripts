@@ -1,4 +1,4 @@
-import * as $ from 'jquery';
+import $ from 'jquery';
 import * as lodash from 'lodash-es';
 import type { OutputFormatType } from 'diff2html/lib/types';
 
