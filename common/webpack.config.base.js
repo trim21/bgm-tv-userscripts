@@ -12,9 +12,9 @@ module.exports = {
         test: /\.[tj]s$/,
         exclude: /node_modules/,
         use: {
-          loader: 'ts-loader',
+          loader: 'esbuild-loader',
           options: {
-            transpileOnly: true,
+            target: 'es2022',
           },
         },
       },
