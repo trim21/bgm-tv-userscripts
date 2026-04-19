@@ -24,9 +24,44 @@
 
 /******/ (() => { // webpackBootstrap
 /******/ 	"use strict";
+/******/ 	// The require scope
+/******/ 	var __webpack_require__ = {};
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/************************************************************************/
 
 ;// external "$"
 const external_$_namespaceObject = $;
+var external_$_default = /*#__PURE__*/__webpack_require__.n(external_$_namespaceObject);
 ;// ./scripts/hover-subject-info/src/utils.ts
 function getSubjectID(s) {
     if (!s?.length)
@@ -135,19 +170,19 @@ ${tags}
 `;
 }
 function main() {
-    external_$_namespaceObject('head').append(style);
-    external_$_namespaceObject('a').each((i, e) => {
-        if (getSubjectID(external_$_namespaceObject(e).attr('href'))) {
-            external_$_namespaceObject(e).on('mouseover', hoverHandler).on('mouseleave', leaveHandler);
+    external_$_default()('head').append(style);
+    external_$_default()('a').each((i, e) => {
+        if (getSubjectID(external_$_default()(e).attr('href'))) {
+            external_$_default()(e).on('mouseover', hoverHandler).on('mouseleave', leaveHandler);
         }
     });
 }
 function leaveHandler() {
-    external_$_namespaceObject('#popup').remove();
+    external_$_default()('#popup').remove();
     console.log('leave');
 }
 function hoverHandler() {
-    const e = external_$_namespaceObject(this);
+    const e = external_$_default()(this);
     const href = e.attr('href');
     if (!href) {
         return;
@@ -157,8 +192,8 @@ function hoverHandler() {
         return;
     }
     const offset = e.offset() ?? { left: 0, top: 0 };
-    external_$_namespaceObject('body').append('<div id="popup"> loading </div>');
-    const popup = external_$_namespaceObject('#popup').css({
+    external_$_default()('body').append('<div id="popup"> loading </div>');
+    const popup = external_$_default()('#popup').css({
         left: offset.left,
         top: offset.top + 40,
         position: 'absolute',

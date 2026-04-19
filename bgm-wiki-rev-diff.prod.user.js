@@ -27,9 +27,44 @@
 
 /******/ (() => { // webpackBootstrap
 /******/ 	"use strict";
+/******/ 	// The require scope
+/******/ 	var __webpack_require__ = {};
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/************************************************************************/
 
 ;// external "$"
 const external_$_namespaceObject = $;
+var external_$_default = /*#__PURE__*/__webpack_require__.n(external_$_namespaceObject);
 ;// ./node_modules/lodash-es/_listCacheClear.js
 /**
  * Removes all key-value entries from the list cache.
@@ -3613,7 +3648,7 @@ var find = _createFind(lodash_es_findIndex);
 ;// ./scripts/wiki-rev-diff/src/parser.ts
 
 function parseRevDetails(html) {
-    const jq = external_$_namespaceObject(html);
+    const jq = external_$_default()(html);
     const rawInfo = jq.find('#subject_infobox').val()?.toString() ?? '';
     const title = jq.find('input[name="subject_title"]').val()?.toString() ?? '';
     const description = jq.find('textarea#subject_summary').val()?.toString() ?? '';
@@ -3652,8 +3687,8 @@ function parseRevEl(el) {
 }
 function getRevs() {
     const revs = [];
-    external_$_namespaceObject('#pagehistory li').each(function () {
-        const rev = parseRevEl(external_$_namespaceObject(this));
+    external_$_default()('#pagehistory li').each(function () {
+        const rev = parseRevEl(external_$_default()(this));
         if (rev != null) {
             revs.push(rev);
         }
@@ -3748,21 +3783,21 @@ async function render(revOld, revNew) {
     const elID = `show-diff-view-${outputFormat}`;
     show('');
     if (patch.trim()) {
-        external_$_namespaceObject(`#${elID}`).html(html);
+        external_$_default()(`#${elID}`).html(html);
     }
     else {
-        external_$_namespaceObject(`#${elID}`).html('<h1>选中的版本之间没有修改</h1>');
+        external_$_default()(`#${elID}`).html('<h1>选中的版本之间没有修改</h1>');
     }
     document.getElementById(elID)?.scrollIntoView({
         behavior: 'smooth',
     });
 }
 function show(html) {
-    external_$_namespaceObject('#show-diff-info').html(html);
+    external_$_default()('#show-diff-info').html(html);
 }
 function clear() {
-    external_$_namespaceObject('#show-diff-view-line-by-line').html('');
-    external_$_namespaceObject('#show-diff-view-side-by-side').html('');
+    external_$_default()('#show-diff-view-line-by-line').html('');
+    external_$_default()('#show-diff-view-side-by-side').html('');
     show('');
 }
 
@@ -3868,17 +3903,17 @@ async function initUI() {
             await GM.setValue(configKey, outputFormat);
         })();
     });
-    external_$_namespaceObject('#headerSubject').after('<div id="show-diff-view-side-by-side" class="show-version-diff"></div>');
-    external_$_namespaceObject('#columnInSubjectA > hr.board').after(style + '<div id="show-diff-view-line-by-line" class="show-version-diff"></div>');
-    external_$_namespaceObject('#columnInSubjectA .subtitle').after('<div id="show-diff-info"></div>');
+    external_$_default()('#headerSubject').after('<div id="show-diff-view-side-by-side" class="show-version-diff"></div>');
+    external_$_default()('#columnInSubjectA > hr.board').after(style + '<div id="show-diff-view-line-by-line" class="show-version-diff"></div>');
+    external_$_default()('#columnInSubjectA .subtitle').after('<div id="show-diff-info"></div>');
     const diff2htmlStyle = await GM.getResourceUrl('diff2html');
-    external_$_namespaceObject('head').append(style).append(`<link rel='stylesheet' type='text/css' href='${diff2htmlStyle}' />`);
-    const s = external_$_namespaceObject('#pagehistory li');
+    external_$_default()('head').append(style).append(`<link rel='stylesheet' type='text/css' href='${diff2htmlStyle}' />`);
+    const s = external_$_default()('#pagehistory li');
     const revs = Array.from(s).map(function (e) {
-        return parseRevEl(external_$_namespaceObject(e))?.id;
+        return parseRevEl(external_$_default()(e))?.id;
     });
     s.each(function (index) {
-        const el = external_$_namespaceObject(this);
+        const el = external_$_default()(this);
         const id = revs[index];
         if (!id) {
             el.prepend('<span style="padding-right: 1.4em"> 无法参与比较 </span>');
@@ -3893,7 +3928,7 @@ async function initUI() {
         'rev-left': 'rev-right',
         'rev-right': 'rev-left',
     };
-    external_$_namespaceObject('input[type="radio"]').on('change', function (e) {
+    external_$_default()('input[type="radio"]').on('change', function (e) {
         const name = e.target.getAttribute('name');
         if (!name) {
             return;
@@ -3901,41 +3936,41 @@ async function initUI() {
         const selectName = typeRevert[name];
         const rev = e.target.getAttribute('value');
         if (rev) {
-            external_$_namespaceObject(`input[name="${selectName}"][value="${rev}"]`).css('visibility', 'hidden');
-            external_$_namespaceObject(`input[name="${selectName}"][value!="${rev}"]`).css('visibility', 'visible');
+            external_$_default()(`input[name="${selectName}"][value="${rev}"]`).css('visibility', 'hidden');
+            external_$_default()(`input[name="${selectName}"][value!="${rev}"]`).css('visibility', 'visible');
         }
     });
-    external_$_namespaceObject('.compare-previous-trim21-cn').on('click', function () {
-        const el = external_$_namespaceObject(this);
+    external_$_default()('.compare-previous-trim21-cn').on('click', function () {
+        const el = external_$_default()(this);
         const left = String(el.data('rev'));
         const right = String(el.data('previous'));
         compare(left, right);
-        external_$_namespaceObject(`input[name="rev-left"][value="${left}"]`).prop('checked', true);
-        external_$_namespaceObject(`input[name="rev-left"][value!="${left}"]`).prop('checked', null);
-        external_$_namespaceObject(`input[name="rev-right"][value="${left}"]`).css('visibility', 'hidden');
-        external_$_namespaceObject(`input[name="rev-right"][value!="${left}"]`).css('visibility', 'visible');
-        external_$_namespaceObject('input[name="rev-left"]').css('visibility', 'visible');
-        external_$_namespaceObject('input[name="rev-right"]').prop('checked', null);
+        external_$_default()(`input[name="rev-left"][value="${left}"]`).prop('checked', true);
+        external_$_default()(`input[name="rev-left"][value!="${left}"]`).prop('checked', null);
+        external_$_default()(`input[name="rev-right"][value="${left}"]`).css('visibility', 'hidden');
+        external_$_default()(`input[name="rev-right"][value!="${left}"]`).css('visibility', 'visible');
+        external_$_default()('input[name="rev-left"]').css('visibility', 'visible');
+        external_$_default()('input[name="rev-right"]').prop('checked', null);
         if (right) {
-            external_$_namespaceObject(`input[name="rev-right"][value="${right}"]`).prop('checked', true);
-            external_$_namespaceObject(`input[name="rev-left"][value="${right}"]`).css('visibility', 'hidden');
+            external_$_default()(`input[name="rev-right"][value="${right}"]`).prop('checked', true);
+            external_$_default()(`input[name="rev-left"][value="${right}"]`).css('visibility', 'hidden');
         }
     });
-    external_$_namespaceObject('#columnInSubjectA span.text').append('<a href="#" id="compare-trim21-cn" class="l"> > 比较选中的版本</a>');
-    external_$_namespaceObject('#compare-trim21-cn').on('click', function () {
+    external_$_default()('#columnInSubjectA span.text').append('<a href="#" id="compare-trim21-cn" class="l"> > 比较选中的版本</a>');
+    external_$_default()('#compare-trim21-cn').on('click', function () {
         const selectedRevs = getSelectedVersion();
         compare(selectedRevs[0], selectedRevs[1]);
     });
 }
 function getSelectedVersion() {
     const selectedVersion = [];
-    const selectedRev = external_$_namespaceObject('.rev-trim21-cn:checked');
+    const selectedRev = external_$_default()('.rev-trim21-cn:checked');
     if (selectedRev.length < 2) {
         window.alert('请选中两个版本进行比较');
         throw new Error();
     }
     selectedRev.each(function () {
-        const val = external_$_namespaceObject(this).val();
+        const val = external_$_default()(this).val();
         selectedVersion.push(val);
     });
     selectedVersion.sort((a, b) => parseInt(b) - parseInt(a));

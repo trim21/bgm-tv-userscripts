@@ -16,9 +16,44 @@
 
 /******/ (() => { // webpackBootstrap
 /******/ 	"use strict";
+/******/ 	// The require scope
+/******/ 	var __webpack_require__ = {};
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/************************************************************************/
 
 ;// external "$"
 const external_$_namespaceObject = $;
+var external_$_default = /*#__PURE__*/__webpack_require__.n(external_$_namespaceObject);
 ;// ./scripts/sort-index/src/style.css
 /* harmony default export */ const style = ("#prgManagerHeader ul#prgManagerOrder li a span {\n}\n\n#prgManagerHeader ul#prgManagerOrder li a.focus span {\n  filter: invert();\n}\n\n/* https://www.flaticon.com/free-icons/sort */\n\n#prgManagerHeader ul#prgManagerOrder li a#switchSmartOrder span {\n  /* https://icons8.com/icon/69918/sort-by-recently-viewed */\n  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKaSURBVGhD7dlLyExhHMfxcS2KolxzS5SFpNwtWBAKZaVkI0VZocRCoiQrKynKQiyssLF0CRsJWdkQSRayQIhy/f6m+ff+Oz3nvPM+zTznHJ1ffXqb55xnen5zzsycM2+rSZMmTf6rrMYujGk/KidrsR0j2o8isgJ/8BdXNVBCtsDWcEoDMdkHPYG81kAJ0eJtDfc0EBNf5I0GIjIeczAJMafGadgaHmggJjFFtNhNuIL3sPnyDXexFxPRTUopsg7PYXOKfMFhjEZRkhbRUTgH23conmAG8pKsiF7Rm7D9jD5prmMbFkMfoVqUjkR233dYiFCSFNGRuAbbx/zCDoQyFy+QnfMWoSOTpMhR2HbvOIqyCD+RnfcI2fdM34voVAgt5gfGwTIbKrah/WggN5CdK8fg0/cioVNK9Kr6PIXGdbot0EAnh5CdK9+h7x5L34vcgm3zHsLnFWzbMg10cgB+nvmNybD0vYi+M2yb9wmjYFkFfXodbD8ayCWE5l+AT5I3+0XYdm83ijIdX5Gdp+u5CfBJUmQsdCrZPkZHZSlC0QfBfWTn6PLFn3qWJEUUXQyGLku0sBOYh2HQK70TL5HdV2/wjQglWRFFi8x78w9GF5Z6H+UlaRFlJPZDp5XNKaJLmMuYiqIkL2KZAn1HPIPN9XQEzmIJuklpRXz0fbAGW7Ee8zEcQ0klivQiTRGfpkgP0xTxaYr0MD0psgf2JB9xpAT6HczWcBtRWQl7kio4g+jk3Vun9gHTEB3d7ekQ38HjCH4x+hkotE8R3e+cx0yUGl9kswbqmqZI1VLLIsuh+w7PF9FPrNnt+gGjctE/Tru91ZWTqGy6LVPpEpbBytSihCWvTK1KWFTmM2pdwmJlal3CMqvzt49ptf4B0C4sGC5Wg58AAAAASUVORK5CYII=)\n    no-repeat top;\n  background-size: 20px 20px;\n}\n\n#prgManagerHeader ul#prgManagerOrder li a#switchNormalOrder span {\n  /* https://icons8.com/icon/69920/sort-by-modified-date */\n  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHySURBVGhD7Zg9LwRBHIcPkSA6lXj5DApv0VBQ0ZLoNAoRnUQhKhGJRCQqjVqhEJ0GEY3CN1AIrQIlEfx+e/tPJnP7cju3tzN7mSd5snbudrLP7U1uV8Xj8Xhaiim4AruDPTtMwyXYEewZMAF/4R8844AFFqCcwx4HTFiDnIA+cyAneuERvIL8pJPgycs53HHABDXkhQM5wIh7KPPy096AcexDeS+PM6IZIXPwB8q8NCnG2RCyCKNiZqCOUyH8Om3CtmCvSlTMDtRxJkRdE6cwLobbUajjRIi+sGlUzBdcDvZqsR4SFSHqMQPhNgqrIUkRoh4Th7WQeiIo1wRvf9KwEpIlIm5N6BQewhu6WyjvjzNLBLFyRfrgJZRjdLNGEGtrZBXKMaomEcRayAj8hnIcNY0g1kJIFxyD57CRCFJYCK/AevXPGhjTSAQpLOQA8s41LqZRCglph6+QrzMm7WnPhEJCBiEfgY/hJAeagNXFnic+RMWH5IgPUWmZEPUG8B1uWVB9NLiGRvC3QSZxwUNozAWMmrRo32A/NKYT8hLfwEcD1ZN5Csey+ABP4BC0ihoyz4Gy4kNco5Qh43BWUw3ZDsdUe6Bz8D+HH1A9+SR3obPUG+N0hJAWU4oIIS6mVBECYz5hqSMEiSl1hDAcbptIpfIPemrPlazYnP4AAAAASUVORK5CYII=)\n    no-repeat top;\n  background-size: 20px 20px;\n}\n\n#prgManagerHeader ul#prgManagerOrder li a span {\n  display: block;\n  text-indent: -9999px;\n  height: 18px;\n  width: 20px;\n}\n");
 ;// ./scripts/sort-index/src/index.ts
@@ -62,9 +97,9 @@ function bangumiSortIndex() {
             this.airing = el.find('li a.epBtnNA, li a.epBtnToday').length !== 0 ? -1 : 1;
         }
     }
-    const container = external_$_namespaceObject('#cloumnSubjectInfo .infoWrapper_tv');
-    const originals = Array.from(external_$_namespaceObject('.infoWrapper_tv [id^=subjectPanel_]')).map((element) => {
-        return new Subject(external_$_namespaceObject(element));
+    const container = external_$_default()('#cloumnSubjectInfo .infoWrapper_tv');
+    const originals = Array.from(external_$_default()('.infoWrapper_tv [id^=subjectPanel_]')).map((element) => {
+        return new Subject(external_$_default()(element));
     });
     const subjects = [...originals];
     function getDate(rel) {
@@ -106,13 +141,13 @@ function bangumiSortIndex() {
         render(originals);
     }
     function onLoad() {
-        const orderUI = external_$_namespaceObject(`<ul id='prgManagerOrder' class='categoryTab clearit rr'>
+        const orderUI = external_$_default()(`<ul id='prgManagerOrder' class='categoryTab clearit rr'>
 
 <li data-mode='normal'><a href='javascript:void(0);' id='switchNormalOrder' title='修改順序'><span>標準</span></a></li>
 <li data-mode='smart' ><a href='javascript:void(0);' id='switchSmartOrder'  title='智障順序'><span>智能</span></a></li>
 
 </ul>`);
-        external_$_namespaceObject('#prgManagerHeader').append(orderUI[0]);
+        external_$_default()('#prgManagerHeader').append(orderUI[0]);
         if (!localStorage['index-sort-order']) {
             localStorage['index-sort-order'] = 'smart';
         }
@@ -121,7 +156,7 @@ function bangumiSortIndex() {
         function click(ctx) {
             optionUIs.find('a').removeClass('focus');
             if (ctx) {
-                const el = external_$_namespaceObject(ctx);
+                const el = external_$_default()(ctx);
                 mode = el.attr('data-mode')?.toString();
                 localStorage.setItem(configKey, mode);
             }
@@ -137,7 +172,7 @@ function bangumiSortIndex() {
                     localStorage.setItem(configKey, mode);
                     normal();
             }
-            external_$_namespaceObject(`#prgManagerOrder li[data-mode="${mode}"]`).find('a').addClass('focus');
+            external_$_default()(`#prgManagerOrder li[data-mode="${mode}"]`).find('a').addClass('focus');
         }
         optionUIs.on('click', function () {
             click(this);
