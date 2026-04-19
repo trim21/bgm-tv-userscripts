@@ -1,4 +1,4 @@
-import * as $ from 'jquery';
+import $ from 'jquery';
 
 import type { Subject } from './model';
 import { getSubjectID } from './utils';

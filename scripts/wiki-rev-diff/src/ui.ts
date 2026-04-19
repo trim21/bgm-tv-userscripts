@@ -1,5 +1,5 @@
 import * as Diff2Html from 'diff2html';
-import * as $ from 'jquery';
+import $ from 'jquery';
 import type { ColorSchemeType, OutputFormatType } from 'diff2html/lib/types';
 
 import { configKey } from './config';
