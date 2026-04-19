@@ -2232,7 +2232,7 @@ __metadata:
     "@typescript-eslint/parser": "npm:8.58.2"
     diff: "npm:9.0.0"
     diff2html: "npm:3.4.56"
-    esbuild-loader: "npm:^4.4.3"
+    esbuild-loader: "npm:4.4.3"
     eslint: "npm:10.2.1"
     eslint-config-prettier: "npm:10.1.8"
     eslint-plugin-import: "npm:2.32.0"
@@ -2991,7 +2991,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"esbuild-loader@npm:^4.4.3":
+"esbuild-loader@npm:4.4.3":
   version: 4.4.3
   resolution: "esbuild-loader@npm:4.4.3"
   dependencies:
