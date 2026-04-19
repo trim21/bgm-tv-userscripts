@@ -16,7 +16,7 @@
 // @match         https://bgm.tv/rakuen/topiclist
 // @match         https://bangumi.tv/rakuen/topiclist
 // @match         https://chii.in/rakuen/topiclist
-// @require       https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js
+// @require       https://cdn.jsdelivr.net/npm/jquery@4.0.0/dist/jquery.min.js
 // @run-at        document-end
 // @grant         GM_info
 // @author        Trim21 <i@trim21.me>
