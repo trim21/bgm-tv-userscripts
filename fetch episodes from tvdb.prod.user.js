@@ -57,19 +57,16 @@ var external_$_default = /*#__PURE__*/__webpack_require__.n(external_$_namespace
 ;// ./scripts/fetch-tvdb-series/src/index.ts
 
 function main() {
-  const params = new URLSearchParams(document.location.search);
-  const name = params.get('t.name') ?? '';
-  const infobox = params.get('t.infobox') ?? '';
-  const summary = params.get('t.summary') ?? '';
-  console.log({
-    name,
-    infobox,
-    summary
-  });
-  external_$_default()('input[name="subject_title"]').val(name);
-  external_$_default()('#subject_infobox').val(infobox);
-  external_$_default()('#subject_summary').val(summary);
+    const params = new URLSearchParams(document.location.search);
+    const name = params.get('t.name') ?? '';
+    const infobox = params.get('t.infobox') ?? '';
+    const summary = params.get('t.summary') ?? '';
+    console.log({ name, infobox, summary });
+    external_$_default()('input[name="subject_title"]').val(name);
+    external_$_default()('#subject_infobox').val(infobox);
+    external_$_default()('#subject_summary').val(summary);
 }
 main();
+
 /******/ })()
 ;

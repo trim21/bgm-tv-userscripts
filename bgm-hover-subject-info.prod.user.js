@@ -29,30 +29,32 @@
 const external_$_namespaceObject = $;
 ;// ./scripts/hover-subject-info/src/utils.ts
 function getSubjectID(s) {
-  if (!s?.length) return undefined;
-  if (s.startsWith('#')) {
-    return;
-  }
-  if (s.startsWith('/')) {
-    s = 'https://bgm.tv' + s;
-  } else {
-    if (!/^https?:\/\/(bgm\.tv|chii\.in|bangumi\.tv)\//.test(s)) {
-      return;
+    if (!s?.length)
+        return undefined;
+    if (s.startsWith('#')) {
+        return;
     }
-  }
-  const u = new URL(s);
-  const path = u.pathname;
-
-  // [ '', 'subject', '8' ]
-  const split = path.split('/');
-  if (split.length >= 4) {
+    if (s.startsWith('/')) {
+        s = 'https://bgm.tv' + s;
+    }
+    else {
+        if (!/^https?:\/\/(bgm\.tv|chii\.in|bangumi\.tv)\//.test(s)) {
+            return;
+        }
+    }
+    const u = new URL(s);
+    const path = u.pathname;
+    // [ '', 'subject', '8' ]
+    const split = path.split('/');
+    if (split.length >= 4) {
+        return undefined;
+    }
+    if (split[1] === 'subject') {
+        return parseInt(split[2], 10);
+    }
     return undefined;
-  }
-  if (split[1] === 'subject') {
-    return parseInt(split[2], 10);
-  }
-  return undefined;
 }
+
 ;// ./scripts/hover-subject-info/src/index.ts
 
 
@@ -97,19 +99,25 @@ const style = `
 </style>
 `;
 function createPopup(subject) {
-  let rank = '';
-  if (subject.rating.rank) {
-    rank = `<p class='rateInfo'>
+    let rank = '';
+    if (subject.rating.rank) {
+        rank = `<p class='rateInfo'>
 <span class='starstop-s'><span class='starlight stars${Math.round(subject.rating.score)}'></span></span>
  <small class='fade'>${subject.rating.score}</small> <span class='tip_j'>(${subject.rating.total}人评分)</span>
 </p>`;
-  }
-  let tags = '';
-  if (subject.tags.length) {
-    tags = "<div class='popup-tags'>" + subject.tags.sort((a, b) => b.count - a.count).slice(0, 10).map(value => `<span class='tag'><span class='name'>${value.name}</span> <small>${value.count}</small></span>`).join('\n');
-    tags += '</div>';
-  }
-  return `
+    }
+    let tags = '';
+    if (subject.tags.length) {
+        tags =
+            "<div class='popup-tags'>" +
+                subject.tags
+                    .sort((a, b) => b.count - a.count)
+                    .slice(0, 10)
+                    .map((value) => `<span class='tag'><span class='name'>${value.name}</span> <small>${value.count}</small></span>`)
+                    .join('\n');
+        tags += '</div>';
+    }
+    return `
 <div class='d-flex'>
   <span class='image d-block'>
     <img src='${subject.images?.small}' class='cover' alt='${subject.name}'>
@@ -127,67 +135,62 @@ ${tags}
 `;
 }
 function main() {
-  external_$_namespaceObject('head').append(style);
-  external_$_namespaceObject('a').each((i, e) => {
-    if (getSubjectID(external_$_namespaceObject(e).attr('href'))) {
-      external_$_namespaceObject(e).on('mouseover', hoverHandler).on('mouseleave', leaveHandler);
-    }
-  });
+    external_$_namespaceObject('head').append(style);
+    external_$_namespaceObject('a').each((i, e) => {
+        if (getSubjectID(external_$_namespaceObject(e).attr('href'))) {
+            external_$_namespaceObject(e).on('mouseover', hoverHandler).on('mouseleave', leaveHandler);
+        }
+    });
 }
 function leaveHandler() {
-  external_$_namespaceObject('#popup').remove();
-  console.log('leave');
+    external_$_namespaceObject('#popup').remove();
+    console.log('leave');
 }
 function hoverHandler() {
-  const e = external_$_namespaceObject(this);
-  const href = e.attr('href');
-  if (!href) {
-    return;
-  }
-  const subjectID = getSubjectID(href);
-  if (!subjectID) {
-    return;
-  }
-  const offset = e.offset() ?? {
-    left: 0,
-    top: 0
-  };
-  external_$_namespaceObject('body').append('<div id="popup"> loading </div>');
-  const popup = external_$_namespaceObject('#popup').css({
-    left: offset.left,
-    top: offset.top + 40,
-    position: 'absolute',
-    'z-index': 1000
-  });
-  (async function () {
-    const res = await getWithCache(subjectID);
-    if (res.status > 400) {
-      popup.html('not found');
-      return;
+    const e = external_$_namespaceObject(this);
+    const href = e.attr('href');
+    if (!href) {
+        return;
     }
-    const data = await res.json();
-    let html = createPopup(data);
-    if (res.redirected) {
-      html = '条目被合并到此条目' + html;
+    const subjectID = getSubjectID(href);
+    if (!subjectID) {
+        return;
     }
-    popup.html(html);
-  })().catch(console.error);
+    const offset = e.offset() ?? { left: 0, top: 0 };
+    external_$_namespaceObject('body').append('<div id="popup"> loading </div>');
+    const popup = external_$_namespaceObject('#popup').css({
+        left: offset.left,
+        top: offset.top + 40,
+        position: 'absolute',
+        'z-index': 1000,
+    });
+    (async function () {
+        const res = await getWithCache(subjectID);
+        if (res.status > 400) {
+            popup.html('not found');
+            return;
+        }
+        const data = (await res.json());
+        let html = createPopup(data);
+        if (res.redirected) {
+            html = '条目被合并到此条目' + html;
+        }
+        popup.html(html);
+    })().catch(console.error);
 }
 const c = {};
 async function getWithCache(subjectID) {
-  if (subjectID in c) {
-    if (c[subjectID].createdAt + 1000 * 60 * 5 > new Date().getTime()) {
-      // cache request in 5min
-      return c[subjectID].res.clone();
+    if (subjectID in c) {
+        if (c[subjectID].createdAt + 1000 * 60 * 5 > new Date().getTime()) {
+            // cache request in 5min
+            return c[subjectID].res.clone();
+        }
     }
-  }
-  const res = await fetch(`https://api.bgm.tv/v0/subjects/${subjectID}`);
-  c[subjectID] = {
-    res: res.clone(),
-    createdAt: new Date().getTime()
-  };
-  return res;
+    const res = await fetch(`https://api.bgm.tv/v0/subjects/${subjectID}`);
+    c[subjectID] = { res: res.clone(), createdAt: new Date().getTime() };
+    return res;
 }
 main();
+
 /******/ })()
 ;

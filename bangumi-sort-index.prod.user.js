@@ -25,115 +25,128 @@ const external_$_namespaceObject = $;
 
 
 function addStyle(css) {
-  'use strict';
-
-  const head = document.getElementsByTagName('head')[0];
-  if (head) {
-    const style = document.createElement('style');
-    style.setAttribute('type', 'text/css');
-    style.textContent = css;
-    head.appendChild(style);
-  }
+    'use strict';
+    const head = document.getElementsByTagName('head')[0];
+    if (head) {
+        const style = document.createElement('style');
+        style.setAttribute('type', 'text/css');
+        style.textContent = css;
+        head.appendChild(style);
+    }
 }
 addStyle(style);
 const castKeyword = '首播';
 const configKey = 'index-sort-order';
 function bangumiSortIndex() {
-  class Subject {
-    constructor(el) {
-      this.el = el;
-      const titleEL = el.find('.epGird .tinyHeader .textTip').last();
-      this.title = titleEL.attr('data-subject-name-cn') ?? titleEL.attr('data-original-title') ?? titleEL.attr('data-subject-name') ?? 'title';
-      const nextWatch = el.find('li a:not(.epBtnWatched)').first();
-      const rel = nextWatch.attr('rel');
-      if (rel) {
-        this.nextDate = getDate(rel);
-      } else {
-        this.nextDate = 0;
-      }
-      this.airing = el.find('li a.epBtnNA, li a.epBtnToday').length !== 0 ? -1 : 1;
+    class Subject {
+        el;
+        nextDate;
+        title;
+        airing;
+        constructor(el) {
+            this.el = el;
+            const titleEL = el.find('.epGird .tinyHeader .textTip').last();
+            this.title =
+                titleEL.attr('data-subject-name-cn') ??
+                    titleEL.attr('data-original-title') ??
+                    titleEL.attr('data-subject-name') ??
+                    'title';
+            const nextWatch = el.find('li a:not(.epBtnWatched)').first();
+            const rel = nextWatch.attr('rel');
+            if (rel) {
+                this.nextDate = getDate(rel);
+            }
+            else {
+                this.nextDate = 0;
+            }
+            this.airing = el.find('li a.epBtnNA, li a.epBtnToday').length !== 0 ? -1 : 1;
+        }
     }
-  }
-  const container = external_$_namespaceObject('#cloumnSubjectInfo .infoWrapper_tv');
-  const originals = Array.from(external_$_namespaceObject('.infoWrapper_tv [id^=subjectPanel_]')).map(element => {
-    return new Subject(external_$_namespaceObject(element));
-  });
-  const subjects = [...originals];
-  function getDate(rel) {
-    const castDate = Array.from(document.querySelector(rel)?.querySelector('span.tip')?.childNodes ?? []).filter(e => e.nodeType === Node.TEXT_NODE).map(e => e.textContent ?? '').filter(t => t.includes(castKeyword));
-    if (castDate.length) {
-      return new Date(castDate[0].replace(`${castKeyword}:`, '')).getTime();
+    const container = external_$_namespaceObject('#cloumnSubjectInfo .infoWrapper_tv');
+    const originals = Array.from(external_$_namespaceObject('.infoWrapper_tv [id^=subjectPanel_]')).map((element) => {
+        return new Subject(external_$_namespaceObject(element));
+    });
+    const subjects = [...originals];
+    function getDate(rel) {
+        const castDate = Array.from(document.querySelector(rel)?.querySelector('span.tip')?.childNodes ?? [])
+            .filter((e) => e.nodeType === Node.TEXT_NODE)
+            .map((e) => e.textContent ?? '')
+            .filter((t) => t.includes(castKeyword));
+        if (castDate.length) {
+            return new Date(castDate[0].replace(`${castKeyword}:`, '')).getTime();
+        }
+        return 0;
     }
-    return 0;
-  }
-  function render(subjects) {
-    subjects.forEach(s => {
-      s.el.remove();
-    });
-    subjects.forEach((s, i) => {
-      s.el.removeClass('odd');
-      s.el.removeClass('even');
-      if (i % 2) {
-        s.el.addClass('even');
-      } else {
-        s.el.addClass('odd');
-      }
-      container.append(s.el);
-    });
-  }
-  function smart(subjects) {
-    subjects.sort((a, b) => {
-      if (a.airing === b.airing) {
-        return (b.nextDate - a.nextDate) * a.airing;
-      }
-      return a.airing;
-    });
-    render(subjects);
-  }
-  function normal() {
-    render(originals);
-  }
-  function onLoad() {
-    const orderUI = external_$_namespaceObject(`<ul id='prgManagerOrder' class='categoryTab clearit rr'>
+    function render(subjects) {
+        subjects.forEach((s) => {
+            s.el.remove();
+        });
+        subjects.forEach((s, i) => {
+            s.el.removeClass('odd');
+            s.el.removeClass('even');
+            if (i % 2) {
+                s.el.addClass('even');
+            }
+            else {
+                s.el.addClass('odd');
+            }
+            container.append(s.el);
+        });
+    }
+    function smart(subjects) {
+        subjects.sort((a, b) => {
+            if (a.airing === b.airing) {
+                return (b.nextDate - a.nextDate) * a.airing;
+            }
+            return a.airing;
+        });
+        render(subjects);
+    }
+    function normal() {
+        render(originals);
+    }
+    function onLoad() {
+        const orderUI = external_$_namespaceObject(`<ul id='prgManagerOrder' class='categoryTab clearit rr'>
 
 <li data-mode='normal'><a href='javascript:void(0);' id='switchNormalOrder' title='修改順序'><span>標準</span></a></li>
 <li data-mode='smart' ><a href='javascript:void(0);' id='switchSmartOrder'  title='智障順序'><span>智能</span></a></li>
 
 </ul>`);
-    external_$_namespaceObject('#prgManagerHeader').append(orderUI[0]);
-    if (!localStorage['index-sort-order']) {
-      localStorage['index-sort-order'] = 'smart';
+        external_$_namespaceObject('#prgManagerHeader').append(orderUI[0]);
+        if (!localStorage['index-sort-order']) {
+            localStorage['index-sort-order'] = 'smart';
+        }
+        const optionUIs = orderUI.find('li');
+        let mode = localStorage.getItem(configKey) ?? 'normal';
+        function click(ctx) {
+            optionUIs.find('a').removeClass('focus');
+            if (ctx) {
+                const el = external_$_namespaceObject(ctx);
+                mode = el.attr('data-mode')?.toString();
+                localStorage.setItem(configKey, mode);
+            }
+            switch (mode) {
+                case 'smart':
+                    smart(subjects);
+                    break;
+                case 'normal':
+                    normal();
+                    break;
+                default:
+                    mode = 'normal';
+                    localStorage.setItem(configKey, mode);
+                    normal();
+            }
+            external_$_namespaceObject(`#prgManagerOrder li[data-mode="${mode}"]`).find('a').addClass('focus');
+        }
+        optionUIs.on('click', function () {
+            click(this);
+        });
+        click();
     }
-    const optionUIs = orderUI.find('li');
-    let mode = localStorage.getItem(configKey) ?? 'normal';
-    function click(ctx) {
-      optionUIs.find('a').removeClass('focus');
-      if (ctx) {
-        const el = external_$_namespaceObject(ctx);
-        mode = el.attr('data-mode')?.toString();
-        localStorage.setItem(configKey, mode);
-      }
-      switch (mode) {
-        case 'smart':
-          smart(subjects);
-          break;
-        case 'normal':
-          normal();
-          break;
-        default:
-          mode = 'normal';
-          localStorage.setItem(configKey, mode);
-          normal();
-      }
-      external_$_namespaceObject(`#prgManagerOrder li[data-mode="${mode}"]`).find('a').addClass('focus');
-    }
-    optionUIs.on('click', function () {
-      click(this);
-    });
-    click();
-  }
-  onLoad();
+    onLoad();
 }
 bangumiSortIndex();
+
 /******/ })()
 ;
