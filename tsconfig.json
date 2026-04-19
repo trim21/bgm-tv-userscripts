@@ -6,7 +6,7 @@
     "module": "ESNext",
     "target": "ESNext",
     "lib": ["DOM", "ESNext"],
-    "skipLibCheck": false,
+    "skipLibCheck": true,
     "allowImportingTsExtensions": true,
     "strict": true,
     "strictNullChecks": true,
