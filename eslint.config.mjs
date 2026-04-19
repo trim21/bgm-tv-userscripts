@@ -1,4 +1,3 @@
-import babelParser from '@babel/eslint-parser';
 import tsPlugin from '@typescript-eslint/eslint-plugin';
 import tsParser from '@typescript-eslint/parser';
 import importPlugin from 'eslint-plugin-import';
@@ -20,13 +19,6 @@ export default [
     languageOptions: {
       ecmaVersion: 'latest',
       sourceType: 'module',
-      parser: babelParser,
-      parserOptions: {
-        requireConfigFile: false,
-        babelOptions: {
-          plugins: ['@babel/plugin-syntax-import-assertions'],
-        },
-      },
       globals: {
         JQuery: false,
         browser: false,
