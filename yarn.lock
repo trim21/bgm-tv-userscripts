@@ -62,20 +62,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/eslint-parser@npm:7.28.6":
-  version: 7.28.6
-  resolution: "@babel/eslint-parser@npm:7.28.6"
-  dependencies:
-    "@nicolo-ribaudo/eslint-scope-5-internals": "npm:5.1.1-v1"
-    eslint-visitor-keys: "npm:^2.1.0"
-    semver: "npm:^6.3.1"
-  peerDependencies:
-    "@babel/core": ^7.11.0
-    eslint: ^7.5.0 || ^8.0.0 || ^9.0.0
-  checksum: 10/15c0c9c78abcc5f267a34bab95437c37dfc468e3ac5e11094ed26bebd63c7a5b056fa47c005ba74eb9fbed6c79e37f90cbe2a24ed09425921275391fe9a5bbe7
-  languageName: node
-  linkType: hard
-
 "@babel/generator@npm:^7.27.5, @babel/generator@npm:^7.29.0":
   version: 7.29.1
   resolution: "@babel/generator@npm:7.29.1"
@@ -413,7 +399,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/plugin-syntax-import-assertions@npm:7.28.6, @babel/plugin-syntax-import-assertions@npm:^7.28.6":
+"@babel/plugin-syntax-import-assertions@npm:^7.28.6":
   version: 7.28.6
   resolution: "@babel/plugin-syntax-import-assertions@npm:7.28.6"
   dependencies:
@@ -1859,15 +1845,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nicolo-ribaudo/eslint-scope-5-internals@npm:5.1.1-v1":
-  version: 5.1.1-v1
-  resolution: "@nicolo-ribaudo/eslint-scope-5-internals@npm:5.1.1-v1"
-  dependencies:
-    eslint-scope: "npm:5.1.1"
-  checksum: 10/f2e3b2d6a6e2d9f163ca22105910c9f850dc4897af0aea3ef0a5886b63d8e1ba6505b71c99cb78a3bba24a09557d601eb21c8dede3f3213753fcfef364eb0e57
-  languageName: node
-  linkType: hard
-
 "@npmcli/agent@npm:^4.0.0":
   version: 4.0.0
   resolution: "@npmcli/agent@npm:4.0.0"
@@ -3080,8 +3057,6 @@ __metadata:
   dependencies:
     "@actions/exec": "npm:3.0.0"
     "@babel/core": "npm:7.29.0"
-    "@babel/eslint-parser": "npm:7.28.6"
-    "@babel/plugin-syntax-import-assertions": "npm:7.28.6"
     "@babel/preset-env": "npm:7.29.0"
     "@babel/preset-typescript": "npm:7.28.5"
     "@jest/globals": "npm:30.2.0"
@@ -4037,13 +4012,6 @@ __metadata:
     esrecurse: "npm:^4.3.0"
     estraverse: "npm:^5.2.0"
   checksum: 10/d102a22525020be99a6897c0d5570b16a387b251e661ba70cedb4f983536d5acd45b9ea2ee05b63ab04f6c35e4f2ed00a113d1c6fb5f61ff879d92e46d0c2f15
-  languageName: node
-  linkType: hard
-
-"eslint-visitor-keys@npm:^2.1.0":
-  version: 2.1.0
-  resolution: "eslint-visitor-keys@npm:2.1.0"
-  checksum: 10/db4547eef5039122d518fa307e938ceb8589da5f6e8f5222efaf14dd62f748ce82e2d2becd3ff9412a50350b726bda95dbea8515a471074547daefa58aee8735
   languageName: node
   linkType: hard
 
