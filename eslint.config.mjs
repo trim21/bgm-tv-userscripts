@@ -19,6 +19,7 @@ export default [
     languageOptions: {
       ecmaVersion: 'latest',
       sourceType: 'module',
+      parser: tsParser,
       globals: {
         JQuery: false,
         browser: false,
