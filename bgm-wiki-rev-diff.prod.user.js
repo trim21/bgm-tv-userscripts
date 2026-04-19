@@ -3647,119 +3647,135 @@ var find = _createFind(lodash_es_findIndex);
 
 ;// ./scripts/wiki-rev-diff/src/parser.ts
 
+
 function parseRevDetails(html) {
-    const jq = external_$_default()(html);
-    const rawInfo = jq.find('#subject_infobox').val()?.toString() ?? '';
-    const title = jq.find('input[name="subject_title"]').val()?.toString() ?? '';
-    const description = jq.find('textarea#subject_summary').val()?.toString() ?? '';
-    const metaTags = jq.find('input#tags').val()?.toString() ?? '';
-    return {
-        title,
-        rawInfo,
-        description,
-        metaTags,
-    };
+  const jq = external_$_default()(html);
+  const rawInfo = jq.find("#subject_infobox").val()?.toString() ?? "";
+  const title = jq.find('input[name="subject_title"]').val()?.toString() ?? "";
+  const description = jq.find("textarea#subject_summary").val()?.toString() ?? "";
+  const metaTags = jq.find("input#tags").val()?.toString() ?? "";
+  return {
+    title,
+    rawInfo,
+    description,
+    metaTags
+  };
 }
 function parseRevEl(el) {
-    const date = el.find('a:not(.compare-previous-trim21-cn)').first().html();
-    const revEL = el.find('a.l:contains("恢复")');
-    const revCommentEl = el.find('span.comment');
-    let comment = '';
-    if (revCommentEl.length > 0) {
-        comment = revCommentEl.html();
-        comment = comment.substring(1, comment.length - 1);
-    }
-    const revHref = revEL.attr('href');
-    if (!revHref) {
-        // this is a merge commit, can't know what's really info
-        return undefined;
-    }
-    const revID = revHref.split('/').pop();
-    if (!revID) {
-        throw new Error(`can't parse rev id from ${revHref}`);
-    }
-    return {
-        id: revID,
-        comment,
-        date,
-        url: revHref,
-    };
+  const date = el.find("a:not(.compare-previous-trim21-cn)").first().html();
+  const revEL = el.find('a.l:contains("\u6062\u590D")');
+  const revCommentEl = el.find("span.comment");
+  let comment = "";
+  if (revCommentEl.length > 0) {
+    comment = revCommentEl.html();
+    comment = comment.substring(1, comment.length - 1);
+  }
+  const revHref = revEL.attr("href");
+  if (!revHref) {
+    return void 0;
+  }
+  const revID = revHref.split("/").pop();
+  if (!revID) {
+    throw new Error(`can't parse rev id from ${revHref}`);
+  }
+  return {
+    id: revID,
+    comment,
+    date,
+    url: revHref
+  };
 }
 function getRevs() {
-    const revs = [];
-    external_$_default()('#pagehistory li').each(function () {
-        const rev = parseRevEl(external_$_default()(this));
-        if (rev != null) {
-            revs.push(rev);
-        }
-    });
-    return revs;
+  const revs = [];
+  external_$_default()("#pagehistory li").each(function() {
+    const rev = parseRevEl(external_$_default()(this));
+    if (rev != null) {
+      revs.push(rev);
+    }
+  });
+  return revs;
 }
 function getRevInfo(revID) {
-    for (const rev of getRevs()) {
-        if (rev.id === revID) {
-            return rev;
-        }
+  for (const rev of getRevs()) {
+    if (rev.id === revID) {
+      return rev;
     }
+  }
 }
 
 ;// external "Diff2Html"
 const external_Diff2Html_namespaceObject = Diff2Html;
 ;// ./scripts/wiki-rev-diff/src/config.ts
-const configKey = 'view-mode';
+
+const configKey = "view-mode";
 
 ;// external "Diff"
 const external_Diff_namespaceObject = Diff;
 ;// ./scripts/wiki-rev-diff/src/differ.ts
 
+
 const pattern = /(?![\t\r\n])(\p{Cf}|\p{Cc}|\p{Co})/gu;
 function escapeInvisible(s) {
-    return s.replaceAll(pattern, function (match) {
-        const u = match.codePointAt(0);
-        if (u === undefined) {
-            return '';
-        }
-        return '\\u' + u.toString(16).toLowerCase();
-    });
+  return s.replaceAll(pattern, function(match) {
+    const u = match.codePointAt(0);
+    if (u === void 0) {
+      return "";
+    }
+    return "\\u" + u.toString(16).toLowerCase();
+  });
 }
 function diff(revOld, revNew, style) {
-    const options = { context: 100 };
-    if (style === 'line-by-line') {
-        options.context = 4;
-    }
-    return [
-        oneLineDiff('标题', revOld.details.title, revNew.details.title, revOld.rev.date, revNew.rev.date, options),
-        oneLineDiff('标签', revOld.details.metaTags, revNew.details.metaTags, revOld.rev.date, revNew.rev.date, options),
-        infoDiff(revOld, revNew, options),
-        descriptionDiff(revOld, revNew, options),
-    ].join('\n');
+  const options = { context: 100 };
+  if (style === "line-by-line") {
+    options.context = 4;
+  }
+  return [
+    oneLineDiff("\u6807\u9898", revOld.details.title, revNew.details.title, revOld.rev.date, revNew.rev.date, options),
+    oneLineDiff("\u6807\u7B7E", revOld.details.metaTags, revNew.details.metaTags, revOld.rev.date, revNew.rev.date, options),
+    infoDiff(revOld, revNew, options),
+    descriptionDiff(revOld, revNew, options)
+  ].join("\n");
 }
 function oneLineDiff(name, s1, s2, oldDate, newDate, options) {
-    if (s1 === s2) {
-        return '';
-    }
-    return external_Diff_namespaceObject.createPatch(name, escapeInvisible(s1), escapeInvisible(s2), oldDate, newDate, options);
+  if (s1 === s2) {
+    return "";
+  }
+  return external_Diff_namespaceObject.createPatch(name, escapeInvisible(s1), escapeInvisible(s2), oldDate, newDate, options);
 }
 function infoDiff(rev1, rev2, options) {
-    if (rev1.details.rawInfo === rev2.details.rawInfo) {
-        return '';
-    }
-    return external_Diff_namespaceObject.createPatch('相关信息', escapeInvisible(rev1.details.rawInfo), escapeInvisible(rev2.details.rawInfo), rev1.rev.date, rev2.rev.date, options);
+  if (rev1.details.rawInfo === rev2.details.rawInfo) {
+    return "";
+  }
+  return external_Diff_namespaceObject.createPatch(
+    "\u76F8\u5173\u4FE1\u606F",
+    escapeInvisible(rev1.details.rawInfo),
+    escapeInvisible(rev2.details.rawInfo),
+    rev1.rev.date,
+    rev2.rev.date,
+    options
+  );
 }
 function descriptionDiff(rev1, rev2, options) {
-    if (rev1.details.description === rev2.details.description) {
-        return '';
-    }
-    return external_Diff_namespaceObject.createPatch('简介', escapeInvisible(rev1.details.description), escapeInvisible(rev2.details.description), rev1.rev.date, rev2.rev.date, options);
+  if (rev1.details.description === rev2.details.description) {
+    return "";
+  }
+  return external_Diff_namespaceObject.createPatch(
+    "\u7B80\u4ECB",
+    escapeInvisible(rev1.details.description),
+    escapeInvisible(rev2.details.description),
+    rev1.rev.date,
+    rev2.rev.date,
+    options
+  );
 }
 
 ;// ./scripts/wiki-rev-diff/src/utils.ts
+
 function getCookie(name) {
-    const value = '; ' + document.cookie;
-    const parts = value.split('; ' + name + '=');
-    if (parts.length === 2)
-        return parts.pop()?.split(';').shift();
-    return undefined;
+  const value = "; " + document.cookie;
+  const parts = value.split("; " + name + "=");
+  if (parts.length === 2) return parts.pop()?.split(";").shift();
+  return void 0;
 }
 
 ;// ./scripts/wiki-rev-diff/src/ui.ts
@@ -3768,91 +3784,94 @@ function getCookie(name) {
 
 
 
+
 async function render(revOld, revNew) {
-    let outputFormat = (await GM.getValue(configKey));
-    if (!outputFormat) {
-        outputFormat = 'line-by-line';
-    }
-    const colorScheme = getCookie('chii_theme');
-    const patch = diff(revOld, revNew, outputFormat);
-    const html = external_Diff2Html_namespaceObject.html(patch, {
-        outputFormat,
-        colorScheme,
-        drawFileList: false,
-    });
-    const elID = `show-diff-view-${outputFormat}`;
-    show('');
-    if (patch.trim()) {
-        external_$_default()(`#${elID}`).html(html);
-    }
-    else {
-        external_$_default()(`#${elID}`).html('<h1>选中的版本之间没有修改</h1>');
-    }
-    document.getElementById(elID)?.scrollIntoView({
-        behavior: 'smooth',
-    });
+  let outputFormat = await GM.getValue(configKey);
+  if (!outputFormat) {
+    outputFormat = "line-by-line";
+  }
+  const colorScheme = getCookie("chii_theme");
+  const patch = diff(revOld, revNew, outputFormat);
+  const html = external_Diff2Html_namespaceObject.html(patch, {
+    outputFormat,
+    colorScheme,
+    drawFileList: false
+  });
+  const elID = `show-diff-view-${outputFormat}`;
+  show("");
+  if (patch.trim()) {
+    external_$_default()(`#${elID}`).html(html);
+  } else {
+    external_$_default()(`#${elID}`).html("<h1>\u9009\u4E2D\u7684\u7248\u672C\u4E4B\u95F4\u6CA1\u6709\u4FEE\u6539</h1>");
+  }
+  document.getElementById(elID)?.scrollIntoView({
+    behavior: "smooth"
+  });
 }
 function show(html) {
-    external_$_default()('#show-diff-info').html(html);
+  external_$_default()("#show-diff-info").html(html);
 }
 function clear() {
-    external_$_default()('#show-diff-view-line-by-line').html('');
-    external_$_default()('#show-diff-view-side-by-side').html('');
-    show('');
+  external_$_default()("#show-diff-view-line-by-line").html("");
+  external_$_default()("#show-diff-view-side-by-side").html("");
+  show("");
 }
 
 ;// ./scripts/wiki-rev-diff/src/model.ts
+
 class Commit {
-    rev;
-    details;
-    constructor(rev, detail) {
-        this.rev = rev;
-        this.details = detail;
-    }
+  rev;
+  details;
+  constructor(rev, detail) {
+    this.rev = rev;
+    this.details = detail;
+  }
 }
 
 ;// ./scripts/wiki-rev-diff/src/compare.ts
 
 
 
+
 function compare(revID1, revID2) {
-    clear();
-    show('<h2>loading versions...</h2>');
-    const rev1 = getRevInfo(revID1);
-    const rev2 = getRevInfo(revID2);
-    if (rev1 == null) {
-        throw new Error(`error finding ${revID1}`);
-    }
-    const ps = [fetchRev(rev1), fetchRev(rev2)];
-    Promise.all(ps)
-        .then(async (values) => {
-        await render(values[1], values[0]);
-    })
-        .catch((e) => {
-        console.error(e);
-        show('<div style="color: red">获取历史修改失败，请刷新页面后重试</div>');
-    });
+  clear();
+  show("<h2>loading versions...</h2>");
+  const rev1 = getRevInfo(revID1);
+  const rev2 = getRevInfo(revID2);
+  if (rev1 == null) {
+    throw new Error(`error finding ${revID1}`);
+  }
+  const ps = [fetchRev(rev1), fetchRev(rev2)];
+  Promise.all(ps).then(async (values) => {
+    await render(values[1], values[0]);
+  }).catch((e) => {
+    console.error(e);
+    show('<div style="color: red">\u83B7\u53D6\u5386\u53F2\u4FEE\u6539\u5931\u8D25\uFF0C\u8BF7\u5237\u65B0\u9875\u9762\u540E\u91CD\u8BD5</div>');
+  });
 }
 const _cache = {};
 async function fetchRev(rev) {
-    if (rev == null) {
-        return new Commit({
-            id: '0',
-            comment: '',
-            date: '',
-            url: '',
-        }, {
-            title: '',
-            rawInfo: '',
-            description: '',
-            metaTags: '',
-        });
-    }
-    if (!_cache[rev.id]) {
-        const res = await fetch(rev.url);
-        _cache[rev.id] = new Commit(rev, parseRevDetails(await res.text()));
-    }
-    return _cache[rev.id];
+  if (rev == null) {
+    return new Commit(
+      {
+        id: "0",
+        comment: "",
+        date: "",
+        url: ""
+      },
+      {
+        title: "",
+        rawInfo: "",
+        description: "",
+        metaTags: ""
+      }
+    );
+  }
+  if (!_cache[rev.id]) {
+    const res = await fetch(rev.url);
+    _cache[rev.id] = new Commit(rev, parseRevDetails(await res.text()));
+  }
+  return _cache[rev.id];
 }
 
 ;// ./scripts/wiki-rev-diff/src/index.ts
@@ -3861,9 +3880,10 @@ async function fetchRev(rev) {
 
 
 
+
 async function main() {
-    console.log('start bgm-wiki-rev-diff UserScript');
-    await initUI();
+  console.log("start bgm-wiki-rev-diff UserScript");
+  await initUI();
 }
 const style = `
 <style>
@@ -3891,90 +3911,93 @@ ul#pagehistory > li > * {
 </style>
 `;
 async function initUI() {
-    GM.registerMenuCommand('切换diff视图', function () {
-        void (async () => {
-            let outputFormat = (await GM.getValue(configKey));
-            if (!outputFormat || outputFormat === 'side-by-side') {
-                outputFormat = 'line-by-line';
-            }
-            else {
-                outputFormat = 'side-by-side';
-            }
-            await GM.setValue(configKey, outputFormat);
-        })();
-    });
-    external_$_default()('#headerSubject').after('<div id="show-diff-view-side-by-side" class="show-version-diff"></div>');
-    external_$_default()('#columnInSubjectA > hr.board').after(style + '<div id="show-diff-view-line-by-line" class="show-version-diff"></div>');
-    external_$_default()('#columnInSubjectA .subtitle').after('<div id="show-diff-info"></div>');
-    const diff2htmlStyle = await GM.getResourceUrl('diff2html');
-    external_$_default()('head').append(style).append(`<link rel='stylesheet' type='text/css' href='${diff2htmlStyle}' />`);
-    const s = external_$_default()('#pagehistory li');
-    const revs = Array.from(s).map(function (e) {
-        return parseRevEl(external_$_default()(e))?.id;
-    });
-    s.each(function (index) {
-        const el = external_$_default()(this);
-        const id = revs[index];
-        if (!id) {
-            el.prepend('<span style="padding-right: 1.4em"> 无法参与比较 </span>');
-            return;
-        }
-        el.prepend(`<input type='radio' class='rev-trim21-cn' name='rev-right' label='select to compare' value='${id}'>`);
-        el.prepend(`<input type='radio' class='rev-trim21-cn' name='rev-left' label='select to compare' value='${id}'>`);
-        const previous = lodash_es_find(revs, Boolean, index + 1) ?? '';
-        el.prepend(`(<a href='#' data-rev='${id}' data-previous='${previous}' class='l compare-previous-trim21-cn'>显示修改</a>) `);
-    });
-    const typeRevert = {
-        'rev-left': 'rev-right',
-        'rev-right': 'rev-left',
-    };
-    external_$_default()('input[type="radio"]').on('change', function (e) {
-        const name = e.target.getAttribute('name');
-        if (!name) {
-            return;
-        }
-        const selectName = typeRevert[name];
-        const rev = e.target.getAttribute('value');
-        if (rev) {
-            external_$_default()(`input[name="${selectName}"][value="${rev}"]`).css('visibility', 'hidden');
-            external_$_default()(`input[name="${selectName}"][value!="${rev}"]`).css('visibility', 'visible');
-        }
-    });
-    external_$_default()('.compare-previous-trim21-cn').on('click', function () {
-        const el = external_$_default()(this);
-        const left = String(el.data('rev'));
-        const right = String(el.data('previous'));
-        compare(left, right);
-        external_$_default()(`input[name="rev-left"][value="${left}"]`).prop('checked', true);
-        external_$_default()(`input[name="rev-left"][value!="${left}"]`).prop('checked', null);
-        external_$_default()(`input[name="rev-right"][value="${left}"]`).css('visibility', 'hidden');
-        external_$_default()(`input[name="rev-right"][value!="${left}"]`).css('visibility', 'visible');
-        external_$_default()('input[name="rev-left"]').css('visibility', 'visible');
-        external_$_default()('input[name="rev-right"]').prop('checked', null);
-        if (right) {
-            external_$_default()(`input[name="rev-right"][value="${right}"]`).prop('checked', true);
-            external_$_default()(`input[name="rev-left"][value="${right}"]`).css('visibility', 'hidden');
-        }
-    });
-    external_$_default()('#columnInSubjectA span.text').append('<a href="#" id="compare-trim21-cn" class="l"> > 比较选中的版本</a>');
-    external_$_default()('#compare-trim21-cn').on('click', function () {
-        const selectedRevs = getSelectedVersion();
-        compare(selectedRevs[0], selectedRevs[1]);
-    });
+  GM.registerMenuCommand("\u5207\u6362diff\u89C6\u56FE", function() {
+    void (async () => {
+      let outputFormat = await GM.getValue(configKey);
+      if (!outputFormat || outputFormat === "side-by-side") {
+        outputFormat = "line-by-line";
+      } else {
+        outputFormat = "side-by-side";
+      }
+      await GM.setValue(configKey, outputFormat);
+    })();
+  });
+  external_$_default()("#headerSubject").after('<div id="show-diff-view-side-by-side" class="show-version-diff"></div>');
+  external_$_default()("#columnInSubjectA > hr.board").after(
+    style + '<div id="show-diff-view-line-by-line" class="show-version-diff"></div>'
+  );
+  external_$_default()("#columnInSubjectA .subtitle").after('<div id="show-diff-info"></div>');
+  const diff2htmlStyle = await GM.getResourceUrl("diff2html");
+  external_$_default()("head").append(style).append(`<link rel='stylesheet' type='text/css' href='${diff2htmlStyle}' />`);
+  const s = external_$_default()("#pagehistory li");
+  const revs = Array.from(s).map(function(e) {
+    return parseRevEl(external_$_default()(e))?.id;
+  });
+  s.each(function(index) {
+    const el = external_$_default()(this);
+    const id = revs[index];
+    if (!id) {
+      el.prepend('<span style="padding-right: 1.4em"> \u65E0\u6CD5\u53C2\u4E0E\u6BD4\u8F83 </span>');
+      return;
+    }
+    el.prepend(`<input type='radio' class='rev-trim21-cn' name='rev-right' label='select to compare' value='${id}'>`);
+    el.prepend(`<input type='radio' class='rev-trim21-cn' name='rev-left' label='select to compare' value='${id}'>`);
+    const previous = lodash_es_find(revs, Boolean, index + 1) ?? "";
+    el.prepend(
+      `(<a href='#' data-rev='${id}' data-previous='${previous}' class='l compare-previous-trim21-cn'>\u663E\u793A\u4FEE\u6539</a>) `
+    );
+  });
+  const typeRevert = {
+    "rev-left": "rev-right",
+    "rev-right": "rev-left"
+  };
+  external_$_default()('input[type="radio"]').on("change", function(e) {
+    const name = e.target.getAttribute("name");
+    if (!name) {
+      return;
+    }
+    const selectName = typeRevert[name];
+    const rev = e.target.getAttribute("value");
+    if (rev) {
+      external_$_default()(`input[name="${selectName}"][value="${rev}"]`).css("visibility", "hidden");
+      external_$_default()(`input[name="${selectName}"][value!="${rev}"]`).css("visibility", "visible");
+    }
+  });
+  external_$_default()(".compare-previous-trim21-cn").on("click", function() {
+    const el = external_$_default()(this);
+    const left = String(el.data("rev"));
+    const right = String(el.data("previous"));
+    compare(left, right);
+    external_$_default()(`input[name="rev-left"][value="${left}"]`).prop("checked", true);
+    external_$_default()(`input[name="rev-left"][value!="${left}"]`).prop("checked", null);
+    external_$_default()(`input[name="rev-right"][value="${left}"]`).css("visibility", "hidden");
+    external_$_default()(`input[name="rev-right"][value!="${left}"]`).css("visibility", "visible");
+    external_$_default()('input[name="rev-left"]').css("visibility", "visible");
+    external_$_default()('input[name="rev-right"]').prop("checked", null);
+    if (right) {
+      external_$_default()(`input[name="rev-right"][value="${right}"]`).prop("checked", true);
+      external_$_default()(`input[name="rev-left"][value="${right}"]`).css("visibility", "hidden");
+    }
+  });
+  external_$_default()("#columnInSubjectA span.text").append('<a href="#" id="compare-trim21-cn" class="l"> > \u6BD4\u8F83\u9009\u4E2D\u7684\u7248\u672C</a>');
+  external_$_default()("#compare-trim21-cn").on("click", function() {
+    const selectedRevs = getSelectedVersion();
+    compare(selectedRevs[0], selectedRevs[1]);
+  });
 }
 function getSelectedVersion() {
-    const selectedVersion = [];
-    const selectedRev = external_$_default()('.rev-trim21-cn:checked');
-    if (selectedRev.length < 2) {
-        window.alert('请选中两个版本进行比较');
-        throw new Error();
-    }
-    selectedRev.each(function () {
-        const val = external_$_default()(this).val();
-        selectedVersion.push(val);
-    });
-    selectedVersion.sort((a, b) => parseInt(b) - parseInt(a));
-    return selectedVersion;
+  const selectedVersion = [];
+  const selectedRev = external_$_default()(".rev-trim21-cn:checked");
+  if (selectedRev.length < 2) {
+    window.alert("\u8BF7\u9009\u4E2D\u4E24\u4E2A\u7248\u672C\u8FDB\u884C\u6BD4\u8F83");
+    throw new Error();
+  }
+  selectedRev.each(function() {
+    const val = external_$_default()(this).val();
+    selectedVersion.push(val);
+  });
+  selectedVersion.sort((a, b) => parseInt(b) - parseInt(a));
+  return selectedVersion;
 }
 main().catch(console.error);
 
