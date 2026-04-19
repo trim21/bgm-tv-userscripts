@@ -14,7 +14,7 @@
 // @match               https://chii.in/subject/*/edit*
 // @require             https://cdn.jsdelivr.net/npm/jquery@4.0.0/dist/jquery.min.js
 // @require             https://cdn.jsdelivr.net/npm/diff2html@3.4.56/bundles/js/diff2html.min.js
-// @require             https://cdn.jsdelivr.net/npm/diff@8.0.4/dist/diff.min.js
+// @require             https://cdn.jsdelivr.net/npm/diff@9.0.0/dist/diff.min.js
 // @require             https://cdn.jsdelivr.net/npm/lodash@4.18.1/lodash.min.js
 // @resource            diff2html https://cdn.jsdelivr.net/npm/diff2html@3.4.56/bundles/css/diff2html.min.css
 // @grant               GM.getResourceUrl
