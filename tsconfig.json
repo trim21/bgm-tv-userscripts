@@ -6,6 +6,7 @@
     "module": "ESNext",
     "target": "ESNext",
     "lib": ["DOM", "ESNext"],
+    "types": ["greasemonkey"],
     "skipLibCheck": true,
     "allowImportingTsExtensions": true,
     "strict": true,
