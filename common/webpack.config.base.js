@@ -12,9 +12,9 @@ module.exports = {
         test: /\.[tj]s$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
+          loader: 'ts-loader',
           options: {
-            presets: [['@babel/preset-env'], ['@babel/preset-typescript']],
+            transpileOnly: true,
           },
         },
       },
