@@ -13,46 +13,52 @@ jobs:
     steps:
       - uses: actions/checkout@v7.0.1
 
+      - uses: pnpm/action-setup@v6
+
       - name: Setup node
         uses: actions/setup-node@v7.0.0
         with:
           node-version: 'lts/*'
-          cache: yarn
+          cache: pnpm
 
-      - run: yarn
+      - run: pnpm install --frozen-lockfile
 
-      - run: yarn tsc
+      - run: pnpm run tsc
 
-      - run: yarn format:check
+      - run: pnpm run format:check
 
-      - run: yarn lint
+      - run: pnpm run lint
 
   test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7.0.1
 
+      - uses: pnpm/action-setup@v6
+
       - name: Setup node
         uses: actions/setup-node@v7.0.0
         with:
           node-version: 'lts/*'
-          cache: yarn
+          cache: pnpm
 
-      - run: yarn
+      - run: pnpm install --frozen-lockfile
 
-      - run: yarn test
+      - run: pnpm run test
 
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7.0.1
 
+      - uses: pnpm/action-setup@v6
+
       - name: Setup node
         uses: actions/setup-node@v7.0.0
         with:
           node-version: 'lts/*'
-          cache: yarn
+          cache: pnpm
 
-      - run: yarn
+      - run: pnpm install --frozen-lockfile
 
-      - run: yarn build
+      - run: pnpm run build

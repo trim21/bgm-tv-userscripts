@@ -7,7 +7,7 @@ import prettier from 'eslint-config-prettier';
 export default [
   {
     name: 'ignores',
-    ignores: ['**/dist/**/*.js', '**/*.spec.ts', '**/.yarn/**', 'eslint.config.mjs'],
+    ignores: ['**/dist/**/*.js', '**/*.spec.ts', 'eslint.config.mjs'],
   },
   {
     name: 'javascript',
