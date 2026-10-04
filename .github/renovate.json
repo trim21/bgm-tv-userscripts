@@ -6,5 +6,12 @@
     "github>Trim21/renovate-config:monthly"
   ],
   "labels": ["ci:auto-merge", "dependencies"],
-  "prConcurrentLimit": 3
+  "prConcurrentLimit": 3,
+  "packageRules": [
+    {
+      "matchPackageNames": ["pnpm"],
+      "groupName": "pnpm",
+      "allowedVersions": "<12"
+    }
+  ]
 }
